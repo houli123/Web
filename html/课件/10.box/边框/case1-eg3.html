@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>图像边框</title>
+<style type="text/css">
+div{
+	padding:30px;
+	margin:20px;
+	font-size:14px;
+	background-color:#9FF;     /*设置div背景颜色*/
+	float:left;
+	width:160px;
+	height:80px;
+}
+#bi1{
+	border-image-source:url("images/test.png");
+	border-image-slice:27;
+	border-image-width:auto;
+	border-image-repeat:repeat;
+}
+#bi2{
+	border-image-source:url("images/test.png");
+	border-image-slice:27 fill;
+	border-image-width:auto;
+	border-image-repeat:repeat;
+}
+#bi3{
+	border-image-source:url("images/test.png");
+	border-image-slice:27;
+	border-image-width:auto;
+	border-image-outset:10px;
+	border-image-repeat:repeat;
+}
+#bi4{ border-image:url("images/test.png") 27/15px repeat; }
+#bi5{ border-image:url("images/test.png") 35/40px repeat; }
+#bi6{ border-image:url("images/test.png") 20/27px repeat; } 
+#bi7{ border-image:url("images/test.png") 27/auto stretch; }
+#bi8{ border-image:url("images/test.png") 27/auto round; }
+#bi9{ border-image:url("images/test.png") 10 15 20 30/auto repeat; }
+</style>
+</head>
+<body>
+<div id="bi1">
+	切片：27<br />
+	边框厚度：auto，即27px <br />
+	平铺方式：repeat
+</div>
+<div id="bi2">
+	<h1>加关键字fill</h1>
+</div>
+<div id="bi3">
+	切片：27<br />
+	边框厚度：auto，即27px <br />
+	外延：10px <br /> 
+	平铺方式：repeat
+</div>
+<div id="bi4">
+	切片：27<br />
+	边框厚度：15px  <br />	
+	平铺方式：repeat
+</div>
+<div id="bi5">
+	切片：35<br />
+	边框厚度：40px <br />
+	平铺方式：repeat
+</div>
+<div id="bi6">
+	切片：20<br />
+	边框厚度：27px <br />
+	平铺方式：repeat
+</div>
+<div id="bi7">
+	切片：20<br />
+	边框厚度：auto，即27px <br />
+	平铺方式：stretch
+</div>
+<div id="bi8">
+	切片：20<br />
+	边框厚度：auto，即27px <br />
+	平铺方式：round
+</div>
+<div id="bi9">
+	切片：10 15 20 30<br />
+	边框厚度：auto，即27px <br />
+	平铺方式：repeat;
+</div>
+</body>
+</html>
+			

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>背景图像裁剪</title>
+<style type="text/css">
+p{
+	width:300px;
+	height:120px;
+	padding:20px;
+	border:10px dashed #000;
+	background-image:url(images/bg7.jpg);
+	background-repeat:no-repeat;
+	float:left;
+	margin:10px;
+	font-size:36px;
+	font-weight:900;
+	font-family:黑体;
+}
+.bclip1{ background-clip:border-box;  }
+.bclip2{ background-clip:padding-box;  }
+.bclip3{ background-clip:content-box;  }
+.bclip4{
+	-webkit-background-clip:text;      /* webkit，从前景内容的形状作为裁剪区域向外裁剪背景 */
+	-webkit-text-fill-color:transparent;   /*webkit，文本颜色设置为透明，透出背景图像*/
+}
+</style>
+</head>
+<body>
+<p class="bclip1"><br />不发生裁剪</p>
+<p class="bclip2"><br />border区域背景被裁剪</p>
+<p class="bclip3"><br />border和padding部分被裁剪</p>
+<p class="bclip4">从前景内容的形状作为裁剪区域向外裁剪背景</p>
+</body>
+</html>

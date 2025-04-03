@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2e8b57;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .menu a {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            color: #2e8b57;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .menu a:hover {
+            background-color: #2e8b57;
+            color: white;
+        }
+        .list {
+            margin-top: 20px;
+        }
+        .item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            text-align: left;
+        }
+        .text {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .info {
+            color: #666;
+            font-size: 14px;
+        }
+        .del {
+            color: #ff4444;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .del:hover {
+            color: #cc0000;
+        }
+        .hello {
+            color: #2e8b57;
+            margin-bottom: 15px;
+        }
+        .page {
+            margin-top: 20px;
+        }
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .page li {
+            display: inline-block;
+        }
+        .page a, .page span {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            color: #666;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        .page a:hover {
+            background-color: #f5f5f5;
+            border-color: #999;
+        }
+        .page .active span {
+            background-color: #2e8b57;
+            color: white;
+            border-color: #2e8b57;
+        }
+        .page .disabled span {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        .btns {
+            float: right;
+            margin-bottom: 15px;
+        }
+        .btns .btn {
+            padding: 8px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        .btns .btn-green {
+            background-color: #2e8b57;
+            color: white;
+        }
+        .btns .btn-gray {
+            background-color: #f0f0f0;
+            color: #666;
+        }
+        .btns .btn-green:hover {
+            background-color: #246b45;
+        }
+        .btns .btn-gray:hover {
+            background-color: #e0e0e0;
+        }
+        /* 清除浮动 */
+        .list {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">留言板</h1>
+<div class="box">
+    <div class="menu">
+        {empty name='Think.session.username'}
+        <a href="{:url('User/login')}">登录</a>
+        <a href="{:url('User/reg')}">注册</a>
+        {else/}
+        <div class="hello"><a href="{:url('update')}">欢迎您：{$Think.session.username}</a></div>
+        <a href="{:url('post')}">发表留言</a>
+        <a href="{:url('show')}">我的留言</a>
+        <a href="{:url('User/logout')}">退出登录</a>
+        {/empty}
+    </div>
+    
+    <div class="mb-3">
+        <div class="btns">
+            <a href="{:url('index', ['order'=>'desc'])}" 
+               class="btn {$current_order=='desc'?'btn-green':'btn-gray'}">
+                最新发布
+            </a>
+            <a href="{:url('index', ['order'=>'asc'])}" 
+               class="btn {$current_order=='asc'?'btn-green':'btn-gray'}">
+                最早发布
+            </a>
+        </div>
+    </div>
+    
+    <div class="list">
+        {volist name='message_list' id='item'}
+        <div class="item">
+            <div class="text">{$item.content}</div>
+            <div class="info">
+                留言人：{$item.username}&nbsp;&nbsp;
+                留言时间：{$item.create_time|date='Y年m月d日',###}
+                {eq name='Think.session.username' value='$item.username'}
+                <a href="{:url('delete?id='.$item['message_id'])}" onclick="return confirm('确定删除？')" class="del">删除</a>
+                {/eq}
+            </div>
+        </div>
+        {/volist}
+    </div>
+    
+    <div class="page">
+        {$message_list->render()}
+    </div>
+</div>
+</body>
+</html>

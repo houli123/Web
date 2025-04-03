@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>背景图像平铺</title>
+<style type="text/css">
+div{
+	width:240px;
+	height:160px;
+	float:left;
+	margin:10px;
+	font-size:30px;
+	font-weight:900;
+	text-align:center;
+	border:1px solid black;
+	background-image:url(images/bg3.jpg);    /*所有div设置同样的背景图像*/	
+}
+#br1{
+	background-repeat:repeat;        /*背景图像重复*/
+}
+#br2{
+	background-repeat:no-repeat;        /*背景图像不重复*/
+}
+#br3{
+	background-repeat:repeat-x;        /*背景图像横向重复*/
+}
+#br4{
+	background-repeat:repeat-y;        /*背景图像纵向重复*/
+}
+#br5{
+	background-repeat:space;        /*背景图像纵向重复*/
+}
+#br6{
+	background-repeat:round;        /*背景图像纵向重复*/
+}
+</style>
+</head>
+<body>
+<div id="br1">repeat</div>
+<div id="br2">no-repeat</div>
+<div id="br3">repeat-x</div>
+<div id="br4">repeat-y</div>
+<div id="br5">space</div>
+<div id="br6">round</div>
+</body>
+</html>

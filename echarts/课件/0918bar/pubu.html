@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 900px; height: 600px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("main"));
+        var option = {
+            title: {
+                text: '专升本考试分数组成',
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {  
+                    type: 'shadow'  
+                }
+            },
+            xAxis: [
+                {
+                    type: 'value',
+                    
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'category',
+					data: [ '互联网+', '政治', '英语','数学', '计算机专业课','总分数']
+                }
+            ],
+            series: [
+
+                {
+                    name: '分值',
+                    type: 'bar', 
+                    stack: '分数', 
+                    itemStyle: { normal: { label: { show: true, position: 'inside' } } },
+                    data: [15,100, 100, 100, 200,515]
+                }
+            ]
+        };
+        myChart.setOption(option); 
+    </script>
+</body>
+
+</html>

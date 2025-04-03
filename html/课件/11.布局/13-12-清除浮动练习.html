@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>清除浮动</title>
+<style type="text/css">
+section{
+	width:500px;
+	height:200px;
+	border:1px solid #000;
+	margin:10px;
+	background:#f3de83;
+}
+h1,h2,h3{
+	background:#daf6f7;
+	margin:10px;
+	padding:5px;
+	border:1px solid #000;
+	font-size:14px;
+	text-align:center;
+	height:20px;
+}
+h1{
+	width:60px;
+}
+h2{
+	width:100px;
+}
+h3{
+	width:150px;
+}
+h4{
+	width:200px;
+	padding:10px;
+	background:#f9aa9d;
+	border:2px dashed #000;
+	font-size:14px;
+	text-align:center;	
+    height:20px;	
+}
+p{
+	font:13px/1.5 宋体;
+}
+.float_none{
+	float:none;          /*不浮动*/
+}
+.float_left{
+	float:left;         /*浮动在左*/
+}
+.float_right{
+	float:right;        /*浮动在右*/
+}
+.clear_both{               /*清除两侧浮动*/
+	clear:both;
+}
+</style>
+</head>
+<body>
+<section>
+<h1 class="float_left">H1左浮动</h1>
+<h2 class="float_left">H2左浮动</h2>
+<h4 class="float_none">H4不浮动</h4>
+<h3 class="clear_both float_right">H3右浮动</h3>
+</section>
+
+<section>
+<h1 class="float_left">H1左浮动</h1>
+<h2 class="float_left">H2左浮动</h2>
+<h3 class="float_none float_right">H3右浮动</h3>
+<h4 class="float_none clear_both">H4不浮动，清除两侧浮动</h4>
+</section>
+
+<section>
+<h1 class="float_left">H1左浮动</h1>
+<h2 class="float_left">H2左浮动</h2>
+
+<p>段落文字，不浮动，不清除浮动时效果。段落文字，不浮动，不清除浮动时效果。段落文字，不浮动，不清除浮动时效果。段落文字，不浮动，不清除浮动时效果。</p>
+<h3 class="float_right clear_both">H3右浮动</h3>
+</section>
+
+<section>
+<h1 class="float_left">H1左浮动</h1>
+<h2 class="float_left">H2左浮动</h2>
+
+<p class="clear_both">段落文字，不浮动，除浮左右两侧动时效果。段落文字，不浮动，除浮左右两侧动时效果。段落文字，不浮动，除浮左右两侧动时效果。段落文字，不浮动，除浮左右两侧动时效果。</p>
+<h3 class="float_right">H3右浮动</h3>
+</section>
+</body>
+</html>
+

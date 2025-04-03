@@ -1,0 +1,64 @@
+CREATE DATABASE TestDB;
+
+USE TestDB;
+
+CREATE TABLE class(
+ classNo int NOT NULL PRIMARY KEY auto_increment,
+ className varchar(20) NOT NULL,
+ studentSum int NOT NULL default 0
+);
+
+
+CREATE TABLE student(
+ studentId  varchar(5) NOT NULL PRIMARY KEY,
+ studentName varchar(20) NOT NULL,
+ age int NOT NULL DEFAULT 18,
+ class int NOT NULL
+);
+
+ALTER TABLE student 
+ADD CONSTRAINT fk1 FOREIGN KEY (class)
+REFERENCES class(classNo)
+;
+
+INSERT INTO class(className,studentSum) VALUES("10计信1班",0);
+INSERT INTO class(className,studentSum) VALUES("10计信2班",0);
+INSERT INTO class(className,studentSum) VALUES("10计信3班",0);
+INSERT INTO class(className,studentSum) VALUES("10计信4班",0);
+
+INSERT INTO student VALUES("S0101","TOM",18,1);
+INSERT INTO student VALUES("S0102","JACK",19,1);
+INSERT INTO student VALUES("S0103","MARY",20,1);
+INSERT INTO student VALUES("S0104","JOHN",20,1);
+
+INSERT INTO student VALUES("S0201","Lily",18,2);
+INSERT INTO student VALUES("S0202","Merry",19,2);
+INSERT INTO student VALUES("S0203","Jane",22,2);
+
+
+INSERT INTO student VALUES("S0301","张三",20,3);
+INSERT INTO student VALUES("S0302","李四",18,3);
+INSERT INTO student VALUES("S0303","王五",19,3);
+INSERT INTO student VALUES("S0304","刘丽",19,3);
+
+INSERT INTO student VALUES("S0401","陈小二",19,4);
+INSERT INTO student VALUES("S0402","王小虎",21,4);
+INSERT INTO student VALUES("S0403","李明",20,4);
+
+UPDATE class SET studentSum=
+(SELECT COUNT(*) FROM student
+WHERE class=1) WHERE classNo=1 ;
+
+
+UPDATE class SET studentSum=
+(SELECT COUNT(*) FROM student
+WHERE class=2) WHERE classNo=2 ;
+
+UPDATE class SET studentSum=
+(SELECT COUNT(*) FROM student
+WHERE class=3) WHERE classNo=3;
+
+UPDATE class SET studentSum=
+(SELECT COUNT(*) FROM student
+WHERE class=4) WHERE classNo=4 ;
+

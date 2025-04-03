@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>改变超链接样式</title>
+<style type="text/css">
+body{
+	text-align:center;
+}
+/* 导航条的样式设置 */
+nav{
+	font-size:13px;
+	margin:0 auto;
+	background:#980300;
+}
+
+/* 导航条中表格的样式设置 */
+nav table{
+		border:0;
+		border-collapse:collapse;
+		margin:0 auto;
+		width:700px;
+}
+nav table td{               /*设定每个单元格的样式*/
+		width:100px;              
+		padding:6px 0;
+}
+
+/*导航条中表格里的超链接各个状态的样式*/
+nav table a:link{				/* 超链接的样式 */
+	color:white;				
+	text-decoration:none;		/* 无下划线 */
+}
+nav table a:visited{			/* 访问过的超链接 */
+		color:#d5d5d5;			/* 灰色 */
+		text-decoration:none;		
+}
+nav table a:hover{				/* 鼠标经过时的超链接 */
+		color:#FFFF00;			    	/* 黄色 */
+		text-decoration:underline;		 /* 下划线 */
+}
+</style>
+</head>
+<body>
+<nav>
+	<table>
+			
+			<tr><td><a href="#">学校概况</a></td></tr>
+			<tr><td><a href="#">管理机构</a></td></tr>
+			<tr><td><a href="#">院系专业</a></td></tr>
+			<tr><td><a href="#">人才培养</a></td></tr>
+			<tr><td><a href="#">科学研究</a></td></tr>
+			<tr><td><a href="#">师资队伍</a></td></tr>
+            <tr></tr><td><a href="#">招生就业</a></td>
+
+	</table>
+</nav>
+</body>
+</html>

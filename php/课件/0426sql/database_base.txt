@@ -1,0 +1,67 @@
+CREATE DATABASE TestDB;
+
+
+USE TestDB;
+
+CREATE TABLE class(
+ classNo int NOT NULL PRIMARY KEY auto_increment,
+ className varchar(20) NOT NULL
+);
+
+
+
+
+CREATE TABLE student(
+ studentId  varchar(5) NOT NULL PRIMARY KEY,
+ studentName varchar(20) NOT NULL,
+ age int NOT NULL DEFAULT 18,
+ class int NOT NULL
+);
+
+
+​USE TestDB;
+ALTER TABLE student 
+ADD CONSTRAINT fk1 FOREIGN KEY (class)
+REFERENCES class(classNo)
+;
+
+USE TestDB;
+INSERT INTO class(className) VALUES("10计信1班");
+INSERT INTO class(className) VALUES("10计信2班");
+INSERT INTO class(className) VALUES("10计信3班");
+INSERT INTO class(className) VALUES("10计信4班");
+
+
+INSERT INTO student VALUES("S0101","TOM",18,1);
+INSERT INTO student VALUES("S0102","JACK",19,1);
+INSERT INTO student VALUES("S0103","MARY",20,1);
+INSERT INTO student VALUES("S0104","JOHN",20,1);
+
+
+INSERT INTO student VALUES("S0201","Lily",18,2);
+INSERT INTO student VALUES("S0202","Merry",19,2);
+INSERT INTO student VALUES("S0203","Jane",22,2);
+
+
+INSERT INTO student VALUES("S0301","张三",20,3);
+INSERT INTO student VALUES("S0302","李四",18,3);
+INSERT INTO student VALUES("S0303","王五",19,3);
+INSERT INTO student VALUES("S0304","刘丽",19,3);
+
+
+INSERT INTO student VALUES("S0401","陈小二",19,4);
+INSERT INTO student VALUES("S0402","王小虎",21,4);
+INSERT INTO student VALUES("S0403","李明",20,4);
+
+
+
+
+CREATE TABLE user(
+ userName varchar(20) NOT NULL PRIMARY KEY,
+ password varchar(10),
+ role varchar(10) default "guest"
+);
+
+
+INSERT INTO user VALUES("admin","123","admin");
+INSERT INTO user VALUES("tom","123","guest");

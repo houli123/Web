@@ -1,0 +1,14 @@
+body{
+    margin: 0px;
+    padding: 20px;
+}
+h2{
+    color: #4288ce;
+    margin: 6px 0 0;
+    font-size: 28px;
+    border-bottom: 1px solid #eee;
+}
+.info{
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}

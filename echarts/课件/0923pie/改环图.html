@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px; height: 400px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("main"));
+		
+		
+		/*苹果：iPhone16：8
+		        iPhone15：352
+				iPhoneSE: 244
+		  华为：mate60:262
+		        p60:310
+				nova12:567
+		  小米：xiaomi14: 431
+		        mix fold: 111
+	    */
+        var option = {
+            title: {  
+                text: '各大手机商家品牌销售量',  
+                left: 'center' 
+            },
+            tooltip: {  
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"  
+            },
+            legend: {  
+                orient: 'vertical',  
+                left: 62,  
+                top: 22,  
+                // data: ['生活方式', '遗传因素', '社会因素', '医疗条件', '气候环境','人为']   
+            },
+            series: [   
+              {
+                name: '访问来源',
+                type: 'pie',
+                radius : ['50%','80%'],   //第一个是环图
+                center: ['60%', '60%'],  
+                clockWise: true,
+                itemStyle: {
+                    borderRadius: 10,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                },
+                emphasis: {
+                    label: {
+                    show: true,
+                    fontSize: 20,
+                    fontWeight: 'bold'
+                    }
+                },
+                data: [  
+                    { value: 8, name: 'iPhone16'},
+                    { value: 352, name: 'iPhone15'},
+                    { value: 244, name: 'iPhoneSE'},
+                    { value: 262, name: 'mate60'},
+                    { value: 310, name: 'p60'},
+                    { value: 567, name: 'nova12'},
+                    { value: 431, name: 'xiaomi14'},
+                    { value: 111, name: 'mix fold'},
+                ],
+              },
+              {
+                name: '访问来源',
+                type: 'pie',
+                radius : ['0%','40%'],   //第一个是换图
+                center: ['60%', '60%'],  
+                clockWise: true,
+                itemStyle: {
+                    borderRadius: 10,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                },
+                emphasis: {
+                    label: {
+                    show: true,
+                    fontSize: 20,
+                    fontWeight: 'bold'
+                    }
+                },
+                data: [  
+                    { value: 604, name: '苹果' },
+                    { value: 1139, name: '华为' },
+                    { value: 542, name: '小米' },
+                ],
+              },
+            ]
+        };
+        myChart.setOption(option); 
+    </script>
+</body>
+
+</html>

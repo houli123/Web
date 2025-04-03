@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>边框样式</title>
+<style type="text/css">
+div{
+	width:80px;
+	height:50px;
+	margin:10px;     /*外边距*/  
+	float:left;      /*左边浮动*/
+	font-size:13px;
+}
+#bs1{ border-style:none; }
+#bs2{ border-style:solid; }
+#bs3{ border-style:solid dashed;}
+#bs4{ border-style:solid dashed double; }
+#bs5{ border-style:solid dashed double dotted; }
+#bs6{ border-style:groove; }
+#bs7{ border-style:ridge; }
+#bs8{ border-style:inset; }
+#bs9{ border-style:outset; }
+#bs10{
+	border-top-style:solid;	
+	border-right-style:dashed;
+	border-bottom-style:double;
+	border-left-style:dotted;
+
+}
+</style>
+</head>
+<body>
+<div id="bs1">none无边框</div>
+<div id="bs2">1个值solid</div>
+<div id="bs3">2个值solid dashed</div>
+<div id="bs4">3个值solid dashed double</div>
+<div id="bs5">4个值solid dashed double dotted</div>
+<div id="bs6">groove3D凹槽</div>
+<div id="bs7">ridge3D凸槽</div>
+<div id="bs8">inset3D凹边</div>
+<div id="bs9">outset3D凸边</div>
+<div id="bs10">分别设定四个边</div>
+</body>
+</html>

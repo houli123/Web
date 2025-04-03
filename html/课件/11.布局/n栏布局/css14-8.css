@@ -1,0 +1,75 @@
+/*设置body元素样式*/
+body{
+	margin:0px;
+	text-align:center;
+}
+/*外层父div样式*/
+#container{
+	margin:0 auto;
+	width:980px;
+	border:1px solid #F60;
+}
+/*页眉top样式开始*/
+#top{                
+	height:90px;
+	margin:0;
+}
+/*页眉top样式结束*/
+
+/*导航navi部分样式开始*/
+#navi{                       /*导航部分样式*/
+	padding:0px 13px;
+	height:40px;
+}
+/*导航条部分链接样式的设置*/
+#navi a{             /*链接通用样式*/
+	display:block;      /*显示为块级元素*/                          
+	float:left;	  /*浮动在左*/
+	width:100px;       /*宽100像素*/ 
+	color:white; 
+	font-family:微软雅黑,黑体,宋体;
+	text-decoration:none;        /*无下划线*/ 
+	margin:3px;               /*按钮的外边距*/   
+	padding:6px 15px;
+	border-radius:10px;
+}
+#navi a:link,#navi a:visited{		/* 未访问和访问链接样式*/
+	background:linear-gradient(#F60,#F93);    /*渐变背景*/  
+}
+#navi a:hover{		/* 鼠标经过时的超链接 */		 	
+	background:#724b20;
+}
+/*页眉navi部分样式结束*/
+
+/*焦点focus样式开始*/
+#focus{                    /*焦点部分样式*/
+	margin:0;
+	padding:0;
+	height:210px;
+}
+/*焦点focus样式结束*/
+
+/*主内容main样式开始*/
+#main{  
+	padding:10px;
+	text-align:left;
+}
+#main h4{
+	background:#F93 url(images/little1.png) no-repeat left center;
+	margin:0;
+	padding:10px 60px;
+}
+#main p{
+	font:13px/1.6 宋体;
+	text-indent:2em;
+}
+/*主内容main样式结束*/
+
+/*页脚foot样式开始*/
+#foot{                   
+	height:80px;
+	font:12px/2 宋体;
+	color:#FFF;
+	background:linear-gradient(#F93,#F60);
+}
+/*页脚foot样式结束*/

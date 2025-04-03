@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>圆角边框</title>
+<style type="text/css">
+div{
+	width:130px;
+	height:70px;
+	margin:10px;     
+	float:left;      /*左边浮动*/
+	font-size:13px;
+	border:2px solid #000;
+	padding:5px;
+}
+#br1{ 
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+}
+#br2{
+	border-top-left-radius:20px 10px;
+	border-top-right-radius:20px 10px;
+}
+#br3{ border-radius:10px; }
+#br4{ border-radius:10px 15px; }
+#br5{ border-radius:10px 15px 20px; }
+#br6{ border-radius:10px 15px 20px 25px; }
+#br7{ border-radius:10px/20px;}
+#br8{ border-radius:10px 15px/20px 25px;}
+#br9{ border-radius:10px 15px 20px 25px/20px 25px 30px 35px;}
+</style>
+</head>
+<body>
+<div id="br1">分别设置4个角:<br />左上右上10px<br />左下右下20px</div>
+<div id="br2">分别左上和右上:<br />值20px 10px</div>
+<div id="br3">水平与垂直半径相同:<br />1个参数值:10px</div>
+<div id="br4">水平与垂直半径相同:<br />2个参数值:10px 15px</div>
+<div id="br5">水平与垂直半径相同:<br />3个参数值:10px 15px 20px</div>
+<div id="br6">水平与垂直半径相同:<br />3个参数值:10px 15px 20px 25px</div>
+<div id="br7">水平与垂直半径不同：<br />每组1个参数:10px/20px;</div>
+<div id="br8">水平与垂直半径不同：<br />每组2个参数:10px 15px/20px 25px</div>
+<div id="br9">水平与垂直半径不同：<br />每组4个参数:10px 15px 20px 25px/20px 25px 30px 35px</div>
+</body>
+</html>
+			

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>背景图像尺寸</title>
+<style type="text/css">
+p{
+	width:300px;
+	height:300px;
+	padding:20px;
+	border:10px dashed #000;
+	background-image:url(images/bg6.jpg);
+	background-repeat:no-repeat;
+	float:left;
+	margin:10px;
+	font-size:20px;
+}
+.bs1{ background-size:auto; }
+.bs2{ background-size:cover; }
+.bs3{ background-size:contain; }
+.bs4{ background-size:400px; }
+.bs5{ background-size:300px 200px; }
+.bs6{ background-size:80% 90%; }      
+</style>
+</head>
+<body>
+<h3>背景图大小1000px*500px(比例2:1)，段落内容大小300px*300px（比例1:1）</h3>
+<p class="bs1">auto：图像真实大小，1000px*500px</p>
+<p class="bs2">cover：等比（图像比例2:1）缩放到完全覆盖盒子</p>
+<p class="bs3">contain等比（图像比例2:1）缩放到宽度和盒子相同</p>
+<p class="bs4">宽400px，高等比例(200px)</p>
+<p class="bs5">宽300px，高200px</p>
+<p class="bs6">宽高分别为背景区域的80%和90%</p>
+</body>
+</html>

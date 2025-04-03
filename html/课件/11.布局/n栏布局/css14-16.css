@@ -1,0 +1,171 @@
+/*body的样式*/
+body{ 
+	background-image:url(images/bg1.jpg);
+	background-attachment:fixed;
+	background-size:cover;
+	font-family:微软雅黑,黑体;
+	color:#000;
+	text-align:center;
+}
+/*父容器#container的样式*/
+#container{
+	border-radius:100px;
+	margin:120px auto 0 auto;
+	width:100%;
+	height:1160px;
+	background-color:rgba(70,89,166, 0.8);   /*父div的背景不透明度为80%*/
+	text-align:center;
+}
+
+/*页眉#top的样式*/
+#top{
+	height:100px;
+	padding-top:80px;
+}
+#top section{   /*页眉左侧文字Music Year所在的盒子样式*/
+	float:left;
+	height:100px;
+	width:560px;
+	font-family:chiller;
+	font-size:90px;
+	line-height:90px;
+	color:yellow;
+}
+#top form{    /*页眉右侧表单的样式*/
+	float:right;
+	height:40px;
+	width:300px;
+	padding-top:60px;
+}
+
+/*焦点图#focus的样式*/
+#focus{
+	height:200px;
+	background:url(images/music.jpg) center; /*设置背景图居中*/
+	opacity:0.6;                  /*焦点图不透明度60%*/
+	margin:20px;
+	border-radius:20px;
+}
+#focus:hover{                 /*焦点图不透明度100%,图像清晰*/
+		opacity:1;
+}
+
+/*导航栏#navi的样式*/
+#navi{
+	height:50px;
+	margin:0 30px;
+	font-family:微软雅黑,黑体;
+}
+#navi ul{ 
+	height:30px;
+	list-style-type:none;
+	padding:0px;
+	float:right;
+}
+#navi li{
+	float:left; 
+	width:160px;
+	padding:5px 5px 5px 0.5em;	     
+}
+#navi li:hover{
+	background-color:#0044BB;
+}
+#navi li a{
+	text-decoration:none;
+	color:yellow;
+}
+
+/*主内容区#main的样式*/
+#main{
+	margin:30px auto;
+	width:960px;
+	height:540px;
+	border-radius:10px;
+}
+#left,#center,#right{     /*主内容区三个子div的样式*/
+	  float:left;
+      width:290px;
+      height:500px;
+      background-color:#FFEE99;
+      padding-top:10px;
+      border-radius:15px;
+	  margin:15px;
+}
+/*主内容区排行榜中各个分区的样式*/
+.list{                   /*歌榜名样式，如“MY新歌榜”*/
+      float:left;
+      font-size:20px;
+      margin-left:5px;
+}
+.more{                 /*歌榜名右侧“更多”二字的样式*/
+      float:right;
+      font-size:15px;
+      margin-top:5px;
+      margin-right:5px;
+}
+.row{                 /*歌榜每一行的样式*/
+      float:left;
+      width:280px;
+      height:30px;
+      margin-top:10px;
+      background-color:white;
+      border-radius:10px;
+}
+.row:hover{
+	background:#F66;
+}
+.number1{                 /*歌榜前三数字的样式*/
+	background-color:orange;
+	width:30px;
+	height:30px;
+	color:white;
+	text-align:center;
+}
+.number2{            /*歌榜后七名数字的样式*/
+	background-color:#AAAAAA;
+	width:30px;
+	height:30px;
+	color:white;
+	text-align:center;
+}
+.song{                  /*歌曲名的样式*/
+	float:left;
+	width:120px;
+	height:30px;
+	color:#0066FF;
+	font-size:15px;
+	margin:-25px 0 0 50px;
+}
+.singer{                     /*歌手名的样式*/
+	float:right;
+	width:80px;
+	height:20px;
+	font-size:15px;
+	margin:-30px 20px 0 30px;
+}
+
+/*页脚#foot样式*/
+#foot{
+    height:150px;
+    border-radius:50px;
+}
+.navi2{               /*页脚部分导航链接的样式*/
+	margin:10px;
+	background-color:#FFF;
+	padding:7px;
+	border-radius:20px;
+}
+.navi2 a:link{
+	color:black;
+	text-decoration:none;
+}
+.navi2 span{
+	padding:0 28px;
+	margin-left:30px;
+	font-size:15px;
+}
+.copy{             /*页脚部分版权信息的样式样式*/
+	margin-top:30px;
+	font-size:15px;
+	color:white;
+}

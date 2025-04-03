@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>绝对定位</title>
+<style type="text/css">
+div{
+	width:200px;
+	height:80px;
+	margin:10px;
+	padding:10px;
+	border:2px dashed #000;
+	text-align:center;
+}
+#div1{
+	position:absolute;   /*绝对定位*/
+	top:100px;
+	right:30px;
+	background:#ba9578;
+	color:#FFF;
+}
+#div2{
+	position:relative;   /*相对定位*/
+	top:60px;
+	left:30px;
+	background:#cef091;
+	color:#000;
+}
+#div3{
+	position:static;   /*静态定位*/
+	background:#70c17f;
+	color:#FFF;
+}
+b{
+	border:1px solid red;
+}
+.b2{
+	position:absolute;   /*绝对定位*/
+	left:-20px;
+	top:120px;
+}
+</style>
+</head>
+<body>            
+<div id="div1"><p>div1</p></div>
+<div id="div2">
+	<p>div2</p>
+	<b>b元素1</b>
+	<b class="b2">b元素2</b>
+	<b>b元素3</b>
+</div>
+<div id="div3"><p>div3</p></div>		
+</body>
+</html>

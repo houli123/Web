@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>销售数据分析</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>销售数据分析</h1>
+            <div class="controls">
+                <select id="yearSelect" onchange="updateData()">
+                    <option value="2023">2023年</option>
+                    <option value="2022">2022年</option>
+                    <option value="2021">2021年</option>
+                </select>
+            </div>
+        </div>
+        <div class="charts">
+            <div id="lineChart" class="chart"></div>
+            <div id="pieChart" class="chart"></div>
+            <div id="barChart" class="chart"></div>
+            <div id="radarChart" class="chart"></div>
+            <div id="trendChart" class="chart"></div>
+        </div>
+    </div>
+
+    <!-- 按顺序引入JS文件 -->
+    <script src="js/echarts.js"></script>
+    <script src="data.js"></script>
+    <script src="charts.js"></script>
+    
+    <!-- 添加初始化调用 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateData(); // 初始化所有图表
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 800px; height: 600px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("main"));
+		
+        var option = {
+            title: {
+                text: '历年不同等级会员数量变化',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            legend: {
+                data: ['VIP会员', '普通会员'],
+                bottom: 10
+            },
+            xAxis: {
+                type: 'category',
+                data: ['2016', '2017', '2018'],
+                name: '年份',
+                nameLocation: 'end',
+                nameGap: 20,
+                axisLine: {
+                    show:true,
+                    symbol: ['none', 'arrow'],
+                    symbolSize: [10, 15]
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: '会员数量',
+                nameLocation: 'end',
+                nameGap: 20,
+                axisLine: {
+                    show:true,
+                    symbol: ['none', 'arrow'],
+                    symbolSize: [10, 15]
+                }
+            },
+            series: [
+                {
+                    name: 'VIP会员',
+                    type: 'line',
+                    data: [0, 1, 8]
+                },
+                {
+                    name: '普通会员',
+                    type: 'line',
+                    data: [7, 2, 1]
+                }
+            ]
+        };
+        myChart.setOption(option); 
+    </script>
+</body>
+</html>

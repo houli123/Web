@@ -1,0 +1,94 @@
+{
+  "NBA_Stars": [
+    {
+      "name": "勒布朗·詹姆斯",
+      "score_ability": 95,
+      "defense_strength": 88,
+      "rebound_ability": 85,
+      "assist_efficiency": 98,
+      "speed_agility": 90,
+      "leadership": 99
+    },
+    {
+      "name": "斯蒂芬·库里",
+      "score_ability": 95,
+      "defense_strength": 75,
+      "rebound_ability": 68,
+      "assist_efficiency": 92,
+      "speed_agility": 85,
+      "leadership": 97
+    },
+    {
+      "name": "凯文·杜兰特",
+	  "score_ability": 88,
+      "defense_strength": 92,
+      "rebound_ability": 95,
+      "assist_efficiency": 70,
+      "speed_agility": 78,
+      "leadership": 90
+    },
+    {
+      "name": "詹姆斯·哈登",
+      "score_ability": 85,
+      "defense_strength": 95,
+      "rebound_ability": 88,
+      "assist_efficiency": 80,
+      "speed_agility": 82,
+      "leadership": 85
+    },
+    {
+      "name": "安东尼·戴维斯",
+	  "score_ability": 97,
+      "defense_strength": 70,
+      "rebound_ability": 75,
+      "assist_efficiency": 85,
+      "speed_agility": 88,
+      "leadership": 90
+    },
+    {
+      "name": "拉塞尔·威斯布鲁克",
+	  "score_ability": 80,
+      "defense_strength": 98,
+      "rebound_ability": 82,
+      "assist_efficiency": 85,
+      "speed_agility": 78,
+      "leadership": 92
+    },
+    {
+      "name": "尼古拉·约基奇",
+	  "score_ability": 88,
+      "defense_strength": 85,
+      "rebound_ability": 80,
+      "assist_efficiency": 90,
+      "speed_agility": 85,
+      "leadership": 85
+    },
+    {
+      "name": "克里斯·保罗",
+	  "score_ability": 75,
+      "defense_strength": 88,
+      "rebound_ability": 78,
+      "assist_efficiency": 99,
+      "speed_agility": 78,
+      "leadership": 88
+    },
+    {
+      "name": "德怀特·霍华德",
+	  "score_ability": 70,
+      "defense_strength": 95,
+      "rebound_ability":98,
+      "assist_efficiency": 65,
+      "speed_agility": 72,
+      "leadership": 90
+    },
+    {
+      "name": "扬尼斯·阿德托昆博",
+	  "score_ability": 82,
+      "defense_strength": 92,
+      "rebound_ability":85,
+      "assist_efficiency": 80,
+      "speed_agility": 78,
+      "leadership": 95
+    }
+]
+}

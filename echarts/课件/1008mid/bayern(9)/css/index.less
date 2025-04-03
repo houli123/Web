@@ -1,0 +1,153 @@
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    .index {
+        margin: auto;
+        box-shadow: 0px 0px 5px 1px #ccc;
+        width: 1180px;
+        min-width: 1180px;
+        background-color: #fff;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        padding: 0px 0px 20px;
+        .header {
+            text-align: center;
+            background-color: #C60428;
+            // background-image: url('../img/uefa.jpg');
+            object-fit: cover;
+            background-repeat: no-repeat;
+            color: #FFFDEC;
+            border-bottom: 8px solid #C60428;
+            padding: 0 10px;
+            margin-bottom: 10px;
+
+            h1 {
+                margin: 0;
+                padding: 40px 0 15px 0;
+                font-size: 35px;
+            }
+
+            p {
+                color: #FFFDEC;
+                text-align: center;
+                padding: 0px 0px 15px;
+                font-size: 17px;
+            }
+        }
+
+        .content {
+
+            .tips {
+                color: #797979;
+                text-align: center;
+                width: 100%;
+                margin-top: 0;
+
+            }
+
+            .main_1 {
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 10px;
+
+                .left {
+                    width: 59%;
+                }
+
+                :is(.pink) {
+                    background-color: #831D2E;
+                }
+
+                .right {
+                    width: 40%;
+                    .item_div {
+                        height: 456px;
+
+
+                    }
+                }
+                
+            }
+
+            :where(.item_div) {
+                border: 1px solid #374258;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                height: 300px;
+
+                .item_title {
+                    background-color: #374258;
+                    color: #FFFDEC;
+                    writing-mode: vertical-lr;
+                    width: 55px;
+                    height: 100%;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+
+                .item_content {
+                    width: 100%;
+                    padding: 10px;
+                     .echart{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .text_div{
+                        display: flex;
+                        justify-content: space-between;
+                        h3{
+                            margin-bottom: 10px;
+                        }
+                        .item{
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+
+            .main_2 {
+                padding: 0px 10px;
+
+                .item_div {
+                    height: 700px;
+                   
+                    .item_content{
+                        position: relative;
+                    }
+                    .item_content::before {
+                        content: "";                   
+                        position: absolute;           
+                        top: 0;                        
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-image: url('../img/logo.png'); 
+                        background-repeat: no-repeat;  
+                        background-position: center;
+                        background-size: auto;       
+                        opacity: 0.3;                   
+                    }
+                    .btn{
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        background-color: #C60428;
+                        color: #fff;
+                        padding: 3px 10px;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        z-index: 99;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+
+    }
+}

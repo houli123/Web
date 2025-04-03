@@ -1,0 +1,99 @@
+body{
+	margin:0;
+	text-align:center;
+	background:url(images/bg2.jpg) no-repeat fixed center;
+	opacity:0.85;
+}
+/*父层容器样式开始*/
+#container{
+	margin:0 auto;
+	width:960px;
+}
+/*父层容器样式结束*/
+
+/*页眉部分（banner图）样式开始*/
+#top{
+	width:100%;
+	height:auto;
+}
+/*页眉部分（banner图）样式结束*/
+
+/*主体内容部分（自上而下分7行）样式开始*/
+#main{
+	font-size:13px;
+	line-height:2;
+	background:#fefefc; 
+}
+#main1,#main3,#main5,#main7{   /*分割图所在盒子样式*/
+	height:auto;
+}
+#main2{
+	height:380px;
+	margin:5px;
+}
+#main2_left{
+	float:left;
+	width:475px;
+	height:380px;
+	background-color:#eddbfa;
+}
+#main2_right{
+	float:right;
+	width:470px;
+	height:380px;
+}
+
+#main4{
+	height:160px;
+	margin:5px;
+}
+#main4_left{
+	float:left;
+	height:160px;
+	width:312px;
+	background-color:#ffd5df;
+}
+#main4_center{
+	float:left;
+	height:160px;
+	width:315px;
+	background-color:#eddbfa;
+	margin:0px 5px;
+}
+#main4_right{
+	float:right;
+	height:160px;
+	width:312px;
+	background-color:#dbe8fa;
+}
+
+#main6{
+	margin:5px 0px 5px 5px;
+}
+#main6_1,#main6_2,#main6_3,#main6_4,#main6_5{
+	float:left;
+	width:186px;
+	height:240px;
+	margin-right:5px;
+}
+#main6_1{
+	background-color:#ffd5df;
+}
+#main6_2{
+	background-color:#eddbfa;
+}
+#main6_3{
+	background-color:#dbe8fa;
+}
+#main6_4{
+	background-color:#eddbfa;
+}
+#main6_5{
+	background-color:#ffd5df;
+}
+
+#main h4{
+	padding:10px;
+	border-bottom:1px dashed black;	
+}
+/*主体内容部分（自上而下分7行）样式结束*/

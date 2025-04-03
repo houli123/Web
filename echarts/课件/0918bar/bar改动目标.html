@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+
+    <div id="main1" style="width: 900px; height: 450px"></div>
+
+    <script type="text/javascript">
+        var myChart1 = echarts.init(document.getElementById("main1"));
+
+         var option = {
+                 
+            xAxis: {  
+                show: true,  
+                position: 'bottom',  
+                offset: 0,  
+                type: 'category',  
+                name: '心理',  
+                nameLocation: 'end',  
+                nameTextStyle: { 
+                    color: "#f00",
+					fontSize: 20,              
+                    padding: [5, 0, 0, -5],
+                },  
+                nameGap: 15,  
+                nameRotate:0,  
+                axisLine: {  
+                    show: true,  
+                    symbol: ['none', 'arrow'],  
+                    symbolSize: [15, 15],  
+                    symbolOffset: [0, 7],  
+                    lineStyle: {  
+                        color: '#f00',  
+                        width: 5,  
+                        type: 'solid', 
+                    },
+                },
+                axisTick: {  
+                    show: true, 
+                    inside: true, 
+                    length: 10, 
+                    lineStyle: {
+                        color: 'red',  
+                        width: 5,  
+                        type: 'solid',  
+                    },
+                },
+                axisLabel: {  
+                    show: true,  
+                    inside: false, 
+                    rotate: 0, 
+                    margin: 15,
+                },  
+                splitArea: {  
+                    show: true,
+                },  
+                data: ["开心", "快乐", "愉悦", "成就感", "加油", "继续努力"]
+            },
+                        
+            yAxis: {  
+                show: true,  
+                position: 'left',  
+                type: 'value',  
+                name: '分数',  
+                nameLocation: 'end',  
+                nameTextStyle: {  
+                    color: "#f00",
+					fontSize: 20,
+                    padding: [5, 0, 0, 5],
+                },  
+                nameGap: 15,  
+                nameRotate: 0,  
+                axisLine: {  
+                    show: true,  
+                    symbol: ['none', 'arrow'],  
+                    symbolSize: [15, 15],  
+                    symbolOffset: [0, 7], 
+                    lineStyle: {  
+                        color: '#f00',
+                        width: 5,
+                        type: 'solid',
+                    },
+                },
+                splitLine: {  
+                    show: true,  
+                    lineStyle: {
+                        color: 'red',
+                        width:1,
+                        type:'solid',
+                    },
+                },
+                axisLabel: {  
+                    show: true,  
+                    inside: false,  
+                    rotate: 0, 
+                    margin: 8, 
+                    color:'red',  
+                },
+            },
+                        
+            series: [{  
+                name: '图例',  
+                type: 'bar',  
+                label: {  
+                    show: true,
+                    position: 'insideTop',  
+                    rotate: 0,  
+                    color: '#f00',
+                },
+                itemStyle: {  
+                    color: '#ddd',  
+                    barBorderRadius: [0, 20, 0, 0],
+                },
+                barWidth: '40', 
+                barCategoryGap: '20%',  
+                data: [95, 90, 50, 90, 70, 100]
+            }],
+			
+			backgroundColor: '#c0fec0',
+            
+            title: {  
+                text: '这是第2个echarts图表',
+                textStyle: {  
+                    color: '#000'
+                },
+                subtext: '这是副标题',  
+                subtextStyle: {
+                    color: '#a52'
+                },
+                padding: [10, 0, 100, 100]  
+            },
+                        
+            legend: {  
+                top: '3%',  
+                selected: {
+                    '图例': true,  
+                },
+                textStyle: {  
+                    color: '#fff',  
+                },
+                data: [  
+                    {
+                        name: '图例',
+                        icon: 'circle', 
+                        textStyle: {
+                            color: '#f00',							
+							fontSize: 15
+                        }
+                    }
+                ],
+            },
+                        
+            tooltip: {  
+                show: true,  
+                trigger: 'item',  
+                padding: 5,
+                textStyle: {  
+                    color: "#000",
+                },
+            },           
+            
+            grid: {  
+                show: true,  
+                top: 80,  
+                containLabel: false,  
+                tooltip: {  
+                    show: true,
+                    trigger: 'item',  
+                    textStyle: {
+                        color: '#ff0000',  
+                    }
+                }
+            },
+			
+        };
+        
+        myChart1.setOption(option); 
+
+
+    </script>
+</body>
+
+</html>

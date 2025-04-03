@@ -1,0 +1,137 @@
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+h4{
+  font-size: 30px;
+  font-weight: light;
+}
+body .index {
+  margin: auto;
+  box-shadow: 0px 0px 5px 1px #ccc;
+  width: 1330px;
+  min-width: 1330px;
+  background-color: #fff;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  padding: 0px 0px 20px;
+}
+body .index .header {
+  text-align: center;
+  background-color: #C60428;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  color: #FFFDEC;
+  border-bottom: 3px solid #C60428;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+body .index .header h1 {
+  margin: 0;
+  padding: 40px 0 15px 0;
+  font-size: 90px;
+}
+body .index .header p {
+  color: #FFFDEC;
+  text-align: center;
+  padding: 0px 0px 10px;
+  font-size: 35px;
+}
+body .index .content .tips {
+  color: #797979;
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+}
+body .index .content .main_1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+body .index .content .main_1 .left {
+  width: 59%;
+}
+body .index .content .main_1 :is(.pink) {
+  background-color: #831D2E;
+}
+/* body .index .content .main_2 :is(.pink) {
+  background-color: #831D2E;
+} */
+body .index .content .main_1 .right {
+  width: 40%;
+}
+body .index .content .main_1 .right .item_div {
+  height: 456px;
+}
+body .index .content :where(.item_div) {
+  border: 1px solid #374258;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+}
+body .index .content :where(.item_div) .item_title {
+  background-color: #374258;
+  color: #FFFDEC;
+  writing-mode: vertical-lr;
+  width: 55px;
+  height: 100%;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .index .content :where(.item_div) .item_content {
+  width: 100%;
+  padding: 10px;
+  font-size: 33px;
+}
+body .index .content :where(.item_div) .item_content .echart {
+  width: 100%;
+  height: 100%;
+}
+body .index .content :where(.item_div) .item_content .text_div {
+  display: flex;
+  justify-content: space-between;
+}
+body .index .content :where(.item_div) .item_content .text_div h3 {
+  margin-bottom: 10px;
+}
+body .index .content :where(.item_div) .item_content .text_div .item {
+  padding: 10px;
+}
+body .index .content .main_2 {
+  padding: 0px 10px;
+}
+body .index .content .main_2 .item_div {
+  height: 700px;
+}
+body .index .content .main_2 .item_div .item_content {
+  position: relative;
+}
+body .index .content .main_2 .item_div .item_content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  opacity: 0.3;
+}
+body .index .content .main_2 .item_div .btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #C60428;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size:40px;
+  z-index: 99;
+  cursor: pointer;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src='js/echarts.js'></script>
+</head>
+
+<body>
+	<div id="main" style="width: 800px; height:600px"></div>
+	<script type="text/javascript">
+		var myChartBar = echarts.init(document.getElementById("main"));
+		var option = {  
+			color: ['red', 'yellow', 'blue', 'DarkGreen', 'brown', 'Navy'],
+			backgroundColor: 'rgba(128, 128, 128, 0.1)',  
+			tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }, 
+			legend: { 
+				left: 42, top: 25,
+				data: ['大数据', '区块链', '云计算', '人工智能', '软件', '应用']
+			},
+			xAxis: {
+				type: 'category',
+				data: ['2019', '2020', '2021', '2022', '2023']
+			},  
+			yAxis: { type: 'value'},  
+			series: [
+				{ name: '大数据', type: 'bar', stack: '总量',data: [301, 334, 390, 330, 320] },
+				{ name: '区块链', type: 'bar', stack: '总量', data: [70, 75, 76, 230, 210] },
+				{ name: '云计算', type: 'bar', stack: '总量', data: [191, 234, 290, 330, 310] },
+				{ name: '人工智能', type: 'bar', stack: '总量', data: [201, 154, 190, 330, 410] },
+				{ name: '软件', type: 'bar', stack: '总量', data: [601, 634, 690, 710, 680] },
+				{ name: '应用', type: 'bar', stack: '总量', data: [312, 296, 308, 330, 320] }
+			]
+		};
+	    myChartBar.setOption(option); 
+
+		myChartBar.on("mouseover", function(param){
+			console.log(param.name+param.seriesName);
+		});
+		myChartBar.on("click", function(param){
+			console.log('点击的是'+param.seriesName+'专业'+param.name+'年的招生人数'+param.value);
+		});
+
+	</script>
+</body>
+
+</html>

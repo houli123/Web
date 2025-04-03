@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src='js/echarts.js'></script>
+</head>
+
+<body>
+	<div id="main" style="width: 800px; height: 600px"></div>
+	<script type="text/javascript">
+		//基于准备好的dom,初始化ECharts图表
+		var myChart = echarts.init(document.getElementById("main"));
+		var option = { 
+			color: ['DarkGreen', 'red', 'LimeGreen', 'blue', 'Purple', 'GreenYellow'],
+			backgroundColor: 'rgba(128, 128, 128, 0.1)', 
+			title: {  
+				text: '影响健康、寿命的各类因素',  
+				subtext: 'WHO统计调查报告',  
+				left: 144, top: 5  
+			},
+			tooltip: {  //配置提示框组件
+				trigger: 'item',
+				formatter: function (data) {
+					return data.seriesName + "<br/>" + data.name + ":" + data.value
+						+ "(" + data.percent.toFixed(1) + "%)";
+				}
+			},
+			legend: { 
+				orient: 'vertical',  
+				left: 22,  
+				top: 22,  
+				data: ['生活方式', '遗传因素', '社会因素', '医疗条件', '气候环境'],
+			},
+			
+			series: [  //配置数据系列
+				{
+					cursor: 'crosshair',  //设置经过扇区时，鼠标的形状为十字线
+					name: '访问来源', type: 'pie',
+					itemStyle: {
+						normal: {
+							borderColor: '#fff', borderWidth: 1,
+							label: { show: true, position: 'outer' },
+							labelLine: {
+								show: true, length: 4,
+								lineStyle: { width: 1, type: 'solid' }
+							}
+						}
+					},
+					legendHoverLink: false,
+					radius: ['45%', '75%'],  
+					center: ['58%', '55%'],  
+					data: [{ value: 60, name: '生活方式' }, { value: 15, name: '遗传因素' },
+					{ value: 10, name: '社会因素' }, { value: 8, name: '医疗条件' },
+					{ value: 7, name: '气候环境' }]
+				}
+			]
+		};
+		myChart.setOption(option);//使用刚指定的配置项和数据显示图表
+		
+		
+		myChart.dispatchAction({
+			type:'highlight',
+			dataIndex:[2,3,4]
+		});
+		myChart.dispatchAction({
+			type:'downplay',
+			dataIndex:[3]
+		});
+		
+
+	</script>
+</body>
+
+</html>

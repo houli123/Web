@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="js/echarts.js"></script>
+</head>
+
+<body>
+	<div id="main" style="width: 900px; height: 700px"></div>
+	<script type="text/javascript">
+	
+	    //目标：1. 在我写“//”的地方写上注释; 2. 在我提问的行加入代码
+	    //目标：1. 在我写“//”的地方写上注释; 2. 在我提问的行加入代码
+
+		var myChart = echarts.init(document.getElementById("main"));
+		var option = {
+			color: ["red", 'green', 'blue', 'yellow', 'grey', '#FA8072'],  
+			tooltip: {  
+				trigger: 'axis'
+			},
+			legend: { 
+				data: ['蒸发量', '降水量', '最低气温', '最高气温']
+			},
+			toolbox: {   //
+				show: true,
+				itemSize: 20,
+				feature: {
+					dataView: { show: true, title:"随便"},   //
+					restore: { show: true },   //
+					//如何直接保存图片？
+					saveAsImage:{show:true,name:"0494",type:"jpg",backgroundColor:"pink"},
+					//如何让图表类型切换，在折线图和柱状图中切换？
+					magicType: {
+						type: ['line', 'bar', 'stack'],
+					}
+				}
+			},
+			xAxis: [  
+				{   
+					type: 'category', position: 'bottom',
+					boundaryGap: true, show: true,
+					axisLine: { 
+						lineStyle: {
+							color: 'green', type: 'solid', width: 2
+						}
+					},
+					axisTick: {  
+						show: true, length: 10,
+						lineStyle: {
+							color: 'red', type: 'solid', width: 2
+						}
+					},
+					axisLabel: {  
+						show: true, 
+						interval: 'auto',  //
+						rotate: 45, 
+						margin: 8,
+						formatter: '{value}月',  //
+						textStyle: {
+							color: 'blue', 
+							fontFamily: 'sans-serif',
+							fontSize: 15, 
+							fontStyle: 'italic', 
+							fontWeight: 'bold'
+						}
+					},
+					splitLine: {  
+						show: true,
+						lineStyle: {
+							color: '#483d8b', type: 'dashed', width: 1
+						}
+					},
+					splitArea: {  
+						show: true,
+						areaStyle: {
+							color: ['rgba(144,238,144,0.3)', 'rgba(135,200,250,0.3)']  //
+						}
+					},
+					data: [
+						'1', '2', '3', '4', '5',
+						{  //这个括号里是几个意思？
+							value: '6',
+							textStyle: {
+								color: 'red', fontSize: 30, fontStyle: 'normal',
+								fontWeight: 'bold'
+							}
+						},
+						'7', '8', '9', '10', '11', 
+						{  //这个括号里是几个意思？
+							value: '12',
+							textStyle: {
+								color: 'red', fontSize: 10, fontStyle: 'normal',
+								fontWeight: 'bold'
+							}
+						},
+					]
+				},
+				{   
+					type: 'category',
+					data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+				}
+			],
+			yAxis: [  
+				{  
+					type: 'value', position: 'left',
+					boundaryGap: [0, 0.1],
+					axisLine: {  
+						show: true,
+						lineStyle: {
+							color: 'red', type: 'dashed', width: 2
+						}
+					},
+					axisTick: {  
+						show: true,
+						length: 10,
+						lineStyle: {
+							color: 'green', type: 'solid', width: 2
+						}
+					},
+					axisLabel: {  
+						show: true, interval: 'auto', rotate: -45, margin: 18,
+						formatter: '{value} ml',
+						textStyle: {
+							color: '#1e90ff', fontFamily: 'verdana',
+							fontSize: 10, fontStyle: 'normal',
+							fontWeight: 'bold'
+						}
+					},
+					splitLine: {  
+						show: true,
+						lineStyle: {
+							color: '#483d8b', type: 'dotted', width: 2
+						}
+					},
+				},
+				{  
+					type: 'value',
+					splitNumber: 10,
+					axisLabel: {  //
+						formatter: function (value) {
+							return value + ' °C'
+						}
+					},
+				}
+			],
+			series: [  
+				{   
+					name: '蒸发量', type: 'bar',
+					data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+				},
+				{   
+					name: '降水量', type: 'bar',
+					data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+				},
+				{  
+					name: '最低气温', type: 'line',
+					smooth: true,  
+					yAxisIndex: 1, //表示y轴第i+1个轴，这里就是表示温度轴
+					data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+				},
+				{   
+					name: '最高气温',
+					smooth: true,  
+					type: 'line',
+					yAxisIndex: 1,  //
+					data: [12.0, 12.2, 13.3, 14.5, 16.3, 18.2, 28.3, 33.4, 31.0, 24.5, 18.0, 16.2]
+				}
+			]
+		};
+		myChart.setOption(option); 
+		
+		
+		/* 请回答下列问题：
+		*  1. 有几个X轴、几个Y轴？多个轴怎么实现的？
+		*  2. 下X轴上的“6月”又红又大，如何实现的？
+		*  3. 下X轴的data中都是数字，为什么显示出来是“1月、2月...”?
+		*  4. series中的数值，怎么知道对应哪个轴？
+		*/
+		
+	</script>
+</body>
+
+</html>

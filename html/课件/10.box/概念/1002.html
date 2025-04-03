@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>盒子大小计算方式</title>
+<style type="text/css">
+#cbox{
+	width:300px;      		/*宽300像素*/
+	height:200px;     		/*高200像素*/
+	margin:15px;      		/*外边距15像素*/
+	padding:20px;     		/*内边距20像素*/
+	border:15px solid green;     	/*边框15像素绿色实线*/
+	box-sizing:content-box;     /*width、height仅指内容宽高*/
+}
+#bbox{
+	width:300px;      		/*宽300像素*/
+	height:200px;     		/*高200像素*/
+	margin:15px;      		/*外边距15像素*/
+	padding:20px;     		/*内边距20像素*/
+	border:15px solid green;     	/*边框15像素绿色实线*/
+	box-sizing:border-box;     /*width、height指内容宽高+margin+border*/
+}
+</style>
+</head>
+<body>
+<div id="cbox">content-box方式：盒子所占实际大小为400px*300px，内容部分大小为300px*200px</div>
+<div id="bbox">border-box方式：盒子所占实际大小为330px*230px,，内容部分大小为230px*130px</div>
+</body>
+</html>

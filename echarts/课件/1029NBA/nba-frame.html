@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8"> 
+  <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/echarts.js"></script>
+
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="bar" style="height: 400px; width:800px"></div>
+  <div id="radar" style="height: 500px; width:500px"></div>
+
+
+  <script type="text/javascript">
+    
+	var chart1 = echarts.init(document.getElementById('bar'));
+	var option1;
+
+	var chart2 = echarts.init(document.getElementById('radar'));
+	var option2;
+		
+
+  $.getJSON('NBA.json', function (data) {
+
+    var data = data.NBA_Stars;
+	var name=[];
+	var bardata=[];
+	var radardata=[];
+
+    data.forEach(function (item) {
+		radardata.push({
+            value:[item.score_ability, item.defense_strength, item.rebound_ability, item.assist_efficiency, item.speed_agility, item.three_point_percentage],
+            name:item.name
+        })
+	});
+	for(var i=0; i<data.length; i++) {
+		name.push(data[i].name);
+		var sum=0;
+		for(var key in data[i]){
+			if(key!="name"){
+				sum+=data[i][key];
+			}
+		}
+		bardata.push(sum);
+	}
+
+	console.log(name, bardata, radardata);
+	option1 = {
+	    xAxis:{
+		    type:'category',
+			data:name,
+			xAxisLabel:{
+                rotate:180
+            }
+		},
+		yAxis:{
+		    type:'value'
+		},
+		series:{
+		    type:'bar',
+			data:bardata
+		},
+		tooltip:{},
+	}
+	
+	option2 = {
+	    legend:{
+		    data:name  
+		},
+	    radar: {
+          indicator: [
+           { name: 'score_ability', max: 100 },
+           { name: 'defense_strength', max: 100 },
+           { name: 'rebound_ability', max: 100 },
+           { name: 'assist_efficiency', max: 100 },
+           { name: 'speed_agility', max: 100 },
+           { name: 'three_point_percentage', max: 100 }
+          ]
+        },
+		series:[
+		  {
+		      type:'radar',
+			  data:radardata
+		  }
+		],
+		tooltip:{},
+	}
+	
+	chart1.setOption(option1);
+	chart2.setOption(option2);
+	echarts.connect([chart1,chart2]);
+	chart1.on('mouseover',function(e) {
+		for(var i=0; i<option2.series[0].data.length;i++){
+			if(option2.series[0].data[i].name==e.name){
+				option2.series[0].data[i].lineStyle={width:10,color:'blue'};
+			}
+		}
+		chart2.setOption(option2);
+	});
+	chart1.on('mouseout',function(e) {
+		for(var i=0; i<option2.series[0].data.length;i++){
+			if(option2.series[0].data[i].name==e.name){
+				option2.series[0].data[i].lineStyle={width:1};
+			}
+		}
+		chart2.setOption(option2);
+	});
+  });
+	
+  </script>
+</body>
+</html>

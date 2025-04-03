@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改密码</title>
+</head>
+<body>
+<form action="{:url('do_chgpwd')}" method="post">
+    <input type="hidden" name="username" value="{$Request.session.username}">
+    旧密码：<input type="password" name="oldpwd"><br>
+    新密码：<input type="password" name="newpwd1"><br>
+    确认密码：<input type="password" name="newpwd2"><br>
+    <input type="submit">
+</form>
+</body>
+</html>

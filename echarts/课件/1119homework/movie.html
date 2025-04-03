@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="echarts.js"></script>
+    <style>
+    </style>
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="pieChart" style="height: 400px; width:800px"></div>
+    <div id="scatterChart" style="height: 400px; width:400px"></div>
+
+    <script type="text/javascript">
+        $.getJSON('movie.json', function (data) {
+
+            // 按国家分组电影数据
+            var moviesByCountry = {};
+            var countries = [];
+            var genres = [];
+
+            data.movie.forEach(function(movie) {
+                if (!moviesByCountry[movie.国家]) {
+                    moviesByCountry[movie.国家] = [];
+                    countries.push(movie.国家);
+                }
+                moviesByCountry[movie.国家].push({
+                    revenue: movie.票房,
+                    rating: movie.评分,
+                    genre: movie.电影类型
+                });
+                if (!genres.includes(movie.电影类型)) {
+                    genres.push(movie.电影类型);
+                }
+                // console.log(countries);
+            });
+
+            // 初始化饼图
+            var pieChart = echarts.init(document.getElementById('pieChart'));
+            var pieOption = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b}: {c} ({d}%)'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: countries
+                },
+                series: [{
+                    name: '电影数量',
+                    type: 'pie',
+                    radius: '50%',
+                    data: countries.map(function(country) {
+                        return {
+                            value: moviesByCountry[country].length,
+                            name: country
+                        };
+                    }),
+                    emphasis: {
+                        itemStyle: {
+                            borderColor: '#000',
+                            borderWidth: 5
+                        }
+                    }
+                }]
+            };
+            pieChart.setOption(pieOption);
+
+            // 初始化散点图
+            var scatterChart = echarts.init(document.getElementById('scatterChart'));
+            
+            // 点击饼图时更新散点图
+            pieChart.on('click', function(params) {
+                var selectedCountry = params.name;
+                var movies = moviesByCountry[selectedCountry];
+                
+                var scatterOption = {
+                    title: {
+                        text: selectedCountry + '电影分布',
+                        left: 'center' 
+
+                    },
+                    tooltip: {
+                        formatter: function(params) {
+                            return '票房: ' + params.value[0] + '<br/>评分: ' + params.value[1] + '<br/>类型: ' + params.value[2];
+                        }
+                    },
+                    xAxis: {
+                        type: 'value',
+                        name: '票房',
+                        max: 300
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: '评分',
+                        max: 10
+                    },
+                    legend: {
+                        data: genres, // 确保genres数组已经定义并包含所有不同的电影类型
+                        top: 'bottom' // 将图例移到底部
+                    },
+                    series: genres.map(function(genre) {
+                        return {
+                            name: genre,
+                            type: 'scatter',
+                            data: movies.filter(function(movie) {
+                                return movie.genre === genre;
+                            }).map(function(movie) {
+                                return [movie.revenue, movie.rating, movie.genre];
+                            })
+                        };
+                    })
+                };
+                scatterChart.setOption(scatterOption);
+            });
+        });
+    </script>
+</body>
+
+</html>

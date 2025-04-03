@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>医疗数据可视化分析平台</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/echarts.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('images/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 23, 52, 0.95) 0%, rgba(26, 39, 68, 0.85) 100%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/line.png') repeat;
+            opacity: 0.1;
+            z-index: -1;
+            animation: backgroundMove 20s linear infinite;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: url('images/head_bg.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            z-index: -1;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #4a90e2, #63b3ed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: url('images/line.png') repeat-x;
+            opacity: 0.8;
+        }
+
+        .header p {
+            color: #a8b2d1;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 25px;
+            position: relative;
+        }
+
+        .charts-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/map.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .chart-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+        }
+
+        .chart-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .chart-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 144, 226, 0.3);
+        }
+
+        .chart-box:hover::before {
+            opacity: 1;
+        }
+
+        .chart-title {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #4a90e2;
+            font-weight: 600;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .chart-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: url('images/jt.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        .chart {
+            width: 100%;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chart::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: url('images/lbx.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .chart {
+                height: 400px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>医疗数据可视化分析平台</h1>
+            <p>实时监测与分析患者健康指标</p>
+        </header>
+
+        <div class="charts-container">
+            <!-- 散点图 -->
+            <div class="chart-box">
+                <div class="chart-title">年龄与最大心率关系分析</div>
+                <div id="scatterChart" class="chart"></div>
+            </div>
+
+            <!-- 热力图 -->
+            <div class="chart-box">
+                <div class="chart-title">胸痛类型与血压风险分布</div>
+                <div id="heatmapChart" class="chart"></div>
+            </div>
+
+            <!-- 雷达图 -->
+            <div class="chart-box">
+                <div class="chart-title">患者多维度指标评估</div>
+                <div id="radarChart" class="chart"></div>
+            </div>
+
+            <!-- 桑基图 -->
+            <div class="chart-box">
+                <div class="chart-title">症状与风险关联分析</div>
+                <div id="sankeyChart" class="chart"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/charts.js"></script>
+</html> 

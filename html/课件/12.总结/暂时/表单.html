@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="radio"], input[type="checkbox"] { 
+    position: absolute; left: -999em; 
+}
+input[type="radio"] + label:before, 
+input[type="checkbox"] + label:before { 
+    content:''; /* this is generated content*/
+    display: inline-block; /* make this fake elements inline block */
+    position:relative; /* we need to move the element without effecting the doc flow */
+    top:0.25em;  /* we're moving it slightly down for alignment purposes */
+    left:-2px; /* we're moving it slightly to the left */
+    width:25px; height:25px; /* the width and height of the fake elements */
+    background-image:url(formelements.png); /* the background image sprite */
+}
+input[type="checkbox"] + label:before { background-position: 0 -25px;} 
+input[type="checkbox"]:checked + label:before {background-position: 0 0 ; }
+input[type="radio"] + label:before { background-position: -25px -25px;} 
+input[type="radio"]:checked + label:before { background-position: -25px 0;}
+div.styled { 
+    overflow:hidden; /* this hides the select's drop button */
+    padding:0; 
+    margin:0; 
+    background: white url(formelements-select.png) no-repeat bottom right; 
+    /* this is the new drop button, in image form */
+    width:12em; border-radius:2px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+    border: solid 1px #ccc; 
+}
+div.styled select { 
+    width:115% /* this percentage effectively extends the drop down button out of view */; 
+    background-color:transparent /* this hides the select's background making any styling visible from the div */; 
+    background-image:none; 
+    -webkit-appearance: none /* this is required for Webkit browsers */; 
+    border:none; 
+    box-shadow:none; 
+    padding:0.3em 0.5em; /* padding should be added to the select, not the div */
+}
+input[type="file"] { 
+    position: relative /* this needs to be in place for the pseudo element to position properly */; 
+    -webkit-appearance: none /* this is the key to clearing the default styling */; 
+    width: 40%; 
+    padding:0; 
+    background-color: #f5f5f5; 
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.2); 
+    border:solid 1px #ccc; 
+}
+input[type=file]::-webkit-file-upload-button { 
+    width: 0; 
+    padding: 0; 
+    margin: 0; 
+    -webkit-appearance: none; 
+    border: none; 
+}
+input[type="file"]:after { 
+    content: ‘Upload File'; 
+    margin:0 0 0 0.5em; 
+    display: inline-block; left: 100%; position: relative; 
+    background: white url(formelements-select.png) no-repeat center left; 
+    padding:0.3em 0.5em; 
+    border: solid 1px #ccc; 
+    -webkit-appearance: none; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+}
+input[type="text"], textarea { 
+    width:12em; 
+    border-radius:2px; 
+    border: solid 1px #ccc; 
+    padding:0.4em; 
+    background-color: #f5f5f5; 
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.2); 
+}
+input[type="tel"], 
+input[type="email"], 
+input[type="number"] {
+   Your styles here... 
+}
+input[type="submit"], input[type="button"] { 
+    background: white url(formelements-select.png) no-repeat center left; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+    border-radius:4px; 
+    border: solid 1px #ccc; 
+    padding:0.3em 0.5em; 
+}
+
+</style>
+</head>
+<body>
+    <input type="checkbox" id="male" /><label for="male">Checkbox</label><br />
+    <input type="radio" name="option" id="female" /><label for="female">Radio 1</label>
+    <input type="radio" name="option" id="female2" /><label for="female2">Radio 2</label>
+
+    <div class="styled">
+        <select>
+            <option>Explorer</option>
+            <option>Firefox</option>
+            <option>Webkit</option>
+        </select>
+    </div>
+
+    <input type="file" />
+
+    <input type="text" placeholder="Enter some text here" /><br />
+    <textarea placeholder="Enter some words here"></textarea><br />
+    <input type="button" value="&laquo; Previous"> <input type="submit" value="Send &raquo;">
+</body>
+</html>

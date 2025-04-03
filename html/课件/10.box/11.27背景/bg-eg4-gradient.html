@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>背景图像渐变</title>
+<style type="text/css">
+body{
+	background-image:linear-gradient(yellow, red);     /*网页背景从黄色渐变至红色*/
+	background-attachment:fixed;
+}
+p{
+	width:200px;
+	height:100px;
+	padding:10px;
+	float:left;
+	border:1px solid #000;
+	background-repeat:no-repeat;
+	margin:10px;
+	font-size:14px;
+}
+/*背景从蓝色到白色到红色渐变*/
+.blinear1{          
+	background:linear-gradient(blue,white,red);
+}
+/*背景从白色到红色渐变，从80%开始*/
+.blinear2{          
+	background:linear-gradient(white 80%,red);
+}
+/*背景从白色到红色渐变，45度*/
+.blinear3{          
+	background:linear-gradient(45deg,white,red);
+}
+/*背景从白色到红色渐变，90度*/
+.blinear4{          
+	background:linear-gradient(90deg,white,red);
+}
+</style>
+</head>
+<body>
+<p class="blinear1"><br />背景从蓝色到白色到红色渐变</p>
+<p class="blinear2"><br />背景从白色到红色渐变，从80%开始</p>
+<p class="blinear3"><br />背景从白色到红色渐变，45度</p>
+<p class="blinear4"><br />背景从白色到红色渐变，90度</p>
+</body>
+</html>

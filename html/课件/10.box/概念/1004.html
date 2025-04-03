@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>边框厚度</title>
+<style type="text/css">
+div{
+	width:80px;
+	height:50px;
+	margin:10px;     /*外边距*/  
+	float:left;      /*左边浮动*/
+	font-size:13px;
+	border-style:solid;     /*边框样式solid*/
+}
+
+#bw1{ border-width:thick; }
+#bw2{ border-width:2px 4px;}
+#bw3{ border-width:2px 4px 6px; }
+#bw4{ border-width:2px 4px 6px 8px; }
+#bw5{
+	border-top-width:2px;
+	border-right-width:4px;
+	border-bottom-width:6px;
+	border-left-width:8px;
+}
+</style>
+</head>
+<body>
+<div id="bw1">1个值thick</div>
+<div id="bw2">2个值2px 4px</div>
+<div id="bw3">3个值2px 4px 6px</div>
+<div id="bw4">4个值2px 4px 6px 8px</div>
+<div id="bw5">分别设定4个边2px、4px、6px和8px</div>
+</body>
+</html>
+			

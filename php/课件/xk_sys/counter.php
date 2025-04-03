@@ -1,0 +1,14 @@
+<?php
+if(file_exists("counter.txt")){
+    $fp=fopen("counter.txt","r+");
+    $num=fgets($fp)+1;
+    fseek($fp,0);
+    fwrite($fp,$num);
+    fclose($fp);
+}
+else{
+    $fp=fopen("counter.txt","w+");
+    $num=1;
+    fputs($fp,$num);
+    fclose($fp);
+}

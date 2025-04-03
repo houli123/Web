@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球气候变化与环境保护数据可视化</title>
+    <script src="js/echarts.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #poster {
+            width: 500px;
+            height: 700px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .chart {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster">
+        <h1>全球气候变化与环境保护</h1>
+        <div id="tempChart" class="chart"></div>
+        <div id="emissionChart" class="chart"></div>
+        <div id="renewableChart" class="chart"></div>
+    </div>
+
+    <script>
+        // 温度变化折线图
+        const tempChart = echarts.init(document.getElementById('tempChart'));
+        const tempOption = {
+            title: {
+                text: '全球平均温度变化',
+                left: 'center'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['1900', '1950', '2000', '2020']
+            },
+            yAxis: {
+                type: 'value',
+                name: '温度 (°C)'
+            },
+            series: [{
+                data: [13.7, 13.9, 14.5, 14.9],
+                type: 'line',
+                smooth: true
+            }]
+        };
+        tempChart.setOption(tempOption);
+
+        // 碳排放饼图
+        const emissionChart = echarts.init(document.getElementById('emissionChart'));
+        const emissionOption = {
+            title: {
+                text: '2020年全球碳排放来源',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            series: [{
+                type: 'pie',
+                radius: '50%',
+                data: [
+                    {value: 24.2, name: '工业'},
+                    {value: 16.2, name: '交通'},
+                    {value: 17.5, name: '建筑'},
+                    {value: 18.4, name: '农业'},
+                    {value: 23.7, name: '其他'}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        emissionChart.setOption(emissionOption);
+
+        // 可再生能源雷达图
+        const renewableChart = echarts.init(document.getElementById('renewableChart'));
+        const renewableOption = {
+            title: {
+                text: '2020年各国可再生能源使用比例',
+                left: 'center'
+            },
+            radar: {
+                indicator: [
+                    { name: '中国', max: 100 },
+                    { name: '美国', max: 100 },
+                    { name: '德国', max: 100 },
+                    { name: '印度', max: 100 },
+                    { name: '巴西', max: 100 }
+                ]
+            },
+            series: [{
+                type: 'radar',
+                data: [
+                    {
+                        value: [26.4, 17.5, 45.4, 22.8, 83.9],
+                        name: '可再生能源使用比例'
+                    }
+                ]
+            }]
+        };
+        renewableChart.setOption(renewableOption);
+    </script>
+</body>
+</html>

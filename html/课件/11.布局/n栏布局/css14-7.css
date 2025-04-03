@@ -1,0 +1,19 @@
+/*设置body元素样式*/
+body{
+	margin:0px;
+	text-align:center;
+	font:20px/2 微软雅黑,黑体,宋体;
+}
+div{
+	border:1px solid #000;
+	margin:5px;
+}
+#container{          /*外层父div样式*/
+	margin:0 auto;
+	width:980px;
+}
+#top{ height:90px; }
+#navi{ height:40px; }
+#focus{ height:210px; }
+#main{ height:200px; }
+#foot{ height:80px; }

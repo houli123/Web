@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px; height: 600px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("main"));
+        var titles = ['气温变化', '空气质量指数', '金价走势', '股票A走势'];
+        var dataAll = [  //数据
+            [[10.0, 8.04], [8.0, 6.95], [13.0, 7.58], [9.0, 8.81], [11.0, 8.33],
+            [14, 9.96], [6, 7.24], [4, 4.26], [12, 10.84], [7, 4.82], [5.0, 5.68]],
+            [[10, 9.14], [8.0, 8.14], [13, 8.74], [9, 8.77], [11, 9.26], [14.0, 8.1],
+            [6.0, 6.13], [4.0, 3.10], [12.0, 9.13], [7, 7.26], [5.0, 4.74]],
+            [[4.0, 4.6], [5.0, 5.7], [6.0, 6.4], [7.0, 8.1], [8.0, 7.1], [9.0, 8.4],
+            [10.0, 9.8], [11.0, 9.9], [12.0, 8.5], [13.0, 9.2], [15.0, 11.0]],
+            [[2.0, 2.8], [3.0, 3.6], [4.0, 4.1], [5.0, 5.4], [6.0, 6.7], [7.0, 7.4],
+            [8.0, 7.5], [9.0, 7.5], [12.0, 9.6], [15.0, 10.1], [18.0, 11.9]]
+        ];
+        var markLineOpt = {
+            animation: false,
+            lineStyle: {
+                normal: { type: 'solid' }
+            },
+            data: [[{
+                coord: [10, 0], symbol: 'none' 
+                //  ,type:"min"
+            }, {
+                coord: [20, 13], symbol: 'none'
+                // ,type:"max"
+            }]]
+        }
+        var option = {
+            title: [ 
+                { text: titles[0], textAlign: 'center', left: '25%', top: '1%' },
+                { text: titles[2], textAlign: 'center', left: '73%', top: '1%' },
+                { text: titles[1], textAlign: 'center', left: '25%', top: '50%' },
+                { text: titles[3], textAlign: 'center', left: '73%', top: '50%' },
+            ],
+            grid: [ 
+                { top: '7%', left: '7%', width: '38%', height: '38%' }, 
+                { top: '7%', left: '57%', width: '38%', height: '38%' }, 
+				{ top: '57%', left: '57%', width: '38%', height: '38%' },
+                { top: '57%', left: '7%', width: '38%', height: '38%' },
+            ],
+            tooltip: {
+                formatter: 'Group {a}:({c})'
+            },
+            xAxis: [ 
+                { gridIndex: 0, min: 0, max: 20 }, 
+				{ gridIndex: 1, min: 0, max: 20 },
+                { gridIndex: 2, min: 0, max: 20 },
+                { gridIndex: 3, min: 0, max: 20 },
+            ],
+            yAxis: [  
+                { gridIndex: 0, min: 0, max: 15 }, 
+				{ gridIndex: 1, min: 0, max: 15 },
+                { gridIndex: 2, min: 0, max: 15 },
+                { gridIndex: 3, min: 0, max: 15 },
+            ],
+            series: [ 
+                {  
+                    name: 'I', 
+					type: 'scatter',
+                    xAxisIndex: 0, 
+					yAxisIndex: 0,
+                    data: dataAll[0],
+                    markLine:markLineOpt   //echarts是封装的js，那就是js，遵守js语法规则
+                },
+                { 
+                    name: 'I2', 
+					type: 'scatter',
+                    xAxisIndex: 1, 
+					yAxisIndex: 1,
+                    data: dataAll[1], 
+					markLine:markLineOpt
+                },
+                { 
+                    name: 'IV1', 
+					type: 'scatter',
+                    xAxisIndex: 3, 
+					yAxisIndex: 3,
+                    data: dataAll[2], 
+					markLine:markLineOpt
+                },
+                { 
+                    name: 'IV', 
+					type: 'scatter',
+                    xAxisIndex: 2, 
+					yAxisIndex: 2,
+                    data: dataAll[3], 
+					markLine:markLineOpt
+                }
+            ]
+        };
+        myChart.setOption(option); 
+    </script>
+</body>
+
+</html>

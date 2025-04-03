@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 900px; height: 600px"></div>
+    <script type="text/javascript">
+        
+        var x=[];  
+        var y=[];
+        var data = [];
+        $.getJSON('data.json', function (datas) {
+            datas.nodes.forEach(function (node) {
+                data.push([node.x,node.y]);
+            });
+            console.log(data);
+        var myChart = echarts.init(document.getElementById("main"));
+        var option = {
+            xAxis: {},
+            yAxis: {},
+            series: [
+                {
+                symbolSize: 20,
+                data: data,
+                type: 'scatter'
+                }
+            ]
+		};
+    
+                
+        myChart.setOption(option); 
+    });
+    </script>
+</body>
+
+</html> 

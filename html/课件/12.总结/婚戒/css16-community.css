@@ -1,0 +1,46 @@
+body{
+	margin:0;
+  	text-align:center;
+	background:url(images/bg4.jpg) no-repeat fixed center;
+  	opacity:0.85;
+}
+
+/*父层容器样式开始*/
+#container{
+	margin:0 auto;
+	width:960px;
+}
+/*父层容器样式结束*/
+
+/*页眉部分（banner图）样式开始*/
+#top{
+	width:100%;
+	height:auto;
+}
+/*页眉部分（banner图）样式结束*/
+
+/*主体内容部分样式开始*/
+#main{
+	width:960px;
+	margin:0 auto;
+	font-size:13px;
+	line-height:2;
+	background:#fefefc; 
+}
+#main1,#main2,#main3,#main4,#main5,#main6,#main7{
+	height:auto;
+	margin:0px;
+}
+#main2 img{
+	width:155px;
+}
+#main6_left{
+	float:left;
+	width:40px;
+	padding:10px 40px;
+}
+#main6_right{
+	float:right;
+	width:400px;
+	padding:100px 40px 10px 100px;
+}

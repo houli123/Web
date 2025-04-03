@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src='js/echarts.js'></script>
+	<script type="text/javascript" src='js/jquery-3.3.1.js'></script>
+	
+</head>
+
+<body>
+	<div id="main" style="width: 600px; height:600px; position:absolute;"></div>
+
+	<script type="text/javascript">
+
+		
+		var chartPie = echarts.init(document.getElementById("main"));
+
+        $.get("data.json").done(function (data) {
+		
+			var data = data.all;
+		    
+		    var years = [2019,2020,2021,2022,2023];
+			var sums = [0,0,0,0,0];
+			var piedata = [];
+			
+			for(var i=0;i<data.length;i++){
+			    var index = data[i].年份 - 2019;
+				sums[index]+=data[i].人数;
+			}
+			for(var i=0;i<sums.length;i++){
+			    var temj = {};
+				temj.value = sums[i];
+				temj.name = years[i];
+				piedata.push(temj);
+			}
+			
+			chartPie.setOption({
+			    title:{
+				    text:'学院各专业历年招生情况',
+					left:'center'
+				},
+                legend:{
+				    left:25, 
+					top: 25,
+					data: years
+				},
+				tooltip:{
+				    show:true,
+					trigger:'item'
+				},
+				series:[{
+				    type:'pie',
+					clockwise:false,
+                    data:piedata			
+				}]
+			});
+			
+			chartPie.on("mouseover", function(){
+		        console.log('鼠标在这儿呢');
+		    });
+		
+		    chartPie.on("mouseout", function(){
+		        console.log('鼠标走了');
+		    });
+				
+		    chartPie.on("click", function(param){
+			    console.log(param);
+		        alert('点击的是第'+ (param.dataIndex+1) +'个扇形，该扇形表示'+ param.name +'年。招生人数为'+ param.value +'。扇形是'+ param.color +'色的。');
+		    });
+				
+		});
+		
+
+	</script>
+</body>
+
+</html>

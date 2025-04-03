@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px; height: 400px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("main"));
+        var option = {
+            title: {
+                text: '会员年龄段占比',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['20～29岁', '30～39岁', '40～49岁']
+            },
+            series: [{
+                name: '年龄段',
+                type: 'pie',
+                radius: '50%',
+                roseType:'area',
+                radius : ['50%','90%'],   //第一个是换图
+                center: ['58%', '55%'],  
+                clockWise: true,
+                // data: ageGroups.map((ageGroup, index) => ({ name: ageGroup, value: counts[index] })),
+                data:[
+                    { value: 11, name: '20～29岁' },
+                    { value: 6, name: '30～39岁' },
+                    { value: 2, name: '40～49岁' },
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

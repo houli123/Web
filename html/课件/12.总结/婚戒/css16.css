@@ -1,0 +1,57 @@
+﻿/*几个网页共同所用的样式写在本文档*/
+
+/*导航区样式开始*/
+#navi{
+	font:16px "微软雅黑","黑体","宋体";
+	background-color:#ffcbd8;
+	padding:15px 0px 6px 0px;
+	border-bottom:#F6C 5px solid;
+}
+#navi a{
+	text-decoration:none;
+	padding:0 60px;
+}
+#navi a:link,a:visited{
+	color:#946c59;
+}
+#navi a:hover{
+	color:#F6C;
+}
+/*导航区样式结束*/
+
+/*页脚部分样式开始*/
+#foot{
+	width:960px;
+	height:auto;
+	margin:0 auto;
+	padding:20px 0;
+	color:#e2a98f;
+	background:#FFF;
+
+}
+#foot table{
+	width:960px;
+	height:150px;
+	margin:0 auto;
+	padding:10px 0px;
+	border:0;
+	border-collapse:collapse;
+	font-size:13px;
+}
+#foot table td{
+	width:155px;
+	border-left:#c67c59 thin dashed;
+	border-right:#c67c59 thin dashed;
+}
+.first_line{     /*每个单元格中首行文字的样式*/
+	color:#946c59;
+    font-size:14px;
+	font-weight:bolder;
+}
+#foot>p{         /*最后一个段落的样式*/      
+	color:#a6958d;
+	font-size:12px;
+	padding-:20px 0px;
+	line-height:1.5;
+}
+/*页脚部分样式结束*/

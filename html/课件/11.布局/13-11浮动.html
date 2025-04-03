@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>浮动</title>
+<style type="text/css">
+section{
+	width:500px;
+	height:120px;
+	border:1px solid #000;
+	margin:10px;
+	background:#f3de83;
+}
+h1,h2,h3{
+	background:#daf6f7;
+	margin:10px;
+	padding:5px;
+	border:1px solid #000;
+	font-size:14px;
+	text-align:center;
+	height:20px;
+}
+h1{
+	width:60px;
+}
+h2{
+	width:100px;
+}
+h3{
+	width:150px;
+}
+.float_none{
+	float:none;          /*不浮动*/
+}
+.float_left{
+	float:left;         /*浮动在左*/
+}
+.float_right{
+	float:right;        /*浮动在右*/
+}
+</style>
+</head>
+<body>
+<!--第一组的3个盒子浮动方式：不浮动-->            
+<section>
+<h1 class="float_none">H1</h1>
+<h2 class="float_none">H2</h2>
+<h3 class="float_none">H3</h3>
+</section>
+
+
+<!--第二组的3个盒子浮动方式：前两个浮动在左，第3个浮动在右-->     
+<section>
+<h1 class="float_left">H1</h1>
+<h2 class="float_left">H2</h2>
+<h3 class="float_right">H3</h3>
+</section>
+
+
+<!--第三组的3个盒子浮动方式：浮动在右-->     
+<section>
+<h1 class="float_right">H1</h1>
+<h2 class="float_right">H2</h2>
+<h3 class="float_right">H3</h3>
+</section>
+</body>
+</html>
+

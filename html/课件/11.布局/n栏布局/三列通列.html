@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>三列通栏布局结构</title>
+<link href="css14-15.css" rel="stylesheet" type="text/css" />
+<style>
+	body{
+		text-align: center;
+	}
+	div{
+		border:1px solid black;
+		margin:5px;
+		height: 90px;
+	}
+	#top{
+		background-color: blanchedalmond;
+	}
+	#left,#right{
+		float:left;
+		width: 300px;
+		height: 50px;
+	}
+	#right{
+		float: right;
+	}
+</style>
+</head>
+<body>
+<div id="container">
+	<div id="top">页眉#top</div>            
+	<div id="navi">导航#navi</div>
+	<div id="main">主内容#main
+    	<div id="left">主内容区左侧</div>
+		<div id="right">主内容区右侧</div>
+    </div>
+	<div id="foot">页脚#foot</div> 
+</div>
+</body>
+</html>
+
+        

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>正常流向</title>
+<style type="text/css">
+div{
+	width:200px;
+	height:80px;
+	margin:10px;
+	padding:10px;
+	border:2px dashed #000;
+}
+#div1{
+	background:#ba9578;
+	color:#FFF;
+}
+#div2{
+	background:#cef091;
+	color:#000;
+	z-index: 999;
+}
+#div3{
+	background:#70c17f;
+	color:#FFF;
+	position:relative;
+	bottom:100px;
+}
+b{
+	border:1px solid red;
+}
+</style>
+</head>
+
+<body>            
+<div id="div1"><p>div1</p></div>
+<div id="div2">
+	<p>div2</p>
+	<b>b元素1</b>
+	<b>b元素2</b>
+	<b>b元素3</b>
+</div>
+<div id="div3"><p>div3</p></div>		
+</body>
+</html>

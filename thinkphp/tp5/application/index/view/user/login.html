@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--地址是{:url('your_url')}这样表示-->
+<!--这个url是user控制器里相同名字的url方法-->
+<form action="{:url('do_login')}" method="post">
+    用户名：<input type="text" name="username"><br/>
+    密码：<input type="password" name="pwd"><br>
+    <input type="submit" value="登录">
+</form>
+<!--<form action="{:url('')}" method="post">-->
+<!--    <input type="submit" value="注册">-->
+<!--</form>-->
+</body>
+</html>

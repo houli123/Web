@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>固定定位</title>
+<style type="text/css">
+body{
+	height:700px;
+}
+header{
+	position:fixed;
+	width:100%;
+	height:100px;
+	top:0px;
+	right:0px;
+	bottom:auto;
+	left:0px;
+	border:1px dashed black;
+	color:#FFF;
+	background-color:#5f6062;
+	text-align:center;
+	line-height:3;	
+}
+aside{
+	position:fixed;
+	width:200px;
+	height:auto;
+	top:100px;
+	right:auto;
+	bottom:100px;
+	left:0px;
+	border:1px dashed black;
+	background-color:#f6edc6;
+	text-align:center;
+	line-height:3;		
+}
+section{
+	position:fixed;
+	width:auto;
+	height:auto;
+	top:100px;
+	right:0px;
+	bottom:100px;
+	left:200px;
+	border:1px dashed black;
+	background-color:#fde8ed;
+	text-align:center;
+	line-height:3;	
+	overflow:auto;	
+}
+footer{
+	position:fixed;
+	width:100%;
+	height:100px;
+	top:auto;
+	right:0;
+	bottom:0;
+	left:0px;
+	border:1px dashed black;
+	background-color:#f0ede4;
+	text-align:center;
+	line-height:3;		
+}
+</style>
+</head>
+<body>            
+<header>页眉</header>
+<aside>侧栏</aside>
+<section>主体内容</section>
+<footer>页脚</footer>		
+</body>
+</html>

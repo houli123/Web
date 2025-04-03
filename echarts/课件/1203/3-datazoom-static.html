@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src='js/echarts532.min.js'></script>
+</head>
+
+<body>
+    <div id="main1" style="width: 800px; height: 200px"></div>
+    <div id="main2" style="width: 800px; height: 200px"></div>
+    <script type="text/javascript">
+        var traffic1 = echarts.init(document.getElementById("main1"));
+        var traffic2 = echarts.init(document.getElementById("main2"));
+       
+
+ 	    var data = [];
+        var now = new Date(2020, 5, 2, 24, 60, 60);
+        var oneDay = 24 * 600 * 600;  
+        function randomData() {
+            now = new Date(+now + oneDay);
+            value = Math.random() * 80 + 20;
+            return {
+                name: now.toLocaleString('chinese', { hour12: false }),
+                value: [
+                    now.toLocaleString('chinese', { hour12: false }),
+                    Math.round(value)
+                ]
+            }
+        }
+        for (var i = 0; i < 300; i++) {  
+            data.push(randomData());
+        }
+
+        
+		var option1 = {  
+            backgroundColor: 'rgba(128, 128, 128, 0.1)',  
+            title: { text: '在此图表中滚动鼠标', left: 110, top: 12 },  
+            xAxis: { type: 'time', splitLine: { show: false } },  
+            yAxis: { type: 'value', boundaryGap: [0, '100%'], splitLine: { show: false } },
+            dataZoom: [ 
+                {
+                    type: 'inside',
+                    show: true,
+                    start: 20,  //设置数据显示的开始位置
+                    end: 70,  //设置数据显示的终止位置
+                },
+            ],
+            series: [{ name: '模拟数据', type: 'line', data: data }]  
+        };
+        var option2 = { 
+            backgroundColor: 'rgba(128, 128, 128, 0.1)',  
+            title: { text: '此图表与上面同步变化', left: 110, top: 12 },  
+            xAxis: { type: 'time', splitLine: { show: false } },  
+            yAxis: { type: 'value', boundaryGap: [0, '100%'], splitLine: { show: false } },
+            dataZoom: [ 
+                {
+                    type: 'inside',  
+                    show: true,
+                    start: 0,  //设置数据显示的开始位置
+                    end: 100,  //设置数据显示的终止位置
+                },],
+            series: [{ name: '模拟数据', type: 'bar', data: data }] 
+        };
+        traffic1.setOption(option1);  
+        traffic2.setOption(option2);  
+
+        
+        traffic1.on('datazoom', function (params) {
+
+            //获得起止位置百分比
+            var startPercent = traffic1.getOption().dataZoom[0].start;
+            var endPercent = traffic1.getOption().dataZoom[0].end;
+
+
+            traffic2.dispatchAction({
+                type:'dataZoom',
+                start:startPercent,
+                end:endPercent
+            });
+
+            console.log(traffic2.getOption().dataZoom[0].start);
+            console.log(traffic2.getOption().dataZoom[0].end);
+        });
+		
+
+    </script>
+</body>
+
+</html>

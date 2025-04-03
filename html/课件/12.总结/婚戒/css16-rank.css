@@ -1,0 +1,45 @@
+body{
+	margin:0;
+	text-align:center;
+	background:url(images/bg3.jpg) no-repeat fixed center;
+	opacity:0.85;
+}
+
+/*父层容器样式开始*/
+#container{
+	margin:0 auto;
+	width:960px;
+}
+/*父层容器样式结束*/
+
+/*页眉部分（banner图）样式开始*/
+#top{
+	width:100%;
+	height:auto;
+}
+/*页眉部分（banner图）样式结束
+
+/*主体内容部分样式开始*/
+#main{
+	width:960px;
+	margin:0 auto;
+	padding:10px 0px;
+	background:#fefefc;
+}
+#main h1{
+	color:#582C2C;
+	font-size:24px;
+}
+#main h2{
+	color:#630;
+	font-size:20px;	
+}
+#main p{
+	text-indent:2em;
+	text-align:left;
+	color:#A46C35;
+	font-size:13px;
+	line-height:1.5;
+}
+
+								

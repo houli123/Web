@@ -1,0 +1,56 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+	<title>表单元素的背景颜色</title>
+</head> 
+<style>
+.blue{
+	background-color:#7598FB;
+	color: #000000;
+}
+.red{
+	background-color:#E20A0A;
+	color: #ffffff;
+}
+.green{
+	background-color:#3CB371;
+	color: #ffffff;
+}
+.yellow{
+	background-color:#FFFF6F;
+	color: #000000;
+}
+.cyan{
+	background-color:#00FFFF;
+	color:#000000;
+}
+.purple{
+	background-color:#800080;
+	color:#000000;
+}
+#btnSubmit
+{
+  width:100px;
+  height:30px;
+  box-shadow:0px 0px 7px 5px red;
+  border-radius:20px;
+  background-color:orange;
+}
+
+</style>
+<body>
+	<form method="post">
+		请选择一种颜色
+		<select name="color" id="color">
+			<option value=""> 选择 </option>
+			<option value="blue" class="blue">蓝色</option>
+			<option value="red" class="red">红色</option>
+			<option value="green" class="green">绿色</option>
+			<option value="yellow" class="yellow">黄色</option>
+			<option value="cyan" class="cyan">青色</option>
+			<option value="purple" class="purple">紫色</option>
+		</select>
+	<p><input type="submit" name="btnSubmit"id="btnSubmit" value="提交"></p>
+	</form>
+</body>
+</html>

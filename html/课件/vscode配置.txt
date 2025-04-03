@@ -1,0 +1,7 @@
+插件：
+auto rename tag/auto close tag
+
+运行关键：
+open in browse
+
+!加tab自动补全

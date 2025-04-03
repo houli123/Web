@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>隔行变色</title>
+</head>
+<style type="text/css">
+#table-1 th, #table-1 tr 
+	{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: rgb(230, 189, 189);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(230, 189, 189);
+	}
+#table-1 td, #table-1 th 
+	{
+	padding: 5px 10px;
+	font-size: 12px;
+	font-family: Verdana;
+	color: rgb(177, 106, 104);
+	}
+#table-1 tr:nth-child(even) 
+	{
+	background: rgb(238, 211, 210)
+	}
+#table-1 tr:nth-child(odd) 
+	{
+	background: #FFF
+	}
+</style>
+<body>
+	<table id="table-1">
+	<thead>
+	<tr>
+		<th>星期一</th>
+		<th>星期二</th>
+		<th>星期三</th>
+		<th>星期四</th>
+		<th>星期五</th>
+		<th>星期六</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>语文</td>
+		<td>数学</td>
+		<td>英语</td>
+		<td>英语</td>
+		<td>物理</td>
+		<td>计算机</td>
+	</tr>
+	<tr>
+		<td>数学</td>
+		<td>数学</td>
+		<td>地理</td>
+		<td>历史</td>
+		<td>化学</td>
+		<td>计算机</td>
+	</tr>
+	<tr>
+		<td>化学</td>
+		<td>语文</td>
+		<td>体育</td>
+		<td>计算机</td>
+		<td>英语</td>
+		<td>计算机</td>
+	</tr>
+	<tr>
+		<td>政治</td>
+		<td>英语</td>
+		<td>体育</td>
+		<td>地理</td>
+		<td>历史</td>
+		<td>计算机</td>
+	</tr>
+	<tr>
+		<td>语文</td>
+		<td>数学</td>
+		<td>英语</td>
+		<td>英语</td>
+		<td>物理</td>
+		<td>计算机</td>
+	</tr>
+	<tr>
+		<td>数学</td>
+		<td>数学</td>
+		<td>地理</td>
+		<td>历史</td>
+		<td>化学</td>
+		<td>计算机</td>
+	</tr>
+	</table>
+</body>
+</html>

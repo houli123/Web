@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--重点！！！等价于for i in xx-->
+{//volist id='i' name='datas'}
+{//volist id='i' name='datas' offset='2' length='1'}
+
+<!--奇数偶数行，id不能用i。mod模，eq的value表示余数，empty空的值-->
+{volist id='vo' name='datas' mod='2' empty='no data,so empty'}
+{eq name='mod' value='1'}
+    用户名：{$vo.name}<br>
+    密码：{$vo.pwd}<br>
+{/eq}
+{/volist}
+</body>
+</html>

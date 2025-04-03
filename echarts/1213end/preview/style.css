@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: #0f1c3c;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.chart {
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+#lineChart {
+    grid-column: 1 / -1;
+    height: 500px;
+}
+
+select, button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    background: #2a3f7c;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a4f8c;
+} 

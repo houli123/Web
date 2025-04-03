@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2e8b57;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .box {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .row {
+            margin-bottom: 20px;
+        }
+        .row label {
+            display: block;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .row input[type="text"],
+        .row input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .row input:focus {
+            border-color: #2e8b57;
+            outline: none;
+            box-shadow: 0 0 5px rgba(46,139,87,0.2);
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #246b45;
+        }
+    </style>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <div class="box">
+        <form action="{:url('do_reg')}" method="post">
+            <div class="row">
+                <label for="username">用户名：</label>
+                <input type="text" id="username" name="username" placeholder="请输入用户名">
+            </div>
+            <div class="row">
+                <label for="password">密码：</label>
+                <input type="password" id="password" name="password" placeholder="请输入密码">
+            </div>
+            <div class="row">
+                <label for="password_confirm">确认密码：</label>
+                <input type="password" id="password_confirm" name="password_confirm" placeholder="请再次输入密码">
+            </div>
+            <input type="submit" value="注册" class="btn">
+        </form>
+    </div>
+</body>
+</html>

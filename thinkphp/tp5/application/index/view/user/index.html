@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+</head>
+<body>
+<!--传统方法-->
+<!--欢迎您：{\\\\$username}-->
+<!--好处是方法中不需要assign分配-->
+欢迎您：{$Request.session.username}<br/>
+<!--{$Think.session.username}-->
+<a href="{:url('chgpwd')}">修改密码</a><br>
+<!--{:url('do_login')}地址-->
+<a href="{:url('logout')}">退出登录</a>
+</body>
+</html>

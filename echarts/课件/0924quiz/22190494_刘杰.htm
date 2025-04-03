@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/echarts.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 1500px; height: 680px"></div>
+    <script type="text/javascript">
+        
+        var myChart = echarts.init(document.getElementById("main"));
+
+        var option = {
+		    title: {
+			    text: '不同城市的会员们的年龄分布',
+                left: 'center'
+			},
+            legend: {
+                data: ['20~29岁', '30~39岁', '40~49岁'],
+                bottom: 10,
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['广州', '佛山', '深圳', '东莞'],
+                    name: '城市',
+                    axisTick: {show: false},
+                    axisLine: {
+                        symbol: ['none', 'arrow'],
+                        symbolSize: [10, 15]
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '人数',
+                    // nameLocation: 'end',
+                    axisTick: {show: false},
+                    axisLine: {
+                        show:true,
+                        symbol: ['none', 'arrow'],
+                        symbolSize: [10, 15]
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '20~29岁',
+                    type: 'bar',
+                    data: [5, 3, 2, 1],
+					stack: 'aa',
+                },
+                {
+                    name: '30~39岁',
+                    type: 'bar',
+					stack:'aa',
+                    data: [3, 2, 1, 0]
+                },
+				{
+                    name: '40~49岁',
+					type: 'bar',
+                    stack:'aa',
+                    data: [0, 0, 1, 1]
+                },
+            ],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+		};
+                
+        myChart.setOption(option); 
+    </script>
+</body>
+
+</html> 

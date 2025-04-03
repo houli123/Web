@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>边框复合属性</title>
+<style type="text/css">
+div{
+	width:100px;
+	height:60px;
+	margin:10px;     /*外边距*/  
+	float:left;      /*左边浮动*/
+	font-size:13px;
+}
+#b1{ 
+	border:solid;
+	color:#159DD7;       /*前景色*/
+}
+#b2{ border:double #81409A;}
+#b3{ border:dashed #047C3F 6px;}
+#b4{ 
+	border-top:double;
+	border-right:solid #B6CE44;
+	border-bottom:dotted 2px;
+	border-left:ridge #B7D5EF 8px;
+}
+#b5{
+	border:20px;
+	border-style: dashed solid;
+	border-color: #f00 #0f0;
+	width:400px;
+	height:300px
+}
+#b6{
+	border-color: #0f0;
+	border-width: 10px;
+	border-style: dashed;
+	width:400px;
+	height:300px;
+	padding-top:80px;
+	padding-left: 80px;
+}
+</style>
+</head>
+<body>
+<div id="b1">border:solid，边框颜色默认使用前景色</div>
+<div id="b2">border:double #81409A;</div>
+<div id="b3">border:dashed #047C3F 6px;</div>
+<div id="b4">4个边分别设置</div>
+<div id="b5">400*300，上下boder红色，左右绿色、20px宽、四面虚线</div>
+<div id="b6">
+
+	<img src="images/qute.png"/>
+</div>
+</body>
+</html>
+			

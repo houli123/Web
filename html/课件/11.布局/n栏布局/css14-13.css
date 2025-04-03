@@ -1,0 +1,34 @@
+/*设置body元素样式*/
+body{
+	margin:0px;
+	text-align:center;
+	font:20px/2 微软雅黑,黑体,宋体;
+}
+#top{
+	width:100%;
+	height:90px;
+	background:#FF9; 
+}
+#navi{
+	margin:0 auto;
+	width:980px; 
+	height:40px; 
+	background:#F66;
+}
+#focus{
+	margin:0 auto;
+	width:980px; 
+	height:210px;
+	background:#FC9;
+}
+#main{ 
+	margin:0 auto;
+	width:980px; 
+	height:200px;
+	background:#FF3; 
+}
+#foot{
+	width:100%; 
+	height:80px; 
+	background:#F96;	
+}

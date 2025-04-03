@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡眠质量与生活习惯数据可视化</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #poster {
+            width: 800px;
+            height: 800px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .chart {
+            margin-bottom: 20px;
+        }
+
+        .chart-large {
+            height: 350px;
+        }
+
+        .chart-small {
+            height: 200px;
+            width: 370px;
+        }
+
+        .chart-row {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="poster">
+        <h1>睡眠质量与生活习惯</h1>
+        <div id="sleepTimeChart" class="chart chart-large"></div>
+        <div class="chart-row">
+            <div id="scatterPlot" class="chart chart-small"></div>
+            <div id="radarChart" class="chart chart-small"></div>
+        </div>
+        <div class="chart-row">
+            <div id="heatmap" class="chart chart-small"></div>
+            <div id="funnelChart" class="chart chart-small"></div>
+        </div>
+    </div>
+
+    <script>
+        // 睡眠时间分布柱状图
+        const sleepTimeChart = echarts.init(document.getElementById('sleepTimeChart'));
+        const sleepTimeOption = {
+            title: {
+                text: '成年人每周平均睡眠时间分布',
+                left: 'center'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            },
+            yAxis: {
+                type: 'value',
+                name: '小时'
+            },
+            series: [{
+                data: [7.3, 7.4, 7.5, 7.6, 7.7, 8.0, 8.2],
+                type: 'bar',
+                barWidth: '60%'
+            }]
+        };
+        sleepTimeChart.setOption(sleepTimeOption);
+
+        // 睡眠质量和活动量散点图
+        const scatterPlot = echarts.init(document.getElementById('scatterPlot'));
+        const scatterPlotOption = {
+            title: {
+                text: '睡眠质量和活动量的关系',
+                left: 'center'
+            },
+            xAxis: {
+                name: '活动量 (步数)',
+                type: 'value'
+            },
+            yAxis: {
+                name: '睡眠质量 (评分)',
+                type: 'value'
+            },
+            series: [{
+                data: [
+                    [5000, 6.8], [6000, 7.0], [7000, 7.2], [8000, 7.5], [9000, 7.8],
+                    [10000, 8.0], [11000, 8.2], [12000, 8.5], [13000, 8.8], [14000, 9.0]
+                ],
+                type: 'scatter'
+            }]
+        };
+        scatterPlot.setOption(scatterPlotOption);
+
+        // 不同年龄段平均睡眠时长雷达图
+        const radarChart = echarts.init(document.getElementById('radarChart'));
+        const radarChartOption = {
+            title: {
+                text: '不同年龄段平均睡眠时长',
+                left: 'center'
+            },
+            radar: {
+                indicator: [
+                    { name: '儿童 (3-13岁)', max: 12 },
+                    { name: '青少年 (14-17岁)', max: 10 },
+                    { name: '成人 (18-64岁)', max: 8 },
+                    { name: '老年人 (65岁以上)', max: 7 }
+                ]
+            },
+            series: [{
+                type: 'radar',
+                data: [
+                    {
+                        value: [10.2, 9.1, 7.3, 7.0],
+                        name: '平均睡眠时长'
+                    }
+                ]
+            }]
+        };
+        radarChart.setOption(radarChartOption);
+
+        // 睡眠时间和心情热力图
+        const heatmap = echarts.init(document.getElementById('heatmap'));
+        const heatmapOption = {
+            title: {
+                text: '睡眠时间和心情的关系',
+                left: 'center'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            },
+            yAxis: {
+                type: 'category',
+                data: ['非常差', '较差', '一般', '较好', '非常好']
+            },
+            visualMap: {
+                min: 0,
+                max: 10,
+                calculable: true,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: '10%'
+            },
+            series: [{
+                name: '心情评分',
+                type: 'heatmap',
+                data: [
+                    [0, 0, 2], [0, 1, 3], [0, 2, 4], [0, 3, 5], [0, 4, 6],
+                    [1, 0, 3], [1, 1, 4], [1, 2, 5], [1, 3, 6], [1, 4, 7],
+                    [2, 0, 4], [2, 1, 5], [2, 2, 6], [2, 3, 7], [2, 4, 8],
+                    [3, 0, 5], [3, 1, 6], [3, 2, 7], [3, 3, 8], [3, 4, 9],
+                    [4, 0, 6], [4, 1, 7], [4, 2, 8], [4, 3, 9], [4, 4, 10],
+                    [5, 0, 7], [5, 1, 8], [5, 2, 9], [5, 3, 10], [5, 4, 10],
+                    [6, 0, 8], [6, 1, 9], [6, 2, 10], [6, 3, 10], [6, 4, 10]
+                ]
+            }]
+        };
+        heatmap.setOption(heatmapOption);
+
+        // 睡眠障碍漏斗图
+        const funnelChart = echarts.init(document.getElementById('funnelChart'));
+        const funnelChartOption = {
+            title: {
+                text: '睡眠障碍患者治疗流程',
+                left: 'center'
+            },
+            series: [{
+                name: '治疗流程',
+                type: 'funnel',
+                left: '10%',
+                top: 60,
+                bottom: 60,
+                width: '80%',
+                min: 0,
+                max: 100,
+                minSize: '0%',
+                maxSize: '100%',
+                sort: 'descending',
+                gap: 2,
+                label: {
+                    show: true,
+                    position: 'inside'
+                },
+                labelLine: {
+                    length: 10,
+                    lineStyle: {
+                        width: 1,
+                        type: 'solid'
+                    }
+                },
+                itemStyle: {
+                    borderColor: '#fff',
+                    borderWidth: 1
+                },
+                data: [
+                    { value: 80, name: '就诊' },
+                    { value: 60, name: '诊断' },
+                    { value: 40, name: '治疗' },
+                    { value: 20, name: '康复' }
+                ]
+            }]
+        };
+        funnelChart.setOption(funnelChartOption);
+    </script>
+</body>
+
+</html>

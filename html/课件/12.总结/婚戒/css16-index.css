@@ -1,0 +1,99 @@
+﻿body{
+	margin:0;
+  	text-align:center;
+	background:#fefefc url(images/bg1.jpg) no-repeat center bottom;
+}
+
+/*父层容器样式开始*/
+#container{
+	margin:0 auto;
+	width:100%;
+}
+/*父层容器样式结束
+
+/*页眉部分样式开始*/
+#top{
+	height:160px;
+	width:960px;
+	margin:0 auto;
+	padding-top:50px;
+}
+#top_logo{            /*页眉部分logo样式*/
+  	float:left;
+  	width:260px;
+  	height:auto;
+}
+#top_main{            /*页眉部分其它样式*/
+  	float:right;
+  	height:auto;
+  	width:560px;
+ 	font-size:13px;
+	text-align:right;
+}
+#top_main a{
+	text-decoration:none;
+	color:#000;
+}
+#top_main a:hover{
+	color:#F6C;
+}
+/*页眉部分样式结束*/
+
+/*焦点图像区样式开始*/
+#focus{
+	height:auto;
+	border-top:4px solid #ffcbd8;
+}
+/*焦点图像区样式结束*/
+
+/*主内容区样式开始*/
+#main{
+	margin:0 auto;
+	width:960px;
+	line-height:30px;
+	font-size:13px;
+}
+#main1,#main2,#main3,#main4{
+	background:#FFF;
+}
+#main5{
+	height:600px;
+	background-image:url(images/certificate.jpg) ;
+}
+#main2 img,#main3 img,#main4 img{
+	width:300px;
+	height:400px;
+	margin:20px 0px;	
+}
+#p1{
+	padding:50px 0px;
+	letter-spacing:3px;
+}
+#p2{
+	float:left;
+	width:400px;
+	text-align:right;
+	padding:50px 0px;
+	margin:100px 20px 100px 30px;
+}
+#p3{
+	float:right;
+	width:450px;
+	height:200px;
+	text-align:left;
+	padding:80px 0px 30px;
+	margin:100px 20px 100px 20px;
+}
+#p4{
+	float:left;
+	width:430px;
+	height:200px;
+	text-align:right;
+	padding:80px 0px 30px;
+	margin:100px 20px 100px 20px;
+}
+#p5{
+    padding:190px 50px 100px 620px;
+	text-align:left;
+}
+/*主内容区样式结束*/

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>盒子阴影</title>
+<style type="text/css">
+div,img{
+	width:150px;
+	height:100px;
+	margin:15px;
+	padding:5px;
+	float:left;
+	font-size:13px;
+}
+#bs1{
+	box-shadow:4px 4px 2px 2px #61f7eb; 
+	background-color:#EC3B58;
+}
+#bs2{ 
+	box-shadow:4px 4px; 
+	background-color:#9CDFFC;
+}
+#bs3{ 
+	box-shadow:-4px 4px 2px 2px #ef41d4; 
+	background-color:#7afe84;
+}	
+#bs4{ 
+	box-shadow:0 0 6px 6px #9366f7;
+}
+#bs5{ 
+	box-shadow:inset 0 0 6px 6px #9366f7;
+}
+#bs6{         /*多重阴影效果*/
+	box-shadow: 0 0 2px 2px #56f79a, 0 0 2px 4px #fcf276,0 0 2px 7px #5fcff5,0 0 2px 11px #f34ddf; 
+}
+</style>
+</head>
+<body>
+<div id="bs1">外部阴影有模糊有外延</div>
+<div id="bs2">外部阴影无模糊无外延</div>
+<div id="bs3">外部阴影有模糊有外延</div>
+<img id="bs4" src="images/qute.png" />
+<img id="bs5" src="images/qute.png" />
+<img id="bs6" src="images/qute.png" />
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8"> 
+  <script type="text/javascript" src="jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="echarts.js"></script>
+
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="bar" style="height: 400px; width:800px"></div>
+  <div id="radar" style="height: 500px; width:500px"></div>
+
+
+  <script type="text/javascript">
+    
+	var chart1 = echarts.init(document.getElementById('bar'));
+	var option1;
+
+	var chart2 = echarts.init(document.getElementById('radar'));
+	var option2;
+	
+
+  $.getJSON('NBA.json', function (data) {
+
+    var data = data.NBA_Stars;
+	
+	console.log(data);
+	
+	var name = [];
+	var bardata = [];
+	var nameradar = [];
+	var radardata = [];
+	
+	var first = [];
+	
+	for(var i=0;i<data.length;i++){
+		var sum = 0;
+		for (var key in data[i]){
+		    if(key != "name"){
+			    sum += data[i][key];
+			}
+		}
+		 
+        if(i==0){
+		    first.push(data[i].name);
+			first.push(sum);
+		}else{
+		    name.push(data[i].name);
+   	        bardata.push(sum);
+		}		 
+		
+		var valuess = [];
+		for (var key in data[i]){
+		    if(key != "name"){
+		        valuess.push(data[i][key]);			
+			}
+		}
+   		    
+		var ra = {name:data[i].name, value:valuess}
+	    radardata.push(ra);	
+		nameradar.push(data[i].name);
+	}
+	
+	
+	option1 = {
+	    tooltip:{
+		    
+		},
+	    xAxis:{
+		    type:'category',
+			data:name
+		},
+		yAxis:{
+		    type:'value'
+		},
+		series:{
+		    type:'bar',
+			data:bardata
+		}
+	},
+	option2 = {
+	    legend:{
+		    data:name  
+		},
+	    radar: {
+          indicator: [
+           { name: 'score_ability', max: 100 },
+           { name: 'defense_strength', max: 100 },
+           { name: 'rebound_ability', max: 100 },
+           { name: 'assist_efficiency', max: 100 },
+           { name: 'speed_agility', max: 100 },
+           { name: 'three_point_percentage', max: 100 }
+          ]
+        },
+		series:[
+		  {
+		      type:'radar',
+			  data:radardata
+		  }
+		],
+		tooltip:{},
+	}
+	
+	chart1.setOption(option1);
+	chart2.setOption(option2);
+	
+	chart1.on('mouseover', function(param) {
+		var newoption = {
+			legend:{
+				data:nameradar.filter(e=>e.name==param.name)
+			},
+			tooltip:{
+				
+			},
+			radar: {
+			indicator: [
+			{ name: 'score_ability', max: 100 },
+			{ name: 'defense_strength', max: 100 },
+			{ name: 'rebound_ability', max: 100 },
+			{ name: 'assist_efficiency', max: 100 },
+			{ name: 'speed_agility', max: 100 },
+			{ name: 'leadership', max: 100 }
+			]
+			},
+			series:[
+			{
+				type:'radar',
+				data:radardata.filter(e=>e.name==param.name)
+			}
+			],
+		}
+		chart2.setOption(newoption);
+	});
+
+  });
+	
+  </script>
+</body>
+</html>

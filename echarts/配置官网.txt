@@ -1,0 +1,14 @@
+https://echarts.apache.org/zh/option.html#title
+
+
+图解机器学习：
+https://blog.csdn.net/baidu_41617231/article/details/135196699
+
+
+内容：用echarts（<script src="js/echarts.js"></script>）做一张数据可视化海报，主题自拟
+要求：1. 海报样式为竖版，“5:7”的横竖比
+2. 呈现效果是多个图表，自由设计
+3. 要体现3类以上图表（只能用一个饼线柱）的技术
+4. 数据可视化的部分，必须是基于 JavaScript 
+5.要有背景
+6.图表要和背景匹配，css要做好看
