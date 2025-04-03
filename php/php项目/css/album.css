@@ -1,0 +1,166 @@
+*{
+    text-align: center;
+}
+#middle{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-top:5%;
+    box-shadow: 0px 0px 2px 1px white;
+}
+.title{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #5473aa;
+}
+.title h2{
+    width: 60%;
+	background: white;
+    font-size:30px;
+	margin-left: 19%;
+	margin-top: -20px;
+	text-align: center;
+	line-height: 30px;
+	color: #97895c;
+}
+#grid h3{
+	height: 50px;
+	line-height: 50px;
+	color: #97895c;
+}
+.title p{
+	text-align: center;
+	line-height: 35px;
+	font-size: 15px;
+	font-family: "arial black";
+	color: #97895c;
+}
+/* ----------------------------------------------- */
+#grid{
+    display: grid;
+    grid-template-columns: 32.3% 33.3% 34.3%;
+    /* justify-content: space-around; */
+    /* flex-wrap: wrap;
+    flex:auto; */
+    padding:3%;
+    width: 100%;
+}
+#grid p{
+    width: 80%;
+	margin:0 auto;
+}
+#box p{
+    overflow: auto;
+}
+
+.box2{
+    margin-top:-1%;
+    position: relative;
+    right:5%;
+}
+.box3{
+    position: relative;
+    right:15%; 
+}
+
+/* -------------------------------------------- */
+/* 照片 */
+.photos{
+    background: whitesmoke;
+    padding-bottom: 1%;
+	overflow: auto;
+	margin-top: 30px;
+}
+.photos .title2{
+	width: 60%;
+	height: 80px;
+	/* background: yellow; */
+	margin: 35px auto;
+}
+.photos .title2 .line{
+	height: 30px;
+	border-bottom: 2px solid #5473aa;
+}
+.photos .title2 h2{
+	color: #97895c;
+	width: 140px;
+	background: whitesmoke;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: -15px;
+}
+.photos .title2 p{
+	width: 300px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+	font-size: 15px;
+	font-family: "arial black";
+	color: #97895c;
+}
+
+
+/* 相册的实现 */
+.photos .content2{
+	width: 850px;
+	height: 470px;
+	/*background: red;*/
+	background: rgba(1,1,1,0.5);
+	margin: 25px auto;
+}
+.content2 ul{
+    text-decoration: none;
+    list-style-type:none;
+}
+.photos .content2 .bigView{
+	width: 700px;
+	height: 400px;
+	/* background: blue; */
+	float: left;
+	margin-top: 35px;
+	margin-left: 10px;
+	overflow: hidden;
+}
+.photos .content2 .bigView img{
+	width: 700px;	
+	height: 400px;
+}
+/*通过外层套大盒子，将滚动条隐去*/
+.photos .content2 .smallBox{
+	width: 112px;
+	float: right;
+	overflow-x: hidden;
+	margin-top: -440px;
+	margin-right: 18px;
+}
+.photos .content2 .smallView{
+	width: 112px;
+	height: 400px;
+	/*保证里面的可以滑动*/
+	/* overflow: auto; */
+	overflow-y: scroll;
+    
+}
+.photos .content2 .smallView img{
+	width: 70px;
+	height: 80px;
+	float: left;
+	margin-bottom: 4px;
+    /* margin-left: 10px; */
+	border: 1px solid white;
+}
+
+#middle img{
+	animation-name: studyimg;
+	animation-timing-function: ease-in;
+	animation-duration: .4s;
+}
+@keyframes studyimg {
+	0% { opacity: 0;transform: scale(0.5); }
+	100% { opacity: 1;transform: scale(1); }
+}

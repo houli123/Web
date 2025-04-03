@@ -1,0 +1,193 @@
+#head{
+    /* width: 1200px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+.audio{
+    width: 300px;
+    height: 54px;
+}
+#leaf{
+    width: 698px;
+    height: 698px;
+}
+#middle{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    box-shadow: 0px 0px 2px 1px white;
+    overflow:hidden;
+    /* width: 1200px; */
+}
+
+
+
+.main1{
+	width: 100%;
+	margin: 5px auto;
+	position: relative;
+}
+/* mode_data */
+.cloud{
+	background-color: rgb(243,243,243);
+	box-shadow: 0 0 3px 5px rgba(155,155,155,.1);
+	margin-top: 30px;
+}
+.cloud_photo{
+	display: inline-block;
+}
+.cloud_photo img{
+    border-radius: 15px;
+	height: 240px;
+}
+.cloud_music{
+	display: inline-block;
+	position: relative;
+	left: 50px;
+}
+.cloud_music h1{
+    font-family: 华文隶书;
+	display: block;
+    font-size: 2em;
+    font-weight: bold;
+	margin:0px;
+	position: relative;
+	top:10px;
+}
+.buttons button{
+	display: inline-block;
+	width: 120px;
+	height: 40px;
+	padding: 0 0px;
+	text-align: center;
+	border: 1px solid #c9c9c9;
+	cursor: pointer;
+}
+.buttons button img{
+	width: 30px;
+	height: 30px;
+	position: relative;
+	top: -5px;
+}
+.buttons button p{
+	display: inline-block;
+	position: relative;
+	top: -10px;
+}
+/* .buttons button:focus{
+
+} */
+.buttons button:hover{
+	background-color: rgb(255,255,255);
+	color: #1C1C1C;
+}
+
+
+
+/* detail_layout ---------------------------*/
+.detail_layout{
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 640px;
+	width: 1000px;
+}
+.main_part{
+	/* display: inline-block; */
+    float:left;
+	background-color: rgba(235,235,235,0.3);
+	min-width: 600px;
+	/* width: 800px; */
+	height: 610px;
+	box-shadow: 0 0 3px 5px rgba(155,155,155,.1);
+}
+.song_head{
+	color: rgb(195,165,153);
+	height: 50px;
+}
+.song_head li{
+	display: inline-block;
+	line-height: 50px;
+}
+.song_head_name{
+	width: 70%;
+    text-align: left;
+}
+.song_head_author{
+	width: 15%;
+}
+/* .song_head_time{
+	width: 14;
+} */
+.song__list li{
+	height: 50px;
+	border-top: 1px solid rgb(200,200,200);
+    /* 横线 */
+	line-height: 50px;
+	list-style-type:none;
+}
+.song__list li div{
+	display: inline-block;
+	text-align: right;
+}
+.song__list .song__songname{
+	width: 65%;
+	text-align: left;
+}
+.song__songname .play{
+	display: none;
+	float: right;
+}
+.song__songname .play img{
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+}
+.song__songname:hover .play{
+	display: inline-block;
+}
+.song__list .song__artist{
+	width: 13%;
+}
+.song__list .song__time{
+	width: 12%;
+}
+
+
+
+
+.other_part{
+    float: left;
+	margin-left: 50px;
+	width: 300px;
+	color:#000 ;
+	line-height: 22px;
+	font-size: 14px;
+}
+.other_part h2{
+    font-family: 华文隶书;
+	font-size: 24px;
+}
+.other_part p+h2{
+    margin-top: 39px;
+}
+.other_part h2+p{
+	font-size: 16px;
+    text-indent: 2em;
+    text-align: left;
+    font-family: 仿宋;
+}
+.other_part img+p{
+	font-size: 16px;
+    text-align: center;
+    font-family: 仿宋;
+}
+.other_part .other_zhuanji{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.other_part img{
+	width: 76.66px;
+	height: 76.66px;
+	cursor: pointer;
+}

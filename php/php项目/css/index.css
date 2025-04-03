@@ -1,0 +1,398 @@
+*{
+    font-size: 20px;
+    text-align: center;
+    font-family: 仿宋;
+    text-decoration: none;
+    list-style-type:none;
+}
+img{
+    cursor: pointer;
+}
+video{
+    cursor: pointer;
+}
+#container{
+    position:relative;
+    padding:0;
+    z-index: 100;
+    min-width: 1000px;
+}
+#container #leaf{
+    /*落叶*/
+    opacity: 0%;
+    position:absolute;
+    right:2%;
+    left:4%;
+    margin-bottom: 30%;
+    width: 100%; 
+    height:60%; 
+    position:absolute;
+    /* 开始设置动画效果 */
+    animation-duration: 15s;
+    animation-name: leaf;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+    z-index: 999;
+    pointer-events: none;
+}
+/* 落叶动画关键帧的定义 */
+@keyframes leaf {
+    100%{
+        /* 落叶结束 */
+        margin-top:40%;
+        opacity: 15%;
+    };
+    0%{
+        /* 落叶开始 */
+        margin-top:30%;
+        opacity: 0%;
+    };
+}
+
+/* 背景图片设置 */
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: url("../images/3.JPG");
+    /* 背景图垂直、水平均居中 */
+    background-position: none center;
+    /* 背景图不平铺 */
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+    background-color: #464646;
+    z-index: -9;
+}
+
+/* 固定箭头设置 */
+.head{
+    position:fixed;
+    right:-.3%;
+    top:93%;
+    width: 5%;
+    z-index: 999;
+}
+
+/* 搜索框------------------------------------------------ */
+.search {
+    position: relative;
+    z-index: 999;
+    top:10px;
+    max-width: 150px;
+    max-height: 34px;
+    padding: 7px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px #669933, 0 0 0 7px #fff;
+}
+.search input {
+    outline: none;
+    width: 100px;
+    position: relative;
+    color: #8f363675;
+    font: 300 19px '优设标题黑';
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+}
+.search input::placeholder {
+    color: #8f3636a9;
+    opacity: 0.7;
+}
+.search a {
+    text-align: center;
+    font-size: 20px;
+    display: block;
+    float: right;
+    position: relative; 
+    top:-3px;
+    color: #fff;
+    width: 45px;
+    height: 27px;
+}
+.search a::before {
+    z-index: 999;
+    content: 'GO!';
+    display: block;
+    font-size: 19px;
+    background-color: #669933;
+    padding: 10px;
+    position: absolute;
+    right:-70px;        
+    top: -6px;
+    border-radius: 10px;
+    transition: .3s;
+    opacity: 0;
+    animation: box 1s infinite ease;
+}
+.search a:hover::before{
+    opacity: 1;
+}
+/* 搜索图标动画 */
+@keyframes box {
+    0%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(8deg);
+    }
+    66%{
+        transform: rotate(-8deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* -------------------------------------- */
+/* 背景图片更换 */
+#js{
+    position: absolute;
+    right: 3%;
+    top:10px;
+}
+#js img{
+    width:30px;height: 30px;
+    border-radius: 3px;
+    border:1px solid rgb(74, 87, 87);
+}
+/* -------------------------头部的设计--------------------------- */
+#head{
+padding-top:10%;
+}
+/*设置头像*/
+#head-background{
+margin-bottom: 10%;
+}
+/* 头像的设置 */
+#head-background img{
+    border-color:white;
+    border-radius: 50%;
+    width: 13%;
+    height: 13%;
+    /* 盒子边框阴影的设置 */
+    box-shadow: 0px 0px 10px 10px white;
+}
+
+/* 导航栏 */
+#nav{
+	/* width: 80%; */
+	height: 60px;
+	background-color: #00000080;
+    overflow: hidden;
+}
+/* 无序列表 */
+#nav ul {
+    /* float:flex; */
+    margin: 0px;
+    padding: 0 0 0 0;
+    /* width: 920px; */
+    list-style: none;
+    
+}
+/* 让链接横排 */
+#nav ul li {
+    display: inline;
+}
+/* 字体美化等 */
+#nav ul li a {
+    float: left;
+    padding: 11px 11px; 
+    font-size: 28px;
+    text-align: center;
+    text-decoration: none;
+    color: cornflowerblue;    
+    font-family: Tahoma;
+    outline: none;
+    /* margin-left: 1%; */
+}
+/* 鼠标经过该链接，变色 */
+#nav li a:hover {
+    color:#000;
+    background-color:#FFD204;
+    /*弧度*/
+    border-radius: 30px;
+    transition: all 0.2s;
+}
+
+
+
+
+/* -----------------中间的设计--------------------- */
+#middle{
+    display: flex;
+    margin-top: 2%;
+}
+/* -----------------中间左边的设计--------------------- */
+#left{
+    float:left;
+    background-color: white;
+    padding-top: 2%;
+    width:18%;
+    box-shadow: 0px 0px 2px 2px white ;
+    height: 30%;
+}
+/* 左边的头像 */
+#head-background #imgspe{
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    box-shadow: 0 0 3px 3px white ;
+}
+#name{
+    font-weight: bolder;
+    font-family: 黑体;
+}
+#signature{
+    font-family: 宋体;
+    opacity: 30%;
+    margin-top: 10%;
+    font-size:small;
+}
+#sex{
+    display: block;
+    /* padding:0% 20%; */
+    margin-top: 10%;
+    /* background-color: black; */
+}
+#sex table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    color:hsl(207, 100%, 48%);
+    width:75%;
+    /* height:50%; */
+}
+#sex td{
+    padding:3%;
+    font-family: 华文隶书;
+    font-size:19px;
+    border:1px solid;
+    border-color: rgba(0,0,0,0.2);
+}
+#sex td:hover{
+    transition: all 3s;
+    background-color: #f0dada;
+}
+
+/* 导航栏 */
+#nav1{
+    /* background-color: black; */
+	height: auto;
+    margin-top: 10%;
+}
+/* 无序列表 */
+#nav1 ul {
+    /* margin: 0 10% 0 10%; */
+    padding: 0 0 0 0;
+    list-style: none;
+
+}
+/* 字体美化等 */
+#nav1 ul li a {
+    /* padding-top: 11%;
+    padding-bottom: 11%; */
+    font-size: 25px;
+    text-align: center;
+    font-family: Tahoma;
+    outline: none;
+    line-height: 3em;
+    text-decoration: none;
+    color:black;
+}
+/* 鼠标经过该链接，变色 */
+#nav1 li:hover {
+    background-color:#7fc4fd;
+    opacity: 30%;
+    transition: all 3s;
+}
+
+
+
+/* -----------------中间右边的设计--------------------- */
+#right{
+    float:right;
+    background-color: white;
+    width: 80%;
+    z-index: 2;
+    margin-left:2%;
+    box-shadow: 0px 0px 2px 1px white;
+}
+#right hr{
+    padding: unset;
+    margin:unset;
+}
+#index{
+    background-color: white;
+    text-align: left;
+    /* height: 5%; */
+    font-family: 楷书;
+    font-size:25px;
+    /* font-weight: bold; */
+    padding:1% 0 1% 2%;
+}
+
+#my,#basis,#personal,#prize,#exp{
+    background-color: #f0dada;
+    text-align: left;
+    padding:1% 0 1% 2%;
+    font-family: 黑体;
+    font-size: 24px;
+}
+#basis a{
+    font-family: 黑体;
+    font-size: 24px;
+}
+#my{
+    padding-left: 0;
+    background-color: unset;
+    margin-bottom: 2%;
+}
+#right p{
+    text-align: left;
+}
+.prize p{
+    padding-left:5%;
+}
+
+/* - 经历 */
+.timeline{
+    list-style: none;
+    margin-left: 2em;
+    padding-left: 1.5em;
+    border-left: 2px grey solid;
+    z-index: 99;
+}
+.timeline li{
+    line-height: 1.5em;
+    position: relative;
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+.timeline li:before{
+    content: "";
+    left: -2.3em;
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+    position: absolute;
+    background: #f8bd24;
+    border-radius: 100%;
+    transition: transform .3s;
+}
+.timeline li:hover:before{
+    transform: scale(1.5);
+}
+/* ----------------------------页脚的设计------------------------- */
+footer{
+    margin-top: 1%;
+    background-color: #2b2b2b7a;
+    color:rgb(151, 183, 248);
+    padding:1%;
+    line-height: 2em;
+}
+footer a{
+    color:rgb(151, 183, 248);
+    text-decoration: none;
+}

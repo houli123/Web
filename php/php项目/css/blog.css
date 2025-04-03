@@ -1,0 +1,81 @@
+#middle{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0px 0px 2px 1px white;
+}
+.blog {
+    /* width: 100%; */
+    padding: 30px 20px;
+    /* margin:0 5%; */
+    border-bottom: 2px dotted #000;
+}
+.blog .title {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
+}
+.blog .date {
+    color: #008000;
+    margin-top: 10px;
+    text-align: center;
+}
+.blog .desc {
+    color: #000;
+    text-indent: 2em;
+    margin-top: 10px;
+}
+.blog .detail {
+    display: block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px auto 0 auto;
+    border: 2px solid black;
+    transition: all .5s;
+}
+.blog .detail:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 文字动画 */
+#middle{
+    overflow: hidden;
+}
+.blog:nth-child(odd){
+    animation-name:odd;
+    animation-duration: 5s;
+}
+@keyframes odd{
+    0%{
+        opacity:0;
+        margin-left: -500px;
+    }
+    100%{
+        opacity:1;
+        margin-left: 0px;
+    }
+}
+.blog:nth-child(even){
+    animation-name:even;
+    animation-duration: 5s;
+}
+@keyframes even{
+    0%{
+        opacity:0;
+        margin-right: -500px;
+    }
+    30%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+        margin-right: 0px;
+    }
+}

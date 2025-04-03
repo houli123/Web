@@ -1,0 +1,69 @@
+.calendar{
+    overflow:hidden;
+    /* overflow-y:hidden;  */
+    background-color: #fff;
+    width: 92%;
+    margin:3%;
+    height: 85%;
+    border: 10px solid #fff; /*边框*/
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+.calendar #date_img{
+    display: grid;
+    grid-template-columns: 395px auto;
+}
+.calendar .date{
+    padding-left: 15px;
+    margin:11% 5%;
+    box-sizing: border-box; 
+    position: relative;
+    top:30px;
+}
+.calendar .date h3{
+    margin: 0 0 20px; 
+    padding: 0;
+    font-size: 24px; /*字体大小*/
+    font-weight: 500; /*字体维度*/
+    text-align: center; /*字体居中*/
+    user-select: none; /*不可选中*/
+    text-transform: capitalize; /*首字母大写*/
+}
+.calendar .date .days{
+    display: flex;
+    flex-wrap: wrap; 
+    padding-right: 0;
+}
+.calendar .date .days .number.active{
+    background-color: #362b48;
+    color: #fff;
+    cursor: pointer; /*鼠标样式*/
+    border-radius: 50%; /*边框圆角*/
+}
+.calendar .date .days .day,
+.calendar .date .days .number{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.calendar .img{
+    /* margin-right: 5%; */
+    /* margin-bottom: 3%; */
+    /* margin-top: 2%; */
+    /* margin-left:5%; */
+    margin:auto 5%;
+}
+.calendar .img img{
+    max-height: 350px;
+}
+#this{
+    margin-top:3%;
+}
+
+#today{ 
+    color: #f44336;
+    font-weight: 600;
+} 

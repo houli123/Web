@@ -1,0 +1,94 @@
+/* -----------------中间右边的设计--------------------- */
+#right{
+    z-index: 2;
+}
+
+
+#box{
+    float:flex;
+}
+#box div{
+    margin-top: 5%;
+    padding:3% 3% 5% 3%;
+    width: 36.5%;
+    height: 300px;
+    background-color: antiquewhite;
+    overflow: auto;
+    font-size: larger;
+}
+#text1,#text3{
+    float:left;
+    margin-left: 5%;
+}
+#text2,#text4{
+    float:right;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+#text3,#text4{
+    margin-bottom: 5%;
+}
+#text1,#text2,#text3{
+    text-indent: 2em;
+    text-align: left; 
+}
+
+div #text4{
+    height:300px;
+    padding-bottom: 5%;
+    overflow-x: hidden;
+}
+textarea{
+    background-color: antiquewhite;
+    width:100%;
+    /* height:280px; */
+    height:100%;
+    resize: none;
+    border-color:antiquewhite;
+}
+
+
+/* 文字动画 */
+#text1{
+    animation-name: text1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes text1 {
+    100% { opacity: 1; }
+}
+#text2{
+    animation-name: text2;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes text2 {
+    100% { opacity: 1; }
+}
+#text3{
+    animation-name: text3;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes text3 {
+    100% { opacity: 1; }
+}
+#text4{
+    animation-name: text4;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes text4 {
+    100% { opacity: 1; }
+}
