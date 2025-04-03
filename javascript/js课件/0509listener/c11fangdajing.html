@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品放大镜</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #smallBox {
+            position: relative;
+            z-index: 1;
+            width: 350px;
+            height: 350px;
+            margin: 50px;
+            border: 1px solid #ccc;
+        }
+        
+        #zoom {
+            display: none;
+            width: 235px;
+            height: 235px;
+            position: absolute;
+            background: #ffffcc;
+            border: 1px solid #ccc;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+        
+        #bigBox {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 450px;
+            width: 540px;
+            height: 540px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+        
+        #bigBox img {
+            position: absolute;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="smallBox">
+        <div id="zoom"></div>
+        <img src="img/jdsmall.jpg" />
+    </div>
+    <div id="bigBox">
+        <img src="img/jdbig.jpg" />
+    </div>
+    <script type="text/javascript">
+        var smallBox = document.getElementById("smallBox");
+        var bigBox = document.getElementById("bigBox");
+        var bigBoxImg = bigBox.querySelector("img");
+        var zoom = document.getElementById("zoom");
+        //1.鼠标经过小图显示放大镜和大图
+        smallBox.onmouseover = function() {
+                zoom.style.display = "block"; //显示放大镜
+                bigBox.style.display = "block"; //显示大图
+            }
+            //2.鼠标经过小图隐藏放大镜和大图
+        smallBox.onmouseout = function() {
+            zoom.style.display = "none"; //隐藏放大镜
+            bigBox.style.display = "none"; //隐藏大图
+        }
+        smallBox.onmousemove = function(e) {
+            var event = event || window.event;
+            //获取鼠标在小图中的位置
+            var boxX = event.pageX - smallBox.offsetLeft;
+            var boxY = event.pageY - smallBox.offsetTop;
+            //设置放大镜的坐标
+            var zoomX = boxX - zoom.offsetWidth / 2;
+            var zoomY = boxY - zoom.offsetHeight / 2;
+
+            //3.限制放大镜的运动范围
+            if (zoomX < 0) zoomX = 0;
+            else if (zoomX > smallBox.offsetWidth - zoom.offsetWidth)
+                zoomX = smallBox.offsetWidth - zoom.offsetWidth;
+            if (zoomY < 0) zoomY = 0;
+            else if (zoomY > smallBox.offsetHeight - zoom.offsetHeight)
+                zoomY = smallBox.offsetHeight - zoom.offsetHeight;
+            //4.设置放大镜的位置
+            zoom.style.left = zoomX + "px";
+            zoom.style.top = zoomY + "px";
+            //5. 设置大图移动
+            var bigMove = bigBoxImg.offsetWidth - bigBox.offsetWidth; //大图移动距离
+            var zoomMove = smallBox.offsetWidth - zoom.offsetWidth; //放大镜移动距离
+            var rate = bigMove / zoomMove;
+            bigBoxImg.style.left = -rate * zoomX + "px";
+            bigBoxImg.style.top = -rate * zoomY + "px";
+        }
+    </script>
+</body>
+
+</html>

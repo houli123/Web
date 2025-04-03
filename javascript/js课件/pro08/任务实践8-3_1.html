@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>天干地支——事件监听</title>
+</head>
+<body>
+    <p>
+        <!-- 按钮1：用于显示"天干" -->
+        <button name="button1" id="button1">天干</button>
+    </p>
+    <p>
+        <!-- 按钮2：用于显示"地支" -->
+        <button name="button2" id="button2">地支</button>
+    </p>
+    <script type="text/javascript">
+        // 获取第一个按钮的DOM引用
+        var btn1 = document.querySelector("#button1");
+        // 获取第二个按钮的DOM引用
+        var btn2 = document.querySelector("#button2");
+
+        // 定义第一个按钮的点击事件处理函数
+        function showTianGan() {
+            alert('甲、乙、丙、丁、戊、己、庚、辛、壬、癸');
+            // 移除第一个按钮的点击事件监听器
+            btn1.removeEventListener("click", showTianGan);
+        }
+        
+        // 定义第一个按钮的第二个点击事件处理函数
+        function showAdditionalInfo() {
+            alert("以上是天干");
+        }
+
+        // 定义第二个按钮的点击事件处理函数
+        function showDiZhi() {
+            alert("子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥");
+            // 移除第二个按钮的点击事件监听器
+            btn2.removeEventListener("click", showDiZhi);
+        }
+
+        // 为第一个按钮添加点击事件监听器
+        btn1.addEventListener("click", showTianGan);
+        btn1.addEventListener("click", showAdditionalInfo);
+
+        // 为第二个按钮添加点击事件监听器
+        btn2.addEventListener("click", showDiZhi);
+    </script>
+</body>
+</html>

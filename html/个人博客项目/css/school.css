@@ -1,0 +1,22 @@
+.calendar{
+    background-color: #fff;
+
+    margin:5% 0;
+    width:80%;
+    display: inline-block;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+    border: 15px solid #fff; /*边框*/
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+.calendar img{
+    margin-top: 0;
+    position:relative;
+    bottom: 40px;
+}
+.calendar h1{
+    font-size: 50px;
+    /* font-weight: bold; */
+    font-family: 华文行楷;
+}

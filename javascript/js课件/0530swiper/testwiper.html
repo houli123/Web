@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="swiper/css/swiper.min.css">
+    <style>
+        .swiper-container{
+            width: 800px;
+            height: 600px;
+            border: 3px double blue;
+        }
+        .swiper-slide{
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url(swiperimg/Desert.jpg);"></div>
+            <div class="swiper-slide" style="background-image: url(swiperimg/Koala.jpg);"></div>
+            <div class="swiper-slide" style="background-image: url(swiperimg/Penguins.jpg);"></div>
+            <div class="swiper-slide" style="background-image: url(swiperimg/Tulips.jpg);"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // var s=new Swiper(".swiper-container");
+    // var s=new Swiper(".swiper-container",{loop:true,direction:'vertical',effect:'fade'});
+    var s=new Swiper(".swiper-container",{
+        loop:true,
+        direction:'vertical',
+        effect:'cube',
+        autoplay:2000,
+        autoplayDisableOnInteraction: false
+    });
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        姓名：<input type="text" value="mary" id="myname">
+        <input type="text">
+    </form>
+    <hr>
+    <button onclick="dosth(true)">禁止输入</button>
+    <button onclick="dosth(false)">允许输入</button>
+    <button onclick="dosth2(true)">获得焦点</button>
+    <button onclick="dosth2(false)">失去焦点</button>
+</body>
+</html>
+<script>
+    let myname=document.getElementById("myname")
+    function dosth(f){
+        myname.disabled=f;
+    }
+    function dosth2(f){
+        if(f){
+            myname.focus();
+        }else{
+            myname.blur();
+        }
+    }
+</script>

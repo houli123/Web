@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+	var sum=0;
+	while(true){
+		var x=prompt("请输入一个正数：","0");
+		if(x=="q" || x=="Q")
+			break;
+		var y=parseInt(x);
+		if(isNaN(y))
+			continue;
+		if(y<=0)
+			continue;
+		sum+=y;
+	}
+	document.write("sum="+sum);
+</script>

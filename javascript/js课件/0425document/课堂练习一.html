@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂练习一</title>
+</head>
+<body>
+    
+    <div class="outer-container">
+        <h1 class="title-level-1">一级目录标题</h1>
+        <div class="innerbox">
+            <h2 class="title-level-2">二级目录标题</h2>
+            <span>文本1</span> <!-- 当前span1 -->
+            <span>文本2</span> <!-- 当前span2 -->
+        </div>
+    </div>
+    
+    <script>
+        // 选择第一个和第二个span元素
+        var span1 = document.querySelectorAll("span")[0];
+        var span2 = document.querySelectorAll("span")[1];
+        
+        // 更改第一个span元素的背景色来实现高亮显示
+        span1.style.backgroundColor = 'yellow';
+
+        // 使用parentNode获取并改变第一个span元素的直接父节点的背景色
+        span1.parentNode.style.backgroundColor = 'lightgrey';  // innerbox
+
+        // 使用nextElementSibling获取并改变第一个span元素的下一个同级元素节点的背景色
+        var nextSibling = span1.nextElementSibling;
+        nextSibling.style.backgroundColor = 'lightblue';  
+
+        // 使用previousElementSibling获取并改变第二个span元素的上一个同级元素节点的背景色
+        var prevSibling = span2.previousElementSibling;
+        prevSibling.style.backgroundColor = 'yellow';  // 这将再次高亮显示span1
+
+        // 使用closest获取最近的匹配选择器的父元素，并改变其背景色
+        var closestOuterContainer = span1.closest('.outer-container');
+        closestOuterContainer.style.border = '2px solid red';  // outer-container
+    </script>
+
+</body>
+</html>

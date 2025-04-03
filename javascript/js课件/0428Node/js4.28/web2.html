@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="container" style="position:relative;">
+		<ul id="mylist" >
+			<li>项目01</li>
+			<li>项目02</li>
+			<li>项目03</li>
+			<li>项目04</li>
+		</ul>
+	</div>	
+</body>
+</html>
+<script type="text/javascript">
+	var myls=document.getElementById("mylist")
+	console.log(myls.children);
+	console.log(myls.children[2]);
+	console.log(myls.firstElementChild);
+	console.log(myls.lastElementChild);	
+	var con=document.getElementById("container");
+	console.log(con.firstElementChild.firstElementChild);
+
+	var li=document.getElementsByTagName("li")[0];
+	console.log(li.nextElementSibling)
+	console.log(li.nextElementSibling.nextElementSibling);
+	console.log(li.nextElementSibling.previousElementSibling);
+	
+	</script>

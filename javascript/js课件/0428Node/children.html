@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="mylist">
+        <li>项目001</li>
+        <li>项目002</li>
+        <li>项目003</li>
+    </ul>
+</body>
+</html>
+
+<script type="text/javascript">
+    let myls=document.getElementById("mylist");
+    console.log(myls.children.length);
+    for(let x of myls.children){
+        console.log(x);
+    }
+
+    console.log(myls.childNodes.length);
+    for(let x of myls.childNodes){
+        console.log(x);
+    }
+
+    console.log(myls.firstElementChild);
+    console.log(myls.lastElementChild);
+</script>

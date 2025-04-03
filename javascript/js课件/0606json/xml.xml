@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Products>
+    <productName>摩托罗拉</productName>
+    <price>1000.00</price>
+    <photo>image/摩托罗拉.jpg</photo>
+  </Products>
+  <Products>
+    <productName>三星</productName>
+    <price>3000.00</price>
+    <photo>image/三星.jpg</photo>
+  </Products>
+  <Products>
+    <productName>诺基亚</productName>
+    <price>2000.00</price>
+    <photo>image/诺基亚.jpg</photo>
+  </Products>
+  <Products>
+    <productName>苹果</productName>
+    <price>2000.00</price>
+    <photo>image/苹果.jpg</photo>
+  </Products>
+</root>
+

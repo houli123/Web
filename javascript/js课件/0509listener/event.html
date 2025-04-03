@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myhaha" onclick="dosth1();">哈哈哈哈</h2>
+    <h2 id="myxixi">嘻嘻嘻嘻</h2>
+</body>
+</html>
+<script type="text/javascript">
+    function dosth1(){
+        console.log("哈哈哈-1");
+    }
+    
+    let myh2=document.getElementById("myhaha");
+    myh2.onclick=function(){console.log("哈哈哈哈-2")}//匿名函数
+    //dom0级的监听是只能有一个，再有会替代原本的
+
+    let myxi=document.getElementById("myxixi");
+    myxi.addEventListener("click",dosth1);  //3级dom监听，可以创建多个且能重复执行
+    myxi.addEventListener("click",dosth2);
+    function dosth2(){
+        console.log("嘻嘻-1");
+    }
+    //第三个参数true表示开启冒泡，然后会优先执行最底下的
+    myxi.addEventListener("click",function (){console.log("嘻嘻嘻-2");},true) //匿名函数的写法
+</script>

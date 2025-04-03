@@ -1,0 +1,167 @@
+body {
+    background-image: url("../images/3.jpg");
+}
+
+#real-time-clock {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #4caf50;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 20px;
+}
+
+#right {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+}
+
+#real-time-clock {
+    font-size: 8rem;
+    /* 调整为更大的字体 */
+    width: 70%;
+    /* 设置为占据`#right`的70% */
+    text-align: center;
+    /* 文字居中显示 */
+    padding: 20px 0;
+    /* 增加一些内边距 */
+    box-sizing: border-box;
+    /* 防止内边距影响到宽度计算 */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    /* 设置页面背景颜色 */
+    text-align: center;
+    /* 保证元素居中对齐 */
+}
+
+
+/* 计时器显示 */
+
+#timeshow {
+    font-size: 3em;
+    /* 大号字体显示剩余时间 */
+    color: #333;
+    /* 时间颜色 */
+    margin-bottom: 20px;
+    /* 添加一些间距 */
+}
+
+
+/* 按钮通用样式 */
+
+.btn {
+    font-size: 1em;
+    padding: 10px 20px;
+    /* 按钮内边距 */
+    border: none;
+    /* 移除边框 */
+    cursor: pointer;
+    /* 鼠标悬停效果 */
+    transition: background-color 0.3s ease;
+    /* 平滑背景颜色过渡 */
+}
+
+
+/* 开始和休息按钮样式 */
+
+.btn-light {
+    background-color: #4caf50;
+    /* 按钮背景颜色 */
+    color: #fff;
+    /* 文字颜色 */
+}
+
+
+/* 开始和休息按钮：鼠标悬停状态 */
+
+.btn-light:hover {
+    background-color: #388e3c;
+    /* 暗色背景 */
+}
+
+
+/* 取消按钮样式 */
+
+.btn-light[onclick="end()"] {
+    background-color: #f44336;
+    /* 红色背景，用于取消操作 */
+}
+
+.btn-light[onclick="end()"]:hover {
+    background-color: #d32f2f;
+    /* 鼠标悬停时的暗红色 */
+}
+
+
+/* 输入框样式 */
+
+input[type="text"] {
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 3px;
+    /* 圆角边框 */
+    border: 1px solid #cccccc;
+    /* 边框颜色 */
+    margin: 0 5px;
+    /* 与其他元素间距 */
+}
+
+
+/* 进度条容器 */
+
+.progress {
+    background-color: #e0e0e0;
+    /* 进度条背景 */
+    border-radius: 20px;
+    /* 圆角 */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* 内部阴影 */
+    width: 80%;
+    /* 进度条宽度 */
+    margin: 20px auto;
+    /* 顶部和底部的间距设置为20px，左右自动居中 */
+    height: 30px;
+    /* 进度条高度 */
+}
+
+
+/* 进度条 */
+
+.progress-bar {
+    background-color: #2196F3;
+    /* 亮蓝色 */
+    border-radius: 20px;
+    /* 圆角相匹配 */
+    height: 100%;
+    /* 进度条满高 */
+}
+
+
+/* 开始的进度条样式 */
+
+.progress-bar-ltr {
+    background-color: #4caf50;
+    /* 你可以更改这个颜色 */
+    border-radius: 20px;
+    height: 100%;
+    transition: width 0.5s ease;
+    /* 平滑过渡效果 */
+}
+
+
+/* 结束的进度条样式 */
+
+.progress-bar-rtl {
+    background-color: #2196F3;
+    /*你可以更改这个颜色*/border-radius: 20px;
+    height: 100%;
+    transition: width 0.5s ease;
+}

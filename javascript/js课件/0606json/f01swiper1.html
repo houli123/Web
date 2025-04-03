@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css" />
+        <script type="text/javascript" src="swiper/swiper.min.js"></script>
+        <style type="text/css">
+            .swiper-container{
+                height: 500px;
+                border:1px solid red;
+                width: 800px;
+            }
+            .swiper-slide{
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .swiper-pagination-bullet{
+                width: 30px;
+                height: 30px;
+                background-color: yellow;
+            }
+            .swiper-pagination-bullet-active{
+                background-color: red;
+                width: 30px;
+                height: 30px;
+            }
+
+            .swiper-button-next,.swiper-button-prev{
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    </body>
+</html>
+<script type="text/javascript">
+    // var s=new Swiper(".swiper-container");
+    var s=new Swiper(".swiper-container",
+        {
+            loop:true,
+            effect:"cube",// 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
+            // autoplay:true,
+            autoplay:1000,
+            nextButton:".swiper-button-next",
+            prevButton:".swiper-button-prev",
+            autoplayDisableOnInteraction: false,
+            // direction:"vertical",
+            pagination:".swiper-pagination",
+            paginationClickable:true
+        }
+        );
+</script>

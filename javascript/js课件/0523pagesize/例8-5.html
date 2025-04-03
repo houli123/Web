@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>通过表单id属性访问表单示例</title>
+</head>
+<body>
+    <!-- 定义一个表单，指定id为"formid"，这使得可以通过id来获取表单的引用 -->
+    <form id="formid" name="myForm" method="post" action="check.php">
+        <!-- 定义一个用户名输入框，并给它一个id "userid" -->
+        用户名：<input type="text" id="userid" name="username" value="" /><br /><br />
+        <!-- 定义一个密码输入框，没有指定id，只能通过其它方法如name属性访问 -->
+        密 码：<input type="password" name="password1" value="" /><br /><br />
+        <!-- 定义一个按钮，点击时将执行后续的脚本 -->
+        <input type="button" value="获取表单名" id="getname" />
+    </form>
+    
+    <script type="text/javascript">
+        // 通过getElementById获取按钮的DOM对象
+        var getName = document.getElementById("getname");
+        // 为按钮绑定点击事件处理函数
+        getName.onclick = function () {
+            // 使用getElementById获取表单的DOM对象，并访问其name属性
+            var fname = document.getElementById("formid").name;
+            // 使用getElementById获取用户名输入框的DOM对象，并访问其name属性
+            var uname = document.getElementById("userid").name;
+            // 显示一个警告框，展示表单的name属性和用户名的name属性
+            alert("表单的name属性是" + fname + "\n" + "用户名的name属性是" + uname);
+        }
+    </script>
+</body>
+</html>

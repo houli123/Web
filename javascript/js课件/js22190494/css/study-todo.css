@@ -1,0 +1,83 @@
+body {
+    background-image: url("../images/3.jpg");
+}
+
+
+/* 当前任务列表盒子样式 */
+
+#todolistBox {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #f0fff0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 标题样式 */
+
+#top h1 {
+    color: #38ef7d;
+    margin-bottom: 16px;
+    font-size: 40px;
+}
+
+
+/* 输入框样式 */
+
+#top input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #38ef7d;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+
+/* 任务列表样式 */
+
+#todolist li {
+    list-style: none;
+    background-color: #e6ffe6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* 任务文本样式 */
+
+.todoText {
+    font-size: 16px;
+}
+
+
+/* 按钮通用样式 */
+
+.todoBtn {
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+
+/* 完成按钮样式 */
+
+.todoBtn.done {
+    background-color: #44b144;
+    color: white;
+}
+
+
+/* 删除按钮样式 */
+
+.todoBtn.delete {
+    background-color: #ff6868;
+    color: white;
+}

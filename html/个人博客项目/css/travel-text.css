@@ -1,0 +1,14 @@
+#box{
+    display: flex;
+    flex:1;
+    height: 80%;
+}
+#text1,#text2{
+    float: flex;
+    flex:1;
+    margin-right:5%;
+    min-height: 65%;
+}
+pre{
+    text-align: left;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var persons = [
+        { name:"Tom",  "sex":"男" ,  "age":18 },
+        { "name":"Mary", "sex":"女" ,  "age":"20"}
+    ];
+    for(i=0;i<persons.length;i++){
+        document.write(persons[i].name+"<br/>");
+        document.write(persons[i].age+"<br/>");
+    }
+    var str='{ "name":"Tom",  "sex":"男" ,  "age":18 }';
+    var j1=JSON.parse(str);  //转换时，键必须双引号
+    console.log(j1.name);
+    var str2=JSON.stringify(j1);
+    console.log(str2);
+    var obj1 = {
+        "Products": [
+        {"productName": "摩托罗拉","price": 1000.00,"photo": "image/摩托罗拉.jpg"},
+        {"productName": "三星","price": 3000.00,"photo": "image/三星.jpg"}, 
+        {"productName": "诺基亚","price": 2000.00,"photo": "image/诺基亚.jpg"},
+        {"productName": "苹果","price": 2000.00,"photo": "image/苹果.jpg"}
+        ]
+    };
+</script>

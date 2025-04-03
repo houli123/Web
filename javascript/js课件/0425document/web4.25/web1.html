@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<!-- 命令：h2#header -->
+<h2 id="header">网站前端开发技术</h2>	
+<!-- 命令：u1.list1>li{项目$$$}*5 -->
+<!-- ul不是u1 -->
+<ul class="list1">
+	<li>项目001</li>
+	<li>项目002</li>
+	<li name="haha">项目003</li>
+	<li>项目004</li>
+	<li>项目005</li>
+</ul>
+</body>
+</html>
+<!-- 命令：script -->
+<script type="text/javascript">
+/*	mylis=document.getElementsByTagName("li");
+	document.write(mylis[0].innerHTML);//输出list1里的第一个元素
+	mylis[1].innerHTML="大圣归来";//更改项目002的字为大圣归来
+	x=document.getElementsByTagName("h2")[0];
+	x.innerHTML="魔童降世";//需要li的第三个元素为魔童降世
+	y=document.getElementById("header");
+	y.innerHTML="唐人街探案"; //改ID为header的值为唐人街探案
+	z=document.getElementsByName("haha")[0];
+	z.innerHTML="孤注一掷";
+	a=document.getElementsByClassName("list1")[0];
+	a.style["border"]="3px double red";*/
+
+	mylis=document.querySelectorAll("li");
+	document.write(mylis[0].innerHTML);//输出list1里的第一个元素
+	mylis[1].innerHTML="大圣归来";//
+	x=document.querySelector("h2");
+	x.innerHTML="魔童降世";
+
+	y=document.querySelector("#header");
+	y.innerHTML="唐人街探案";
+	y1=document.querySelectorAll("#header")[0];
+	y1.innerHTML="唐人街探案II";
+
+	z=document.querySelectorAll("li")[2];
+	z.innerHTML="孤注一掷";
+
+	a=document.querySelectorAll(".list1")[0];
+	a.style["border"]="3px double red";
+
+	a1=document.querySelectorAll(".list1")[0];
+	a1.style["border"]="3px double blue";
+</script>

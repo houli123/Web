@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	var x,y,sum=0;
+	while(true)
+	{
+		x=window.prompt("请输入（Q代表结束）：");
+		if((x=="Q")||(x=="q"))
+			break;
+		y=parseFloat(x)
+		if(isNaN(y))
+			continue;
+		if(y<=0)
+			continue;
+		sum+=y;
+	}
+	document.write("输入的所有正数的和="+sum);
+</script>

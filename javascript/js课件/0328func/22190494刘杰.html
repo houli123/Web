@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>22190494刘杰</title>
+	
+</head>
+<body>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+// 	求1~100以内能被3整除的整数之和。
+//   要求：使用3种循环语句实现。
+        document.write("方式1:");
+        var i=1,sum=0;
+        for(i;i<=100;i++){
+        	if(i%3==0)
+        		sum+=i;
+        }
+        document.write("sum="+sum+"<br/>");
+
+
+        document.write("方式2:");
+        var i=1,sum=0;
+        while(i<=100){
+        	if(i%3==0)
+        		sum+=i;
+        	i++;
+        }
+        document.write("sum="+sum+"<br/>");
+
+
+        document.write("方式3:");
+        var i=1,sum=0;
+        do{
+        	if(i%3==0)
+        		sum+=i;
+        	i++;
+        }
+        while(i<=100);
+        document.write("sum="+sum+"<br/>");
+
+	</script>

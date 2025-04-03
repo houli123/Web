@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="mylist" style="border:4px double green">
+        <li style="color:red">项目001</li>
+        <li>项目002</li>
+        <li>项目003</li>
+    </ul>
+    <hr>
+    <button onclick="dosth(true)">深度复制节点</button>
+    <button onclick="dosth(false)">普通复制节点</button>
+    <div id="div1" style="border:4px solid red"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function dosth(flag){
+        let myls=document.getElementById("mylist");
+        let newnode=myls.cloneNode(flag);
+        let d1=document.getElementById("div1");
+        d1.appendChild(newnode);
+        let hr=document.createElement("hr");
+        d1.appendChild(hr);
+    }
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客空间</title>
+    <link href="../css/index.css" type="text/css" rel="stylesheet" />
+    <link href="../css/blog.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="../images/icon/用户.png" sizes="32*32">
+</head>
+
+
+<body>
+    <div id="container">
+      <img src="../images/star.png" alt="" id="mypic">
+        <!-- 回到顶部箭头 -->
+        <a href="#" id="go-top"><img class="head" src="../images/head.png"></a>
+        <!-- 点击更换背景图片的设置 -->
+  	    <div id="js">
+            <img src="../images/3.jpg" alt="" class="photo1">
+            <img src="../images/bak4.png" alt="" class="photo1">
+            <img src="../images/bak5.png" alt="" class="photo1">
+            <img src="../images/bak2.png" alt="" class="photo1">
+        </div>
+
+        <img id="leaf" src="../images/gif.png" />
+        <!-- 最上面那部分 -->
+        <div id="head">
+            <!-- 头部背景图片 -->
+            <div id="head-background">
+                <img src="../images/photo.png" onerror="this.style.display='none'"/>
+            </div>
+            <!-- 导航栏 -->
+            <div id="nav">
+                <ul>
+                    <li><a href="../index.html">主页</a></li>
+                    <li><a href="study-main.html">学习空间</a></li>
+                    <li><a href="album.html">相册空间</a></li>
+                    <li><a href="blog.html">博客空间</a></li>
+                    <li><a href="login.html">切换用户</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!-- 中间的一块 -->
+        <div id="middle">
+          <div id="index">
+              <!-- 博客空间 -->
+          </div>
+
+          <!-- 博客的显示 -->
+          <div id="blog-container">
+            <div class="blog-segment">
+                <h2 class="blog-title"></h2>
+                <p class="blog-author">作者： - 发布时间：</p>
+                <p class="blog-content">博客内容</p>
+                <button class="read-more" onclick="more_content(this)">阅读更多</button>
+            </div>
+          </div>  
+
+        </div>  
+
+    </div>
+
+
+    <!-- 页脚 -->
+    <footer>
+      深圳职业技术大学——人工智能学院信息楼实验室<br>
+      地址：广东省深圳市南山区沙河西路4089号 邮编：518055 <br/>电话：0755—2046336
+
+      邮编：518055 电话：0755—2046337
+      <br>更多信息：<a href="http://www.szpt.edu.cn" target="_blank">点击官网</a>
+  </footer>
+</body>
+</html>
+
+
+<script src="../js/background2.js"></script>
+<script src="../js/blog.js"></script>
+<script src="../js/bomb.js"></script>
+<script src="../js/prelogin.js"></script>

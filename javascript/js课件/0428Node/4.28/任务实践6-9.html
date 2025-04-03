@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表移动——移动节点</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>本学期开的第1门专业课程是Java</li>
+        <li>本学期开的第2门专业课程是JavaScript</li>
+        <li>本学期开的第3门专业课程是jQuery</li>
+        <li>本学期开的第4门专业课程是JavaWeb</li>
+    </ul>
+    <form action="" method="get">
+        <input type="button" value="移动列表" onclick="moveNode()" />
+    </form>
+    <script type="text/javascript">
+        function moveNode() {
+            var parNode = document.getElementById("list"); //获取父元素
+            var firstNode = parNode.firstElementChild; //获取第１个子元素
+            parNode.appendChild(firstNode); //将第1个子元素添加到元素列表的末尾
+        }
+    </script>
+</body>
+
+</html>

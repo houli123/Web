@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="mylist">
+		<li style="color: red;">项目001</li>
+		<li>项目002</li>
+		<li>项目003</li>
+		<li>项目004</li>
+		<li>项目005</li>
+	</ul>
+	<button onclick="dosth1()">正向移动</button>
+	<button onclick="dosth2()">反向移动</button>
+</body>
+</html>
+<script type="text/javascript">
+	function dosth1()
+	{
+		var mylist=document.getElementById("mylist");
+		var fchild=mylist.firstElementChild;
+		mylist.appendChild(fchild);
+	}
+	function dosth2()
+	{
+		var mylist=document.getElementById("mylist");
+		var fchild=mylist.firstElementChild;
+		var lchild=mylist.lastElementChild;
+		mylist.insertBefore(lchild,fchild);
+	}
+</script>

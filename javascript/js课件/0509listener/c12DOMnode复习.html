@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	ul#mylist>li{项目$$$}*4
+	<ul id="mylist">
+		<li>项目001</li>
+		<li>项目002</li>
+		<li>项目003</li>
+		<li>项目004</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	var list1=document.getElementById("mylist");
+	var mylis=list1.children;
+	mylis[1].innerHTML="德业并进";
+	var li=list1.firstElementChild.nextElementSibling;
+	li.style.color="red";
+	li=list1.lastElementChild.previousElementSibling.previousElementSibling;
+	li.style["background-color"]="yellow";
+	var mylist=li.parentNode;
+	mylist.style.setProperty("border","3px double blue");
+
+	mylist.appendChild(li);
+
+	var newli=document.createElement("li");
+	var txtnode=document.createTextNode("自强不息");
+	newli.appendChild(txtnode);
+
+	mylist.insertBefore(newli,li);
+
+	var fli=mylist.firstElementChild;
+	mylist.removeChild(fli);
+
+	var mynew=li.cloneNode(true);
+	fli=mylist.firstElementChild;
+	mylist.replaceChild(mynew,fli);
+
+
+</script>

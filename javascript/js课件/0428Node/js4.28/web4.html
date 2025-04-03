@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul id="mylist" style="border: 3px double blue;">
+	<li style="color: red;">项目001</li>
+	<li>项目002</li>
+	<li>项目003</li>
+	<li>项目004</li>
+	<li>项目005</li>
+</ul>
+<div id="div1" style="border:4px solid red;"></div>
+	<button onclick="addnode(true)">深度复制节点</button>
+	<button onclick="addnode(false)">普通复制节点</button>
+</body>
+</html>
+<script type="text/javascript">
+	function addnode(flag)
+	{
+		var mylist=document.getElementById("mylist");
+		var newnode=mylist.childNodes(flag);
+		var div1=document.getElementById("div1");
+		div1.appendChild(newnode);
+		var br=document.createElement("br");
+		div1.appendChild(br);
+	}
+</script>

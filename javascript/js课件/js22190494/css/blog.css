@@ -1,0 +1,106 @@
+#middle {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0px 0px 2px 1px white;
+}
+body {
+    background-image: url("../images/3.jpg");
+}
+/* 分页按钮的样式 */
+.previous-next-buttons {
+    margin: 20px 0;
+}
+.previous-next-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.previous-next-buttons button[disabled] {
+    background-color: #CCCCCC;
+    cursor: not-allowed;
+}
+.blog-segment {
+    background-color: #E0F2F1;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.blog-title {
+    color: #00c853;
+    font-weight: bold;
+}
+.blog-content {
+    display: none;
+    color: #388E3C;
+}
+.blog- {
+    font-size: 0.8em;
+    color: #009688;
+}
+.read-more {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* 添加博客表单的样式 */
+form {
+    background-color: #FAFAFA;
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+form input[type=text],
+form textarea {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+}
+form input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 评论区内容 */
+.comments-container {
+    margin-top: 20px;
+    background-color: #E8F5E9; /* 淡绿色背景 */
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .comments {
+    color: #2E7D32; /* 更鲜明的绿色 */
+    margin-bottom: 8px;
+  }
+  
+  .comment-input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    border: 1px solid #9E9;
+  }
+  
+  .comment-submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 3px;
+  }

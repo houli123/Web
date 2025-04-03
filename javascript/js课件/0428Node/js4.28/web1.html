@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- div.outer>div.inner>span#me -->
+	<div class="outer" style="position: relative;">
+		<div class="inner"><span id="me">哈哈哈</span><span>呵呵呵</span><span>嘻嘻嘻
+		</span></div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+var inn=document.getElementsByClassName("inner")[0];
+console.log(inn.childNodes.length);
+for(var x of inn.childNodes)
+		console.log(x.innerHTML);
+
+
+
+
+console.log(inn.children.length);
+for(var x of inn.children)
+		console.log(x.innerHTML);
+	// var me=document.getElementById("me");
+		// console.log(me.innerHTML);
+		// console.log(me.parentNode.innerHTML);            
+		// console.log(me.closest(".inner").innerHTML);     
+		// console.log(me.closest(".outer").innerHTML);
+		// console.log(me.offsetParent.innertHTML);     
+		// var inn=me.offsetParent;
+		// console.log(inn.firstElementChild.innerHTML); 
+		// console.log(inn.lastElementChild.innerHTML); 
+		// var ou=me.closest(".inner");
+		// for(var x of ou.children)
+		// console.log(x.innerHTML);
+	    // console.log(inn.firstChild.innerHTML)
+		
+	   
+</script>

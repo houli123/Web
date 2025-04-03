@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width =device-width,initial-scale =1.0,maximum-scale =1.0,user-scalable =yes">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid green;
+            /* float:left; */
+            margin:5px;
+        }
+        .content{
+            display: flex;
+        }
+        @media screen and (min-width:1001px) {
+            .main{
+                flex:70%;
+            }
+            .smallwin{
+                flex:30%;
+                height: 300px;
+                background-color: yellow;
+            }
+        }
+        @media screen and (max-width:1000px) {
+            .main{
+                flex:100%;
+            }
+            .smallwin{
+                display: none;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="main">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, non, ducimus sapiente eius id blanditiis provident quas, earum consequatur totam velit culpa ipsa repellat doloremque omnis accusamus dolor autem nostrum temporibus cum error nam exercitationem quaerat! Temporibus unde illum consequuntur odit nostrum tenetur velit iure nulla aliquam ipsa eveniet hic amet consectetur enim, iste molestias architecto suscipit mollitia sapiente vero tempore. Repellat, beatae nesciunt at dolorem earum obcaecati commodi tenetur facere veritatis ea laboriosam amet corporis harum est aliquam sunt similique? Saepe quasi et cupiditate veniam sapiente dignissimos animi laborum dicta magnam! Consequuntur suscipit at, voluptatem dolorum natus iste quos?
+        </div>
+        <div class="smallwin">
+            屏幕高度大于1000像素时可见哟~
+        </div>
+    </div>
+    
+    
+</body>
+</html>

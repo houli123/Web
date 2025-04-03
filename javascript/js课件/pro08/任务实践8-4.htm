@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>显示触发事件——Event对象</title>
+</head>
+<body>
+    <p id="p1">单击鼠标左键，测试触发事件
+    </p>
+    <script>
+        var p1 = document.querySelector("#p1");
+		// 这是DOM 2级事件处理的推荐方式，允许为同一事件添加多个监听器，且不会覆盖已存在的事件处理函数。
+        p1.addEventListener("click", function(e) {
+            var event = e || window.event;
+            alert(event); //弹出事件名
+        });
+    </script>
+</body>
+
+</html>

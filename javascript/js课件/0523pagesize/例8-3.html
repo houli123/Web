@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>将onload事件绑定到元素示例</title>
+  <script type="text/javascript">
+    // 定义welcome函数，这个函数将在按钮被点击时执行
+    function welcome() {
+      // 弹出欢迎对话框
+      alert("您好!欢迎您，在这里绑定<body>的函数");
+    }
+
+    // 定义start函数，这个函数将在页面加载完成后被<body>的onload事件调用
+    function start() {
+      // 获取页面中id为"btn"的按钮元素
+      var welcome_load = document.getElementById("btn");
+      // 为按钮元素绑定click事件处理器，点击按钮时会执行welcome函数
+      welcome_load.onclick = welcome; //绑定函数
+    }
+  </script>
+</head>
+
+<body onload="start()">
+  <!-- 页面主体内容 -->
+  <p>
+    <!-- 设置按钮，用户点击时触发绑定的welcome函数 -->
+    <button id="btn" name="btn">欢迎光临</button>
+  </p>
+</body>
+</html>

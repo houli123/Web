@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css" />
+        <script type="text/javascript" src="swiper/swiper.min.js"></script>
+        <style type="text/css">
+            .gallery-top{
+                height: 500px;
+                border:1px solid red;
+            }
+            .swiper-slide{
+                background-position: center;
+                background-size: 100% 100%;
+            }
+            .gallery-thumbs{
+                 height: 200px;
+                border:1px solid red;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .gallery-thumbs .swiper-slide{
+                 opacity:0.4;
+                 width: 25%;
+                 margin:5px;
+            }
+            .gallery-thumbs .swiper-slide-active{
+                 opacity:1;
+                 border:1px red double;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/penguins.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/desert.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/koala.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(swiperimg/tulips.jpg)"></div>
+        </div>
+       
+    </div>
+    </body>
+</html>
+<script type="text/javascript">
+   
+    var gallerytop=new Swiper(".gallery-top",
+        {
+            pagination:".swiper-pagination", paginationClickable:true,
+            nextButton:".swiper-button-next", prevButton:".swiper-button-prev"
+        });
+    var gallerythumbs=new Swiper(".gallery-thumbs",
+        {
+            spaceBetween:10, 
+            centeredSlides:true,slidesPerView:'auto',slideToClickedSlide:true
+        });
+    gallerythumbs.params.control=gallerytop;
+    gallerytop.params.control=gallerythumbs;
+    
+</script>

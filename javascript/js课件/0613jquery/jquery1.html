@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <p>哈哈</p>
+    <p class="myp1">哈哈</p>
+    <p class="myp1">哈哈</p>
+    <button id="btn1">隐藏文本</button>
+</body>
+</html>
+
+<script>
+    // $(document).ready(
+    //     function(){
+    //         $("#btn1").click(
+    //             function(){
+    //                 $(".myp1").hide();
+    //             }
+    //         )
+    //     }
+    // )
+    $(
+        function(){
+            $("#btn1").click(
+                function(){
+                    $(".myp1").hide();
+                }
+            )
+        }
+    )
+</script>

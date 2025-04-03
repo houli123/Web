@@ -1,0 +1,27 @@
+#row{
+    flex-wrap: wrap;
+    width:100%;
+    display: flex;
+    flex:1;
+    overflow: hidden;
+}
+#video{
+    /* flex:5000px; */
+    width:100%;
+    /* min-width: 500px; */
+    align-items: center;
+    justify-content: center;
+}
+
+video{
+    padding:3% 3% 0 3%;
+    width:80%;
+    margin-top:2%;
+}
+
+h3{
+    text-align: center;
+}
+#name1{
+    margin-bottom: 10%;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>替换列表</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>本学期开的第1门专业课程是Java</li>
+        <li>本学期开的第2门专业课程是JavaScript</li>
+        <li>本学期开的第3门专业课程是jQuery</li>
+        <li>本学期开的第4门专业课程是JavaWeb</li>
+    </ul>
+    <form action="" method="get">
+        <input type="button" value="替换列表" onclick="replaceNode()" />
+    </form>
+    <script type="text/javascript">
+        function replaceNode() {
+            var parNode = document.getElementById("list"); //获取父元素
+            var firstP = parNode.firstElementChild; //获取第1个子元素
+            var newli = document.createElement("li");
+            var newtext = document.createTextNode("JavaScript实训课");
+            newli.appendChild(newtext);
+            parNode.replaceChild(newli, firstP);
+        }
+    </script>
+</body>
+
+</html>

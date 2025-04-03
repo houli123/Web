@@ -1,0 +1,18 @@
+#right{
+    padding:5%;
+}
+h1+img{
+    position: relative;
+    top:-30px;
+    max-width: 673px;
+    min-width: 673px;
+    max-height: 250px;
+    margin-right: 50px;
+}
+hr+h1{
+    font-size: 40px;
+    font-family: 华文行楷;
+}
+#right{
+    overflow: auto;
+}

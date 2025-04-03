@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!-- 定义文档类型为HTML5 -->
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8 -->
+    <title>商品放大镜的移动——offset系列属性</title> <!-- 页面标题 -->
+    <style type="text/css">
+        * {
+            margin: 0; /* 移除所有元素的默认外边距 */
+            padding: 0; /* 移除所有元素的默认内边距 */
+        }
+        #smallBox {
+            position: relative; /* 相对定位，放大镜基于此定位 */
+            width: 350px; /* 小图容器宽度 */
+            height: 350px; /* 小图容器高度 */
+            margin: 50px; /* 容器外边距 */
+            border: 1px solid #ccc; /* 容器边框 */
+        }
+        #zoom {
+            display: none; /* 默认不显示放大镜 */
+            position: absolute; /* 放大镜使用绝对定位 */
+            background: #ffffcc; /* 放大镜背景颜色 */
+            border: 1px solid #ccc; /* 放大镜边框 */
+            opacity: 0.5; /* 放大镜透明度 */
+            width: 175px; /* 放大镜宽度 */
+            height: 175px; /* 放大镜高度 */
+        }
+        #bigBox {
+            display: none; /* 默认不显示大图容器 */
+            position: absolute; /* 大图容器使用绝对定位 */
+            top: 50px; /* 大图容器顶部位置 */
+            left: 400px; /* 大图容器左侧位置 */
+            width: 700px; /* 大图容器宽度 */
+            height: 700px; /* 大图容器高度 */
+            overflow: hidden; /* 超出部分隐藏 */
+            border: 1px solid #ccc; /* 大图容器边框 */
+            z-index: 100; /* 大图容器层级，确保在放大镜之上 */
+        }
+        #bigBox img {
+            position: absolute; /* 大图使用绝对定位 */
+        }
+    </style>
+</head>
+<body>
+    <div id="smallBox">
+        <div id="zoom"></div> <!-- 放大镜元素 -->
+        <img src="images/01.jpg" alt="Small Image"/> <!-- 小图元素 -->
+    </div>
+    <div id="bigBox">
+        <img src="images/001.jpg" alt="Big Image"/> <!-- 大图元素 -->
+    </div>
+    <script type="text/javascript">
+        var smallBox = document.getElementById("smallBox"); // 获取小图容器元素
+        var zoom = document.getElementById("zoom"); // 获取放大镜元素
+        var bigBox = document.getElementById("bigBox"); // 获取大图容器元素
+        var bigImage = bigBox.querySelector("img"); // 获取大图图片元素
+
+        smallBox.onmouseover = function() {
+            zoom.style.display = "block"; // 鼠标经过时显示放大镜
+            bigBox.style.display = "block"; // 鼠标经过时显示大图
+        };
+
+        smallBox.onmouseout = function() {
+            zoom.style.display = "none"; // 鼠标离开时隐藏放大镜
+            bigBox.style.display = "none"; // 鼠标离开时隐藏大图
+        };
+
+        smallBox.onmousemove = function(e) {
+            var event = e || window.event; // 兼容不同浏览器的事件对象
+            var boxX = event.pageX - smallBox.offsetLeft; // 计算鼠标相对于smallBox的X坐标
+            var boxY = event.pageY - smallBox.offsetTop; // 计算鼠标相对于smallBox的Y坐标
+            var zoomX = boxX - zoom.offsetWidth / 2; // 计算放大镜的X位置
+            var zoomY = boxY - zoom.offsetHeight / 2; // 计算放大镜的Y位置
+            // 限制放大镜位置，防止移出smallBox
+            if (zoomX < 0) zoomX = 0;
+            if (zoomX > smallBox.offsetWidth - zoom.offsetWidth)
+                zoomX = smallBox.offsetWidth - zoom.offsetWidth;
+            if (zoomY < 0) zoomY = 0;
+            if (zoomY > smallBox.offsetHeight - zoom.offsetHeight)
+                zoomY = smallBox.offsetHeight - zoom.offsetHeight;
+            zoom.style.left = zoomX + "px"; // 设置放大镜的left样式
+            zoom.style.top = zoomY + "px"; // 设置放大镜的top样式
+            bigImage.style.left = -2 * zoomX + "px"; // 根据放大镜位置设置大图的X偏移， 2为放大的倍数。
+            bigImage.style.top = -2 * zoomY + "px"; // 根据放大镜位置设置大图的Y偏移
+        };
+    </script>
+</body>
+</html>

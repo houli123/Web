@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>显示实时时间——document.getElementById()方法</title>
+    <style>
+        p {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        span {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <p>现在是<span id="clock"></span></p>
+    <script type="text/javascript">
+        function two(s) {
+            if (s < 10)
+                s = "0" + s;
+            return s;
+        }
+        function ShowTime() {
+            var now, clock_line, time_text;
+            now = new Date();
+            time_text = two(now.getHours()) + ":" + two(now.getMinutes()) + ":" + two(now.getSeconds());
+            clock_line = document.getElementById("clock"); // 获取 clock 段落元素对象
+            clock_line.innerHTML = time_text; //设置段落文本
+        }
+        ShowTime();
+        setInterval(ShowTime, 1000); //设置定时器
+    </script>
+</body>
+</html>

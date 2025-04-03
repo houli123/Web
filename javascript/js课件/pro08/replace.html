@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="mylist">
+        <li>项目001</li>
+        <li>项目002</li>
+        <li>项目003</li>
+        <li>项目004</li>
+        <li>项目005</li>
+    </ul>
+
+    <hr>
+    <h1>深圳</h1>
+    <hr />
+    <h2>地理位置</h2>
+    <p>深圳地处广东省南部。</p>
+    <hr />
+    <h2>历史简述</h2>
+    <p>深圳于1979年建市，1980年设立经济特区。</p>
+    <button onclick="delhr()">删除水平线</button>
+
+    <button onclick="replace();">替换第二个列表项</button>
+    <button onclick="delNode();">删除第一个列表项</button>
+</body>
+</html>
+<script type="text/javascript">
+    function delhr(){
+        let myhrs=document.querySelectorAll('hr');
+        for(let x of myhrs){  //x of range就直接是本身
+            x.parentNode.removeChild(x);
+        }
+    }
+    function delNode(){
+        let list=document.getElementById('mylist');
+        let firstli=list.firstElementChild;
+
+        list.removeChild(firstli);
+    }
+    function replace(){
+        let list=document.getElementById('mylist');
+        let firstli=list.firstElementChild.nextElementSibling;
+
+        let newli=document.createElement("li");
+        let textnode=document.createTextNode("哈哈哈");
+        newli.appendChild(textnode);
+        
+        list.replaceChild(newli,firstli);
+    }
+</script>

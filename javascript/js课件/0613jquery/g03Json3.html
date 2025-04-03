@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                border:1px solid red;
+            }
+            .productname{
+                float:left;
+            }
+            .price{
+                float:right;
+            }
+            li{
+                float:left;
+                list-style-type: none;
+                margin:10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul id="products">
+            <!-- <li>
+                <div class="img">
+                    <img src="img/apple.jpg" height="160" width="160" alt="" />
+                </div>
+                <div class="productname">苹果</div>
+                <div class="price">1600</div>
+            </li> -->
+            
+        </ul>
+    </body>
+</html>
+<script type="text/javascript">
+    var obj1 = {
+        "Products": [
+{"productName": "摩托罗拉","price": 1200.00,"photo": "img/moto.jpg"},
+{"productName": "三星","price": 2400.00,"photo": "img/samsung.jpg"}, 
+{"productName": "诺基亚","price": 1500.00,"photo": "img/nokia.jpg"},
+{"productName": "索尼","price": 1800.00,"photo": "img/sony.jpg"}
+        ]
+    };
+    var str="";
+    for(var i=0;i<obj1.Products.length;i++)
+    {
+        str+='<li>';
+        str+='<div class="img">';
+        str+='<img src="'+obj1.Products[i].photo+'" />';
+        str+='</div>';
+        str+='<div class="productname">'+obj1.Products[i].productName+'</div>';
+        str+='<div class="price">'+obj1.Products[i].price+'</div>';
+        str+='</li>';
+    }
+    var info=document.getElementById("products");
+    info.innerHTML=str;
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>复制元素</title>
+    <script type="text/javascript">
+        function AddClone(deep) {
+            var selNode = document.getElementById("genderId"); //获取元素节点
+            var newSelect = selNode.cloneNode(deep); //根据deep参数决定是否进行深度复制
+            var newNode = document.createElement("br"); //创建新的节点
+            var divNode = document.getElementById("div1"); //获取放置复制元素的容器
+            divNode.appendChild(newSelect);
+            divNode.appendChild(newNode); //将创建的新节点添加到当前节点列表的末尾
+        }
+    </script>
+</head>
+
+<body>
+    <form name="form1" action="" method="post">
+        <hr>
+        <select name="genderSelect" id="genderId">
+            <option value="%">请选择性别</option>
+            <option value="0">男</option>
+            <option value="1">女</option>
+        </select>
+        <hr>
+        <div id="div1"></div>
+        <input type="button" value="普通复制" onClick="AddClone(false)" />
+        <input type="button" value="深度复制" onClick="AddClone(true)" />
+    </form>
+</body>
+
+</html>

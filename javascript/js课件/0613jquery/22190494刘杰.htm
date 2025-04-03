@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        .important{
+            font-weight: bold;
+            font-size:30px;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="id1">1</div>
+    <div id="id2">2</div>
+    <div id="id3">3</div>
+    <div id="id4">4</div>
+    <div id="id5">5</div>
+    <div id="id6">6</div>
+    <button id="btn1">添加</button>
+    <button id="btn2">删除</button>
+    <button id="btn3">切换</button>
+    <button id="btn4">设置</button>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(
+        function(){
+            $("#btn1").click(
+                function(){
+                    $("#id1,#id2").addClass("red");
+                    $("#id3,#id4").addClass("red important");
+                }
+            )
+            $("#btn2").click(
+                function(){
+                    $("#id3,#id4").removeClass("red");
+                }
+            )
+            $("#btn3").click(
+                function(){
+                    $("#id5").toggleClass("important");
+                }
+            )
+            $("#btn4").click(
+                function(){
+                    $("#id6").css({"background-color":"yellow","font-size":"200%"});
+                }
+            )
+        }
+    )
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="cc1" style="position:relative">
+        <ul id="mylist" style="position:relative">
+            <li>项目001</li>
+            <li>项目002</li>
+            <li>项目003</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    let li=document.getElementsByTagName("li")[0];
+    // console.log(li.parentNode);
+    // console.log(li.closest("#mylist"));
+
+    // console.log(li.closest("#div1"));
+    // console.log(li.closest(".cc1"));
+
+    // console.log(li.offsetParent);
+    console.log(li.nextElementSibling);
+    console.log(li.nextElementSibling.nextElementSibling);
+    console.log(li.nextElementSibling.previousElementSibling);
+</script>

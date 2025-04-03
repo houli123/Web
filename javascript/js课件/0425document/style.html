@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .cc1{font-size: 40px;}
+    </style>
+</head>
+<body>
+    <h2 id="header">
+        哈哈
+    </h2>
+</body>
+</html>
+<script type="text/javascript">
+    x=document.getElementById("header");
+    x.style.color='red';
+    x.style['color']='blue';
+    x.style["background-color"]="yellow";
+    x.style["backgroundColor"]="pink";
+
+    //第三种方式修改style，第一个参数是属性，第二个是属性值
+    x.style.setProperty("border","3px double blue");
+
+    //将header的部件加上classname后css自动修改其样式
+    x.className="cc1";
+</script>

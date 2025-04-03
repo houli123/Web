@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>字符键 a 键触发事件过程</title>
+    <script>
+        document.onkeydown = f; //a键按下触发
+        document.onkeyup = f; //a键松开触发
+        document.onkeypress = f; //a键松开触发
+        function f(e) {
+            console.log(`${e.type}:Unicode值${e.keyCode}`);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>按键测试</h1>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="myh">张丽到此一游</h2>
+</body>
+</html>
+<script>
+    var h2=document.getElementById("myh");
+    h2.onmousedown=function(e){
+        if(e.button==0){
+            console.log("鼠标左键");
+            e.retureValue=false;
+        }
+        else if(e.button==1){
+            console.log("鼠标中键");
+            e.retureValue=false;
+        }
+        else if(e.button==2){
+            e.retureValue=false;
+            console.log("鼠标右键");
+            
+        }
+    };
+</script>

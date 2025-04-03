@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>按键以上、下、左、右移动图片——处理字符键</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            background-image: url("img/index.jpg");
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="img"></div>
+    
+</body>
+
+</html>
+
+<script>
+    var img = document.querySelector("#img");
+    document.onkeypress = function(e) {
+        if (e.keyCode == 115)//s
+            img.style.top = `${img.offsetTop + 10}px`;
+        else if (e.keyCode == 119)//w
+            img.style.top = `${img.offsetTop - 10}px`;
+        else if (e.keyCode == 100)//d
+            img.style.left = `${img.offsetLeft + 10}px`;
+        else if (e.keyCode == 97)//a
+            img.style.left = `${img.offsetLeft - 10}px`;
+        else
+            alert("请重新确认按键");
+    }
+    
+</script>

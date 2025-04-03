@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>删除水平线——删除节点</title>
+</head>
+
+<body>
+    <h1>JavaScript程序设计</h1>
+    <hr />
+    <h2>什么是JavaScript</h2>
+    <p>JavaScript是一门基于对象和事件驱动的嵌入式脚本语言</p>
+    <hr />
+    <h2>第一部分 JavaScript概述</h2>
+    <p>JavaScript的发展历史</p>
+    <input type="button" value="删除水平线" onclick="delhr()" />
+    <script type="text/javascript">
+        function delhr() {
+            var hrs = document.querySelectorAll("hr"); //获取所有 <hr> 元素 
+            for (var i = 0; i <= hrs.length - 1; i++) {
+                //依次获取水平线元素节点
+                var hr = hrs[i];
+                //使用其父元素的删除方法进行删除
+                hr.parentNode.removeChild(hr);
+            }
+        }
+    </script>
+</body>
+
+</html>

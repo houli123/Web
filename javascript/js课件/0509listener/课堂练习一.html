@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示事件信息</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="请输入内容">
+    <button id="showBtn">显示事件信息</button>
+    <div id="eventInfo"></div> <!-- 显示事件信息的地方 -->
+
+    <script>
+        var showBtn = document.getElementById('showBtn');
+        var input = document.getElementById('myInput');
+        var eventInfoDiv = document.getElementById('eventInfo');
+
+        showBtn.addEventListener('click', function(event) {
+            var infoText = '输入内容: ' + input.value + '<br>';
+            infoText += '事件类型: ' + event.type + '<br>';
+            infoText += '鼠标位置: (' + event.clientX + ', ' + event.clientY + ')<br>';
+            infoText += '事件目标: ' + event.target.tagName + '<br><br>';
+
+            // 使用innerHTML组合以在现有内容前添加新内容
+            eventInfoDiv.innerHTML = infoText + eventInfoDiv.innerHTML;
+        });
+    </script>
+</body>
+</html>

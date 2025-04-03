@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+</html>
+<script type="text/javascript">
+	var s=["Python","PHP","JavaScript"];
+	for(var i=0;i<s.length;i++)
+	{
+		document.write(s[i]+"<br>");
+	}
+	document.write('<hr/>');
+	for(var x in s)  //in是取下标
+	{
+		document.write(s[x]+"<br>");
+	}
+	document.write('<hr/>');
+	for(var y of s)  //of才是元素
+	{
+		document.write(y+"<br>");
+	}
+	document.write('<hr/>');
+	var m=s.length;
+	for(var i=0;i<m;i++)
+	{
+		haha=s.pop();
+		document.write(i+":"+haha+"<br>");
+	}
+</script>
+
+</body>
+</html>

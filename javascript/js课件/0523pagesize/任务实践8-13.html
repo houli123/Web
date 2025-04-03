@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>改变浏览器大小时弹出提示——onresize 事件</title>
+</head>
+
+<body>
+	<!-- 显示一段文本说明 -->
+	当改变浏览器大小时，弹出提示
+
+	<!-- 在<script>标签中编写JavaScript代码 -->
+	<script type="text/javascript">
+		// 定义一个名为changesize的函数，用于在浏览器大小改变时执行
+		function changesize() {
+			// 使用alert函数显示警告框，通知用户浏览器大小已改变
+			alert("您改变了浏览器大小");
+		}
+
+		// 将document.body的onresize事件处理器设置为changesize函数
+		// 当浏览器窗口的大小改变时，将调用changesize函数
+		document.body.onresize = changesize;
+	</script>
+</body>
+</html>

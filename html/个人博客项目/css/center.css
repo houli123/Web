@@ -1,0 +1,141 @@
+div+hr{
+    opacity: 0.4;
+    /* float:none; */
+}
+input::placeholder{
+    opacity: 0.3;
+}
+.basic{
+    color:navy;
+}
+.basic:hover{
+    background-image: url(../images/icon.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-weight: bolder;
+}
+
+
+/* 设置表单样式 */
+#box{
+    height: 5em;
+}
+.box{
+    display: block;
+    width: 100%;
+    height: 3.6em;
+    /* float: left; */
+}
+span{
+    float: left;
+    margin:auto 0;
+    height: 1em;
+}
+.input_span{
+    position: relative;
+    right:-0.4em;
+    height: 15px;
+}
+.input {
+position: relative;
+display: inline-block;
+margin: 1em;
+max-width: 500px;
+vertical-align: top;
+}
+.input_input {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    /* width: 60%; */
+    max-width: 100px;
+    border: none;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: bolder;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.input_label {
+    padding: 0 1em;
+    /* width: 70%; */
+    color: #6a7989;
+    font-weight: bold;
+    position: relative;
+    /* top:15px; */
+}
+.input_label1{
+    top:0.8em;
+
+    padding: 0 0.7em;
+}
+.input_label2{
+    position: relative;
+    top:-0em;
+}
+.input_input:focus {
+    box-shadow: 0px 0px 0px 2px #669933;
+}
+.input_input:focus {
+    outline: none;
+}
+
+
+/* radio */
+input[type=radio] {
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+    /* display: inline-block;
+    margin: .4rem; */
+}
+input[type=radio] {
+    border-radius: 50%;
+}
+input[type=radio]:checked:before {
+    transform: scale(1);
+}
+input[type=radio]:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 3px;
+    transform: scale(0);
+    transition: all ease-out 250ms;
+}
+input[type=radio] {
+    border: 2px solid #669933;
+}
+input[type=radio]:checked:before {
+    background: #669933;
+}
+
+
+/* 现居地 */
+.input_input2{
+    float:right;
+    margin-left: 1em;
+    min-width: 200px;
+}
+
+/* 保存提交 */
+form .box>input{
+    margin-top: 1em;
+    background-color: #669933;
+    border:0;
+    font-size: 1.2em;
+    color: rgba(226, 223, 223, 0.993);
+    cursor: pointer;
+    transition: all .3s;
+    appearance:button;
+    text-transform: none;
+    line-height: normal;
+}
+.box button:focus{
+    outline: 0;
+}
+.box button:hover{
+    background-color: #25a25a;
+}

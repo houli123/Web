@@ -1,0 +1,27 @@
+1. 前端页面结构
+HTML页面：定义了用户界面和用户体验。
+login.html：登录页面，包含表单收集用户名和密码。
+reg.html：注册页面，包含表单收集用户名、密码和确认密码。
+index.html：留言板首页，展示留言列表，并提供用户操作的导航。
+post.html：发表留言页面，提供表单供用户输入留言内容。
+show.html：展示用户个人留言页面，允许用户删除自己的留言。
+2. 后端逻辑（PHP控制器）
+Index控制器（Index.php）：
+
+index()：渲染留言板首页，包括分页和排序功能。
+post()：渲染发表留言页面。
+do_post(Request $request)：处理发表留言的请求。
+delete(Request $request)：处理删除留言的请求。
+show()：渲染显示用户个人留言的页面。
+User控制器（User.php）：
+
+login()：渲染用户登录页面。
+do_login(Request $request)：处理用户登录请求。
+logout()：处理用户注销请求。
+reg()：渲染用户注册页面。
+do_reg(Request $request)：处理用户注册请求。
+3. 数据库模型（PHP模型）
+Message模型（Message.php）：代表留言的数据库表结构，包含自动写入时间戳功能。
+User模型（User.php）：代表用户的数据库表结构，包含自动写入时间戳功能。
+4. 数据库验证器
+UserValidator验证器（UserValidator.php）：定义了用户注册和编辑时的验证规则和错误消息。

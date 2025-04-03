@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="header">
+        JS
+    </h2>
+    <ul class="list1">
+        <li>项目001</li>
+        <li>项目002</li>
+        <li name="haha">项目003</li>
+        <li>项目004</li>
+        <li>项目005</li>
+    </ul>
+    
+
+</body>
+</html>
+<script text="text/javascript">
+    // document.getElementById();  //只有ById是返回一个，且是最先的
+    // document.getElementsByTagName();  //及时一个元素也是返回数组
+    // document.getElementsByName();
+    // document.getElementsByClassName();
+    // document.querySelector;  //这里是直接访问对象，可以是标记、id和class
+    // document.querySelectorAll;
+    // document.innerHTML="";  //表标签内的内容
+//     mylis=document.getElementsByTagName('li');
+//     document.write(mylis[0].innerHTML);
+//     mylis[1].innerHTML="大圣归来";
+//     x=document.getElementsByTagName('h2');
+//     x[0].innerHTML="魔童降世";
+
+//     y=document.getElementById('header');
+//     y.innerHTML="唐人街";
+
+//     z=document.getElementsByName("haha")[0];
+//     z.innerHTML="百日之下"
+
+//     a=document.getElementsByClassName('list1')[0];
+//     a.style['border']="3px double blue";
+
+    mylis=document.querySelectorAll('li');
+    document.write(mylis[0].innerHTML);
+    mylis[1].innerHTML="大圣归来";
+
+    x=document.querySelector('h2');
+    x.innerHTML="魔童降世";
+
+    y=document.querySelector('#header');  //这里header是id，所以加#
+    y.innerHTML="唐人街";
+
+    y1=document.querySelectorAll('#header')[0];  //这里header是id，所以加#
+    y1.innerHTML="唐人街2";
+
+    z=document.querySelectorAll("li")[2];
+    z.innerHTML="百日之下"
+
+    a=document.querySelectorAll('.list1')[0];
+    // a.style['border']="2px solid red";
+    a.style.border="2px solid red";  
+    //style.['background-color']等价于style.['backgroundColor']
+    a=document.querySelector('.list1');
+    a.style['border']="4px double blue";
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	.cc1{
+		width: 120px;
+		height: 100px;
+		text-align: center;
+		border:2px solid black;
+		display:inline-block;
+		margin: 10px;
+		font-size: 20px;
+		line-height: 100px;
+		background-color: yellow;
+	}
+	hr{
+		clear:both;
+	}
+	#container{
+		text-align: center;
+		border:2px solid red;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div class="cc1">样本001</div>
+	<div class="cc1">样本002</div>
+	<div class="cc1">样本003</div>
+	<div class="cc1">样本004</div>
+	<div class="cc1">样本005</div>
+</div>
+<hr>
+<button onclick="dosth(true);">全部更改样式</button>
+<button onclick="dosth(false);">全部还原样式</button>
+</body>
+</html>
+<script type="text/javascript">
+//在此处写JS代码
+function dosth(flag){
+	s=document.getElementsByClassName("cc1");
+	for(var x of s){
+		if(flag){
+			x.style.backgroundColor="blue";
+			x.style.color="white";
+		}
+		else{
+			x.style.backgroundColor="yellow";
+			x.style.color="black";
+		}
+	}
+}
+</script>
