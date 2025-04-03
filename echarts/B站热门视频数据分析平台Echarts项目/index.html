@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>B站热门视频数据分析平台</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/echarts.js"></script>
+    <!-- <style>
+        @import url("css/index.css");
+    </style> -->
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>B站热门视频数据分析平台</h1>
+            <p>深入分析B站热门视频数据，助力内容创作</p>
+        </header>
+
+        <div class="charts-container">
+            <!-- 堆叠柱状图 -->
+            <div class="chart-box">
+                <div class="chart-title">分区活跃度分析</div>
+                <div id="bar" class="chart"></div>
+            </div>
+
+            <!-- 热力图 -->
+            <div class="chart-box">
+                <div class="chart-title">分区排名分布热力图</div>
+                <div id="heatmap" class="chart"></div>
+            </div>
+
+            <!-- 气泡图 -->
+            <div class="chart-box">
+                <div class="chart-title">分区内容表现分布</div>
+                <div id="bubble" class="chart"></div>
+            </div>
+
+            <!-- 雷达图 -->
+            <div class="chart-box">
+                <div class="chart-title">视频综合表现评估</div>
+                <div id="radar" class="chart"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/charts.js"></script>
+</html> 
