@@ -1,10 +1,31 @@
 <script setup>
 import { ref, watch } from 'vue';
 
-const str = ref('')  // 表示只能声明一次
+const str = ref('');  // 表示只能声明一次
 
-watch(str, (newValue) => {
-  console.log('str changed:', newValue);
+const ls = ref([
+  { name: '吃饭', completed: false },
+  { name: '睡觉', completed: false },
+  { name: '打豆豆', completed: false }
+]);  // 声明一个数组
+
+function add() {
+  if (str.value.trim() !== '') {
+    ls.value.push(
+      {name: str.value, completed: false}
+    )
+    str.value = ''
+  }
+};
+
+// 定义匿名函数的方式
+const del = (index) => {
+  // 表示从index位置删除一个元素
+  ls.value.splice(index, 1)
+}
+
+watch(str, (newValue, oldValue) => {
+  console.log('str changed:', newValue, oldValue);
 });
 </script>
 
@@ -15,47 +36,31 @@ watch(str, (newValue) => {
     <div class="title">xxx的Todo App</div>
 
     <div class="todo-from">
-      <!-- v-model表示双向绑定， -->
+      <!-- v-model表示双向绑定，v-bind则是动态绑定：数据动态设置到标签属性上，也可以简写为“:” -->
       <input v-model="str" class="todo-input" type="text" placeholder="add a todo" />
-      <div class="todo-button">add todo</div>
+      <div @click="add" class="todo-button">add todo</div>
     </div>
 
-    <div class="item completed">
+    <!-- 表示动态绑定 -->
+    <div v-for="(item, index) in ls" :class="[item.completed ? 'completed' : 'item']" >
       <div>
-        <input type="checkbox" />
-        <span class="name">吃饭</span>
+        <input @click="item.completed = !item.completed" type="checkbox" />
+        <span class="name">{{ item.name }}</span>
       </div>
 
-      <div class="del">del</div>
+      <div @click="del(index)" class="del">del</div>
     </div>
 
-    <div class="item">
-      <div>
-        <input type="checkbox" />
-        <span class="name">吃饭</span>
-      </div>
-
-      <div class="del">del</div>
-    </div>
-
-    <div class="item">
-      <div>
-        <input type="checkbox" />
-        <span class="name">吃饭</span>
-      </div>
-
-      <div class="del">del</div>
-    </div>
   </div>
 
-  <!-- <div>
+  <div>
     路由导航
     <nav>
       <router-link to="/example1">路由案例</router-link> |
     </nav>
     案例内容显示区域
     <router-view />
-  </div> -->
+  </div>
 </template>
 
 
