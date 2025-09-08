@@ -67,6 +67,16 @@ watch(str, (newValue, oldValue) => {
 
 <style scoped>
   .completed {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 50px;
+    margin: 8px auto;
+    padding: 16px;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 20px;
     text-decoration: line-through;
     opacity: 0.4;
   }
